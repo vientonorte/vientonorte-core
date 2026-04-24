@@ -1,0 +1,23 @@
+{
+  "name": "@vientonorte/tokens",
+  "version": "0.1.0",
+  "description": "Design tokens del colectivo vientonorte — paleta, tipografía, espaciado, motion, a11y",
+  "license": "MIT",
+  "main": "./dist/tokens.css",
+  "exports": {
+    ".": "./dist/tokens.css",
+    "./css": "./dist/tokens.css",
+    "./tailwind": "./dist/tailwind-preset.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "node scripts/build.js",
+    "typecheck": "tsc --noEmit"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "restricted"
+  }
+}
