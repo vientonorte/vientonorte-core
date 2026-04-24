@@ -69,8 +69,8 @@ grafo force-directed (Contra-Archivo), sync Calendar (table-ro), RBAC (dashfin).
 
 ## Estado de la migración
 - **Fase 0** ✅ Audit de duplicación (`docs/audit-duplicacion.md`)
-- **Fase 1** 🔄 Tokens — piloto en `mi-portafolio` (en curso)
-- **Fase 2** ⬜ UI base components
+- **Fase 1** ✅ Tokens — `@vientonorte/tokens` enlazado en `mi-portafolio` y `dashfin` vía `file:`
+- **Fase 2** 🔄 UI base components
 - **Fase 3** ⬜ A11y + Security
 - **Fase 4** ⬜ Analytics + Docs
 - **Fase 5** ⬜ CLI + Scaffolding

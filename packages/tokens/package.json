@@ -3,6 +3,12 @@
   "version": "0.1.0",
   "description": "Design tokens del colectivo vientonorte — paleta, tipografía, espaciado, motion, a11y",
   "license": "MIT",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vientonorte/vientonorte-core.git",
+    "directory": "packages/tokens"
+  },
   "main": "./dist/tokens.css",
   "exports": {
     ".": "./dist/tokens.css",
@@ -18,6 +24,6 @@
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com",
-    "access": "restricted"
+    "access": "public"
   }
 }
