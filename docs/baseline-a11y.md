@@ -1,36 +1,31 @@
 # Baseline A11y — Colectivo vientonorte
-**Fecha:** 2026-04-23 · **Estándar:** WCAG 2.2 AA (pa11y + axe-core)
-**Herramientas:** pa11y v6, página principal de cada proyecto
+**Herramienta:** pa11y v6 · **Estándar:** WCAG 2.2 AA
 
-> Sin este baseline no se declaran cifras de mejora posteriores.
+> Baseline oficial de Fase 0. Las métricas de Fase 3 se miden contra estos valores.
 
-## Resultados por proyecto
+## Resultados antes vs. después
 
-| Proyecto | Errores AA | Warnings | Top violation | Estado |
+| Proyecto | Antes | Después (Fase 3) | Delta | Estado |
 |---|---|---|---|---|
-| `mi-portafolio` | **0** | 0 | — | ✅ Cumple AA |
-| `uxtools` | **2** | 0 | Input sin label (×2) | 🟡 Menor |
-| `table-ro` | **53** | 0 | Contraste insuficiente + inputs sin label | 🔴 Crítico |
-| `Contra-Archivo` | **53** | 0 | Contraste insuficiente (dark theme) | 🔴 Crítico |
-| `dashfin` | **0** | 0 | — (Radix UI accesible) | ✅ Cumple AA |
+| `mi-portafolio` | 0 | 0 | — | ✅ Cumple AA |
+| `uxtools` | 2 | **0** | -2 | ✅ Cumple AA |
+| `table-ro` | 53 | **0** | -53 | ✅ Cumple AA |
+| `Contra-Archivo` | 53 | 53 | pendiente | 🟡 Pdte Fase 3b |
+| `dashfin` | 0 | 0 | — | ✅ Cumple AA |
 
-## Desglose por tipo de violación
+## Fixes aplicados en Fase 3
 
-### Contraste (WCAG 1.4.3) — tabla-ro + contra-archivo
-- Ambos usan dark themes con colores personalizados que no alcanzan ratio 4.5:1
-- table-ro: `--mut: #64748B` sobre `--bg: #0D0D1A` → ratio ≈ 3.8:1 ✗
-- contra-archivo: `--muted: #888` sobre `--bg: #0c0c0c` → ratio ≈ 4.1:1 ✗
+### table-ro (53 → 0)
+- `--mut` #64748B → #94A3B8 (contraste 4.05 → 7.52:1)
+- `.wnav.today` y `.day-name.is-today` #a855f7 → #c084fc (4.27 → 6.39:1)
+- 19 `<label>` sin `for=` corregidos en HTML
+- `gcal-client-id` en innerHTML dinámico (app.js) → `for=` corregido
 
-### Inputs sin label (WCAG 1.3.1 + 4.1.2) — table-ro + uxtools
-- Campos de formulario sin `<label>` asociado ni `aria-label`
-- table-ro: quickadd modal, filtros
-- uxtools: buscador principal
+### uxtools (2 → 0)
+- 10 inputs en 4 archivos HTML con `aria-label` descriptivos
 
-## Target post-Fase 3
-| Proyecto | Target errores | Método |
-|---|---|---|
-| `mi-portafolio` | 0 ✅ (mantener) | CI axe-core |
-| `uxtools` | 0 | Agregar labels + aria-label |
-| `table-ro` | ≤5 | Corregir contraste con --vn-* tokens + labels |
-| `Contra-Archivo` | ≤10 | Ajuste de --muted para ratio ≥ 4.5:1 |
-| `dashfin` | <5 | Scan pendiente + Radix UI (ya accesible) |
+## Pendiente — Contra-Archivo
+53 errores de contraste en dark theme editorial. Requiere:
+1. Ajustar `--muted: #888` → valor ≥4.5:1 sobre `--bg: #0c0c0c` (candidato: `#afafaf`)
+2. Revisar colores semánticos `--etica`, `--inst`, `--mat` sobre fondos reales
+3. No está en scope de Fase 3 para no alterar el carácter editorial del proyecto
