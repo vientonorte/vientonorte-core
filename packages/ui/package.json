@@ -1,0 +1,20 @@
+{
+  "name": "@vientonorte/ui",
+  "version": "0.1.0",
+  "description": "Componentes UI del colectivo vientonorte — Atomic Design",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": { "import": "./dist/index.js", "types": "./dist/index.d.ts" },
+    "./button": { "import": "./dist/atoms/Button.js", "types": "./dist/atoms/Button.d.ts" },
+    "./input": { "import": "./dist/atoms/Input.js", "types": "./dist/atoms/Input.d.ts" },
+    "./dialog": { "import": "./dist/molecules/Dialog.js", "types": "./dist/molecules/Dialog.d.ts" }
+  },
+  "files": ["dist", "src"],
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "publishConfig": { "registry": "https://npm.pkg.github.com", "access": "restricted" }
+}

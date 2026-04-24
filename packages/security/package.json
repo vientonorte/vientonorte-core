@@ -1,0 +1,13 @@
+{
+  "name": "@vientonorte/security",
+  "version": "0.1.0",
+  "description": "Factor Registry + step-up auth para el colectivo vientonorte",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": { "import": "./dist/index.js", "types": "./dist/index.d.ts" }
+  },
+  "files": ["dist", "src"],
+  "publishConfig": { "registry": "https://npm.pkg.github.com", "access": "restricted" }
+}
