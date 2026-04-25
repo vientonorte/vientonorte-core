@@ -19,40 +19,21 @@ var BASE_STYLES = {
   WebkitUserSelect: "none"
 };
 var VARIANT_STYLES = {
-  primary: {
-    background: "var(--vn-azul-evo, #1A8FDC)",
-    color: "var(--vn-marfil, #f7f2e7)",
-    borderColor: "var(--vn-azul-evo, #1A8FDC)"
-  },
-  secondary: {
-    background: "transparent",
-    color: "var(--vn-azul-evo, #1A8FDC)",
-    borderColor: "var(--vn-azul-evo, #1A8FDC)"
-  },
-  ghost: {
-    background: "transparent",
-    color: "var(--vn-pizarra, #4a5568)",
-    borderColor: "transparent"
-  },
-  danger: {
-    background: "var(--vn-rojo, #E8401C)",
-    color: "var(--vn-marfil, #f7f2e7)",
-    borderColor: "var(--vn-rojo, #E8401C)"
-  }
+  primary: { background: "var(--vn-azul-evo, #1A8FDC)", color: "var(--vn-marfil, #f7f2e7)", borderColor: "var(--vn-azul-evo, #1A8FDC)" },
+  default: { background: "var(--vn-azul-evo, #1A8FDC)", color: "var(--vn-marfil, #f7f2e7)", borderColor: "var(--vn-azul-evo, #1A8FDC)" },
+  secondary: { background: "transparent", color: "var(--vn-azul-evo, #1A8FDC)", borderColor: "var(--vn-azul-evo, #1A8FDC)" },
+  outline: { background: "transparent", color: "var(--vn-azul-evo, #1A8FDC)", borderColor: "var(--vn-azul-evo, #1A8FDC)" },
+  ghost: { background: "transparent", color: "var(--vn-pizarra, #4a5568)", borderColor: "transparent" },
+  link: { background: "transparent", color: "var(--vn-azul-evo, #1A8FDC)", borderColor: "transparent", textDecoration: "underline", textUnderlineOffset: "3px" },
+  danger: { background: "var(--vn-rojo, #E8401C)", color: "var(--vn-marfil, #f7f2e7)", borderColor: "var(--vn-rojo, #E8401C)" },
+  destructive: { background: "var(--vn-rojo, #E8401C)", color: "var(--vn-marfil, #f7f2e7)", borderColor: "var(--vn-rojo, #E8401C)" }
 };
 var SIZE_STYLES = {
-  sm: {
-    padding: "var(--vn-space-1, 4px) var(--vn-space-3, 12px)",
-    fontSize: "var(--vn-text-sm, 0.875rem)"
-  },
-  md: {
-    padding: "var(--vn-space-2, 8px) var(--vn-space-4, 16px)",
-    fontSize: "var(--vn-text-base, 1rem)"
-  },
-  lg: {
-    padding: "var(--vn-space-3, 12px) var(--vn-space-6, 24px)",
-    fontSize: "var(--vn-text-lg, 1.125rem)"
-  }
+  sm: { padding: "var(--vn-space-1, 4px) var(--vn-space-3, 12px)", fontSize: "var(--vn-text-sm, 0.875rem)" },
+  md: { padding: "var(--vn-space-2, 8px) var(--vn-space-4, 16px)", fontSize: "var(--vn-text-base, 1rem)" },
+  default: { padding: "var(--vn-space-2, 8px) var(--vn-space-4, 16px)", fontSize: "var(--vn-text-base, 1rem)" },
+  lg: { padding: "var(--vn-space-3, 12px) var(--vn-space-6, 24px)", fontSize: "var(--vn-text-lg, 1.125rem)" },
+  icon: { padding: 0, width: "var(--vn-touch-min, 44px)", height: "var(--vn-touch-min, 44px)", fontSize: "var(--vn-text-base, 1rem)" }
 };
 function Spinner() {
   return /* @__PURE__ */ jsxs(
@@ -805,9 +786,471 @@ function Dialog({
     }
   );
 }
+
+// src/atoms/Textarea.tsx
+import { jsx as jsx11, jsxs as jsxs5 } from "react/jsx-runtime";
+function Textarea({ label, error, hint, id, style, ...props }) {
+  const inputId = id ?? label?.toLowerCase().replace(/\s+/g, "-");
+  const errorId = error ? `${inputId}-error` : void 0;
+  const hintId = hint ? `${inputId}-hint` : void 0;
+  return /* @__PURE__ */ jsxs5("div", { style: { display: "flex", flexDirection: "column", gap: "var(--vn-space-1)" }, children: [
+    label && /* @__PURE__ */ jsx11("label", { htmlFor: inputId, style: { fontFamily: "var(--vn-font-ui)", fontSize: "var(--vn-text-sm)", fontWeight: 500, color: "var(--vn-color-on-surface)" }, children: label }),
+    /* @__PURE__ */ jsx11(
+      "textarea",
+      {
+        id: inputId,
+        "aria-invalid": !!error,
+        "aria-describedby": [errorId, hintId].filter(Boolean).join(" ") || void 0,
+        ...props,
+        style: {
+          width: "100%",
+          minHeight: "96px",
+          padding: "var(--vn-space-2) var(--vn-space-3)",
+          fontFamily: "var(--vn-font-ui)",
+          fontSize: "var(--vn-text-base)",
+          color: "var(--vn-color-on-surface)",
+          background: "var(--vn-color-surface)",
+          border: `1px solid ${error ? "var(--vn-color-accent)" : "var(--vn-border-medium)"}`,
+          borderRadius: "var(--vn-radius-md)",
+          resize: "vertical",
+          outline: "none",
+          transition: "border-color var(--vn-duration-fast) var(--vn-ease-out)",
+          boxSizing: "border-box",
+          ...style
+        }
+      }
+    ),
+    hint && !error && /* @__PURE__ */ jsx11("p", { id: hintId, style: { margin: 0, fontSize: "var(--vn-text-xs)", color: "var(--vn-color-muted)" }, children: hint }),
+    error && /* @__PURE__ */ jsx11("p", { id: errorId, role: "alert", style: { margin: 0, fontSize: "var(--vn-text-xs)", color: "var(--vn-color-accent)" }, children: error })
+  ] });
+}
+
+// src/atoms/Select.tsx
+import { createContext as createContext2, useContext as useContext2, useState as useState2, useId as useId4 } from "react";
+import { jsx as jsx12, jsxs as jsxs6 } from "react/jsx-runtime";
+var Ctx = createContext2(null);
+var useCtx = () => {
+  const c = useContext2(Ctx);
+  if (!c) throw new Error("Select context");
+  return c;
+};
+function Select({ value: controlled, defaultValue = "", onValueChange, disabled, children }) {
+  const [internal, setInternal] = useState2(defaultValue);
+  const [open, setOpen] = useState2(false);
+  const value = controlled ?? internal;
+  const triggerId = useId4();
+  const onChange = (v) => {
+    setInternal(v);
+    onValueChange?.(v);
+    setOpen(false);
+  };
+  return /* @__PURE__ */ jsx12(Ctx.Provider, { value: { value, onChange, open, setOpen, triggerId }, children: /* @__PURE__ */ jsx12("div", { style: { position: "relative", display: "inline-block", width: "100%" }, children }) });
+}
+function SelectTrigger({ children, style, ...props }) {
+  const { open, setOpen, triggerId } = useCtx();
+  return /* @__PURE__ */ jsxs6(
+    "button",
+    {
+      id: triggerId,
+      "aria-haspopup": "listbox",
+      "aria-expanded": open,
+      onClick: () => setOpen(!open),
+      ...props,
+      style: {
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-between",
+        width: "100%",
+        padding: "var(--vn-space-2) var(--vn-space-3)",
+        fontFamily: "var(--vn-font-ui)",
+        fontSize: "var(--vn-text-base)",
+        color: "var(--vn-color-on-surface)",
+        background: "var(--vn-color-surface)",
+        border: "1px solid var(--vn-border-medium)",
+        borderRadius: "var(--vn-radius-md)",
+        cursor: "pointer",
+        minHeight: "var(--vn-touch-min)",
+        outline: "none",
+        ...style
+      },
+      children: [
+        children,
+        /* @__PURE__ */ jsx12("svg", { width: "12", height: "12", viewBox: "0 0 12 12", fill: "none", "aria-hidden": "true", style: { transform: open ? "rotate(180deg)" : "none", transition: "transform 150ms" }, children: /* @__PURE__ */ jsx12("path", { d: "M2 4l4 4 4-4", stroke: "currentColor", strokeWidth: "1.5", strokeLinecap: "round", strokeLinejoin: "round" }) })
+      ]
+    }
+  );
+}
+function SelectValue({ placeholder = "Seleccionar\u2026" }) {
+  const { value } = useCtx();
+  return /* @__PURE__ */ jsx12("span", { style: { color: value ? "inherit" : "var(--vn-color-muted)" }, children: value || placeholder });
+}
+function SelectContent({ children }) {
+  const { open, triggerId } = useCtx();
+  if (!open) return null;
+  return /* @__PURE__ */ jsx12(
+    "ul",
+    {
+      role: "listbox",
+      "aria-labelledby": triggerId,
+      style: {
+        position: "absolute",
+        top: "calc(100% + 4px)",
+        left: 0,
+        right: 0,
+        background: "var(--vn-color-surface)",
+        border: "1px solid var(--vn-border-medium)",
+        borderRadius: "var(--vn-radius-md)",
+        boxShadow: "var(--vn-shadow-md)",
+        zIndex: "var(--vn-z-dropdown)",
+        listStyle: "none",
+        margin: 0,
+        padding: "var(--vn-space-1)",
+        maxHeight: 240,
+        overflowY: "auto"
+      },
+      children
+    }
+  );
+}
+function SelectItem({ value, children }) {
+  const { value: selected, onChange } = useCtx();
+  const isSelected = selected === value;
+  return /* @__PURE__ */ jsx12(
+    "li",
+    {
+      role: "option",
+      "aria-selected": isSelected,
+      onClick: () => onChange(value),
+      style: {
+        padding: "var(--vn-space-2) var(--vn-space-3)",
+        borderRadius: "var(--vn-radius-sm)",
+        cursor: "pointer",
+        fontFamily: "var(--vn-font-ui)",
+        fontSize: "var(--vn-text-sm)",
+        color: isSelected ? "var(--vn-color-brand)" : "var(--vn-color-on-surface)",
+        background: isSelected ? "rgba(26,143,220,0.08)" : "transparent"
+      },
+      onMouseEnter: (e) => e.currentTarget.style.background = "rgba(26,143,220,0.06)",
+      onMouseLeave: (e) => e.currentTarget.style.background = isSelected ? "rgba(26,143,220,0.08)" : "transparent",
+      children
+    }
+  );
+}
+
+// src/atoms/Switch.tsx
+import React5, { useId as useId5 } from "react";
+import { jsx as jsx13, jsxs as jsxs7 } from "react/jsx-runtime";
+function Switch({ checked, defaultChecked, onCheckedChange, disabled, label, id }) {
+  const [internal, setInternal] = React5.useState(defaultChecked ?? false);
+  const isChecked = checked ?? internal;
+  const generatedId = useId5();
+  const switchId = id ?? generatedId;
+  const toggle = () => {
+    if (disabled) return;
+    const next = !isChecked;
+    setInternal(next);
+    onCheckedChange?.(next);
+  };
+  return /* @__PURE__ */ jsxs7("div", { style: { display: "inline-flex", alignItems: "center", gap: "var(--vn-space-2)", cursor: disabled ? "not-allowed" : "pointer" }, children: [
+    /* @__PURE__ */ jsx13(
+      "button",
+      {
+        role: "switch",
+        id: switchId,
+        "aria-checked": isChecked,
+        "aria-disabled": disabled,
+        disabled,
+        onClick: toggle,
+        style: {
+          position: "relative",
+          display: "inline-flex",
+          alignItems: "center",
+          width: 44,
+          height: 24,
+          borderRadius: "var(--vn-radius-pill)",
+          border: "none",
+          background: isChecked ? "var(--vn-color-brand)" : "var(--vn-border-medium)",
+          cursor: disabled ? "not-allowed" : "pointer",
+          opacity: disabled ? 0.5 : 1,
+          transition: "background var(--vn-duration-fast) var(--vn-ease-out)",
+          outline: "none",
+          padding: 0,
+          flexShrink: 0
+        },
+        onKeyDown: (e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            toggle();
+          }
+        },
+        children: /* @__PURE__ */ jsx13("span", { style: {
+          position: "absolute",
+          left: isChecked ? 22 : 2,
+          width: 20,
+          height: 20,
+          borderRadius: "50%",
+          background: "white",
+          boxShadow: "var(--vn-shadow-sm)",
+          transition: "left var(--vn-duration-fast) var(--vn-ease-spring)"
+        } })
+      }
+    ),
+    label && /* @__PURE__ */ jsx13("label", { htmlFor: switchId, style: { fontFamily: "var(--vn-font-ui)", fontSize: "var(--vn-text-sm)", color: "var(--vn-color-on-surface)", cursor: disabled ? "not-allowed" : "pointer" }, children: label })
+  ] });
+}
+
+// src/atoms/Checkbox.tsx
+import React6, { useId as useId6 } from "react";
+import { jsx as jsx14, jsxs as jsxs8 } from "react/jsx-runtime";
+function Checkbox({ checked, defaultChecked, onCheckedChange, disabled, label, id }) {
+  const [internal, setInternal] = React6.useState(defaultChecked ?? false);
+  const isChecked = checked ?? internal;
+  const generatedId = useId6();
+  const checkId = id ?? generatedId;
+  const toggle = () => {
+    if (disabled) return;
+    const next = !isChecked;
+    setInternal(next);
+    onCheckedChange?.(next);
+  };
+  return /* @__PURE__ */ jsxs8("div", { style: { display: "inline-flex", alignItems: "center", gap: "var(--vn-space-2)" }, children: [
+    /* @__PURE__ */ jsx14(
+      "button",
+      {
+        role: "checkbox",
+        id: checkId,
+        "aria-checked": isChecked,
+        disabled,
+        onClick: toggle,
+        onKeyDown: (e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            toggle();
+          }
+        },
+        style: {
+          width: 20,
+          height: 20,
+          minWidth: 20,
+          borderRadius: "var(--vn-radius-xs)",
+          border: `2px solid ${isChecked ? "var(--vn-color-brand)" : "var(--vn-border-medium)"}`,
+          background: isChecked ? "var(--vn-color-brand)" : "transparent",
+          cursor: disabled ? "not-allowed" : "pointer",
+          opacity: disabled ? 0.5 : 1,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          padding: 0,
+          outline: "none",
+          transition: "background var(--vn-duration-fast), border-color var(--vn-duration-fast)",
+          flexShrink: 0
+        },
+        children: isChecked && /* @__PURE__ */ jsx14("svg", { width: "12", height: "12", viewBox: "0 0 12 12", fill: "none", "aria-hidden": "true", children: /* @__PURE__ */ jsx14("path", { d: "M2 6l3 3 5-5", stroke: "white", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round" }) })
+      }
+    ),
+    label && /* @__PURE__ */ jsx14("label", { htmlFor: checkId, style: { fontFamily: "var(--vn-font-ui)", fontSize: "var(--vn-text-sm)", color: "var(--vn-color-on-surface)", cursor: disabled ? "not-allowed" : "pointer" }, children: label })
+  ] });
+}
+
+// src/atoms/Progress.tsx
+import { jsx as jsx15 } from "react/jsx-runtime";
+function Progress({ value = 0, max = 100, style, ...props }) {
+  const pct = Math.min(100, Math.max(0, value / max * 100));
+  return /* @__PURE__ */ jsx15(
+    "div",
+    {
+      role: "progressbar",
+      "aria-valuenow": value,
+      "aria-valuemin": 0,
+      "aria-valuemax": max,
+      ...props,
+      style: {
+        width: "100%",
+        height: 8,
+        background: "var(--vn-border-subtle)",
+        borderRadius: "var(--vn-radius-pill)",
+        overflow: "hidden",
+        ...style
+      },
+      children: /* @__PURE__ */ jsx15("div", { style: {
+        height: "100%",
+        width: `${pct}%`,
+        background: "var(--vn-color-brand)",
+        borderRadius: "var(--vn-radius-pill)",
+        transition: "width var(--vn-duration-base) var(--vn-ease-out)"
+      } })
+    }
+  );
+}
+
+// src/molecules/Tooltip.tsx
+import React7, { useState as useState3, useId as useId7 } from "react";
+import { Fragment, jsx as jsx16 } from "react/jsx-runtime";
+var TooltipContext = React7.createContext(null);
+function TooltipProvider({ children }) {
+  return /* @__PURE__ */ jsx16(Fragment, { children });
+}
+function Tooltip({ children }) {
+  const [open, setOpen] = useState3(false);
+  const id = useId7();
+  return /* @__PURE__ */ jsx16(TooltipContext.Provider, { value: { open, setOpen, id }, children });
+}
+function TooltipTrigger({ children, asChild, ...props }) {
+  const ctx = React7.useContext(TooltipContext);
+  if (!ctx) return /* @__PURE__ */ jsx16("span", { ...props, children });
+  return /* @__PURE__ */ jsx16(
+    "span",
+    {
+      ...props,
+      "aria-describedby": ctx.open ? ctx.id : void 0,
+      onMouseEnter: () => ctx.setOpen(true),
+      onMouseLeave: () => ctx.setOpen(false),
+      onFocus: () => ctx.setOpen(true),
+      onBlur: () => ctx.setOpen(false),
+      style: { display: "inline-flex", ...props.style },
+      children
+    }
+  );
+}
+function TooltipContent({ children, side = "top", style, ...props }) {
+  const ctx = React7.useContext(TooltipContext);
+  if (!ctx?.open) return null;
+  const POSITION = {
+    top: { bottom: "calc(100% + 8px)", left: "50%", transform: "translateX(-50%)" },
+    bottom: { top: "calc(100% + 8px)", left: "50%", transform: "translateX(-50%)" },
+    left: { right: "calc(100% + 8px)", top: "50%", transform: "translateY(-50%)" },
+    right: { left: "calc(100% + 8px)", top: "50%", transform: "translateY(-50%)" }
+  };
+  return /* @__PURE__ */ jsx16(
+    "div",
+    {
+      role: "tooltip",
+      id: ctx.id,
+      ...props,
+      style: {
+        position: "absolute",
+        ...POSITION[side],
+        background: "var(--vn-color-brand-dark)",
+        color: "var(--vn-primitive-marfil)",
+        padding: "var(--vn-space-1) var(--vn-space-3)",
+        borderRadius: "var(--vn-radius-sm)",
+        fontSize: "var(--vn-text-xs)",
+        fontFamily: "var(--vn-font-ui)",
+        whiteSpace: "nowrap",
+        zIndex: "var(--vn-z-tooltip, 50)",
+        pointerEvents: "none",
+        boxShadow: "var(--vn-shadow-md)",
+        ...style
+      },
+      children
+    }
+  );
+}
+
+// src/molecules/Separator.tsx
+import { jsx as jsx17 } from "react/jsx-runtime";
+function Separator({ orientation = "horizontal", style, ...props }) {
+  return /* @__PURE__ */ jsx17(
+    "hr",
+    {
+      role: "separator",
+      "aria-orientation": orientation,
+      ...props,
+      style: {
+        border: "none",
+        background: "var(--vn-border-subtle)",
+        ...orientation === "horizontal" ? { width: "100%", height: 1, margin: "var(--vn-space-4) 0" } : { width: 1, height: "100%", margin: "0 var(--vn-space-4)", display: "inline-block" },
+        ...style
+      }
+    }
+  );
+}
+
+// src/molecules/Table.tsx
+import { jsx as jsx18 } from "react/jsx-runtime";
+function Table({ children, style, ...props }) {
+  return /* @__PURE__ */ jsx18("div", { style: { width: "100%", overflowX: "auto", ...style }, children: /* @__PURE__ */ jsx18("table", { ...props, style: { width: "100%", borderCollapse: "collapse", fontFamily: "var(--vn-font-ui)", fontSize: "var(--vn-text-sm)" }, children }) });
+}
+function TableHeader({ children, ...props }) {
+  return /* @__PURE__ */ jsx18("thead", { ...props, children });
+}
+function TableBody({ children, ...props }) {
+  return /* @__PURE__ */ jsx18("tbody", { ...props, children });
+}
+function TableRow({ children, style, ...props }) {
+  return /* @__PURE__ */ jsx18("tr", { ...props, style: { borderBottom: "1px solid var(--vn-border-subtle)", ...style }, children });
+}
+function TableHead({ children, style, ...props }) {
+  return /* @__PURE__ */ jsx18("th", { ...props, style: { padding: "var(--vn-space-3) var(--vn-space-4)", textAlign: "left", fontWeight: 600, color: "var(--vn-color-muted)", whiteSpace: "nowrap", ...style }, children });
+}
+function TableCell({ children, style, ...props }) {
+  return /* @__PURE__ */ jsx18("td", { ...props, style: { padding: "var(--vn-space-3) var(--vn-space-4)", color: "var(--vn-color-on-surface)", verticalAlign: "middle", ...style }, children });
+}
+
+// src/molecules/AlertDialog.tsx
+import { createContext as createContext3, useContext as useContext3, useState as useState4 } from "react";
+import { jsx as jsx19 } from "react/jsx-runtime";
+var Ctx2 = createContext3(null);
+var useCtx2 = () => {
+  const c = useContext3(Ctx2);
+  if (!c) throw new Error("AlertDialog context missing");
+  return c;
+};
+function AlertDialog({ children, open: controlledOpen, onOpenChange }) {
+  const [internal, setInternal] = useState4(false);
+  const open = controlledOpen ?? internal;
+  const setOpen = (v) => {
+    setInternal(v);
+    onOpenChange?.(v);
+  };
+  return /* @__PURE__ */ jsx19(Ctx2.Provider, { value: { open, setOpen }, children });
+}
+function AlertDialogTrigger({ children }) {
+  const { setOpen } = useCtx2();
+  return /* @__PURE__ */ jsx19("span", { onClick: () => setOpen(true), style: { display: "contents" }, children });
+}
+function AlertDialogContent({ children }) {
+  const { open, setOpen } = useCtx2();
+  return /* @__PURE__ */ jsx19(Dialog, { open, onClose: () => setOpen(false), title: "", description: "", children });
+}
+function AlertDialogHeader({ children, ...props }) {
+  return /* @__PURE__ */ jsx19("div", { ...props, style: { display: "flex", flexDirection: "column", gap: "var(--vn-space-2)", marginBottom: "var(--vn-space-4)" }, children });
+}
+function AlertDialogTitle({ children, ...props }) {
+  return /* @__PURE__ */ jsx19("h2", { ...props, style: { margin: 0, fontFamily: "var(--vn-font-display)", fontSize: "var(--vn-text-xl)", fontWeight: 700, color: "var(--vn-color-on-surface)" }, children });
+}
+function AlertDialogDescription({ children, ...props }) {
+  return /* @__PURE__ */ jsx19("p", { ...props, style: { margin: 0, fontSize: "var(--vn-text-sm)", color: "var(--vn-color-muted)" }, children });
+}
+function AlertDialogAction({ children, ...props }) {
+  const { setOpen } = useCtx2();
+  return /* @__PURE__ */ jsx19("button", { ...props, onClick: (e) => {
+    setOpen(false);
+    props.onClick?.(e);
+  }, style: { display: "inline-flex", alignItems: "center", padding: "var(--vn-space-2) var(--vn-space-4)", background: "var(--vn-color-brand)", color: "var(--vn-primitive-marfil)", border: "none", borderRadius: "var(--vn-radius-md)", fontFamily: "var(--vn-font-ui)", fontWeight: 600, cursor: "pointer", minHeight: "var(--vn-touch-min)", ...props.style }, children });
+}
+function AlertDialogFooter({ children, ...props }) {
+  return /* @__PURE__ */ jsx19("div", { ...props, style: { display: "flex", gap: "var(--vn-space-3)", justifyContent: "flex-end", marginTop: "var(--vn-space-4)", ...props.style }, children });
+}
+function AlertDialogCancel({ children, ...props }) {
+  const { setOpen } = useCtx2();
+  return /* @__PURE__ */ jsx19("button", { ...props, onClick: (e) => {
+    setOpen(false);
+    props.onClick?.(e);
+  }, style: { display: "inline-flex", alignItems: "center", padding: "var(--vn-space-2) var(--vn-space-4)", background: "transparent", color: "var(--vn-color-muted)", border: "1px solid var(--vn-border-medium)", borderRadius: "var(--vn-radius-md)", fontFamily: "var(--vn-font-ui)", fontWeight: 500, cursor: "pointer", minHeight: "var(--vn-touch-min)", ...props.style }, children });
+}
 export {
   Alert,
   AlertDescription,
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
   AlertTitle,
   Badge,
   Button,
@@ -817,14 +1260,34 @@ export {
   CardFooter,
   CardHeader,
   CardTitle,
+  Checkbox,
   Dialog,
   Input,
   Label,
+  Progress,
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+  Separator,
   Skeleton,
   SkipLink,
+  Switch,
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
   Tabs,
   TabsContent,
   TabsList,
   TabsTrigger,
+  Textarea,
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
   createButton
 };

@@ -23,8 +23,8 @@ import React from 'react';
  * createButton(btn, { variant: 'primary', loading: true });
  */
 
-type ButtonVariant = 'primary' | 'secondary' | 'ghost' | 'danger';
-type ButtonSize = 'sm' | 'md' | 'lg';
+type ButtonVariant = 'primary' | 'secondary' | 'ghost' | 'danger' | 'default' | 'destructive' | 'outline' | 'link';
+type ButtonSize = 'sm' | 'md' | 'lg' | 'default' | 'icon';
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     /** Estilo visual del botón */
     variant?: ButtonVariant;

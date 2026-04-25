@@ -29,3 +29,29 @@ export type { TabsProps, TabsListProps, TabsTriggerProps, TabsContentProps } fro
 
 export { Dialog } from './molecules/Dialog';
 export type { DialogProps } from './molecules/Dialog';
+
+export { Textarea } from './atoms/Textarea';
+
+export { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from './atoms/Select';
+export type { SelectProps, SelectTriggerProps, SelectValueProps, SelectContentProps, SelectItemProps } from './atoms/Select';
+export type { TextareaProps } from './atoms/Textarea';
+
+export { Switch } from './atoms/Switch';
+export type { SwitchProps } from './atoms/Switch';
+
+export { Checkbox } from './atoms/Checkbox';
+export type { CheckboxProps } from './atoms/Checkbox';
+
+export { Progress } from './atoms/Progress';
+export type { ProgressProps } from './atoms/Progress';
+
+export { TooltipProvider, Tooltip, TooltipTrigger, TooltipContent } from './molecules/Tooltip';
+export type { TooltipProviderProps, TooltipProps, TooltipTriggerProps, TooltipContentProps } from './molecules/Tooltip';
+
+export { Separator } from './molecules/Separator';
+export type { SeparatorProps } from './molecules/Separator';
+
+export { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from './molecules/Table';
+
+export { AlertDialog, AlertDialogTrigger, AlertDialogContent, AlertDialogHeader, AlertDialogTitle, AlertDialogDescription, AlertDialogFooter, AlertDialogAction, AlertDialogCancel } from './molecules/AlertDialog';
+export type { AlertDialogProps, AlertDialogTriggerProps, AlertDialogContentProps } from './molecules/AlertDialog';
