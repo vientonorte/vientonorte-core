@@ -70,7 +70,7 @@ grafo force-directed (Contra-Archivo), sync Calendar (table-ro), RBAC (dashfin).
 ## Estado de la migración
 - **Fase 0** ✅ Audit de duplicación (`docs/audit-duplicacion.md`)
 - **Fase 1** ✅ Tokens — `@vientonorte/tokens@0.1.0` publicado en GH Packages, consumido en `mi-portafolio` y `dashfin`
-- **Fase 2** 🔄 UI base components
+- **Fase 2** 🔄 UI base components — `@vientonorte/ui@0.1.0` publicado (Badge, Card, Alert, Tabs, Label, Skeleton, Button, Input, Dialog). ~163 imports migrados en mi-portafolio y dashfin. Pendiente: Button en ambos repos, Badge en dashfin (className hardcodeados)
 - **Fase 3** ⬜ A11y + Security
 - **Fase 4** ⬜ Analytics + Docs
 - **Fase 5** ⬜ CLI + Scaffolding
