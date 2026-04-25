@@ -27,7 +27,32 @@
  */
 
 import React, { useRef, useEffect, useId, useCallback } from 'react';
-import { useFocusTrap } from '@vientonorte/a11y';
+
+function getFocusable(el: HTMLElement): HTMLElement[] {
+  return Array.from(
+    el.querySelectorAll<HTMLElement>(
+      'a[href],button:not([disabled]),input:not([disabled]),select:not([disabled]),textarea:not([disabled]),[tabindex]:not([tabindex="-1"])'
+    )
+  ).filter(e => !e.hasAttribute('hidden') && e.getAttribute('aria-hidden') !== 'true');
+}
+
+function useFocusTrap(ref: React.RefObject<HTMLElement | null>, active: boolean): void {
+  useEffect(() => {
+    if (!active || !ref.current) return;
+    const prev = document.activeElement as HTMLElement | null;
+    getFocusable(ref.current)[0]?.focus();
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key !== 'Tab' || !ref.current) return;
+      const els = getFocusable(ref.current);
+      if (!els.length) { e.preventDefault(); return; }
+      const first = els[0], last = els[els.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    };
+    document.addEventListener('keydown', onKey);
+    return () => { document.removeEventListener('keydown', onKey); prev?.focus(); };
+  }, [active, ref]);
+}
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 

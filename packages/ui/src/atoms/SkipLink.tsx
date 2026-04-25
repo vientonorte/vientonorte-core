@@ -1,8 +1,16 @@
-/**
- * @module SkipLink (ui)
- * Re-export de @vientonorte/a11y SkipLink con estilos inline aplicados.
- * Usar este en proyectos que solo instalen @vientonorte/ui.
- */
+import React from 'react';
 
-// Re-export directo — los estilos se aplican via CSS vars del token package
-export { SkipLink, type SkipLinkProps } from '@vientonorte/a11y';
+export interface SkipLinkProps {
+  href?: string;
+  children?: React.ReactNode;
+}
+
+export function SkipLink({ href = '#main', children = 'Saltar al contenido principal' }: SkipLinkProps) {
+  return (
+    <a href={href} className="vn-skip-link">
+      {children}
+    </a>
+  );
+}
+
+export default SkipLink;
