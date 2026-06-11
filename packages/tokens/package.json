@@ -19,8 +19,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "node scripts/build.js",
-    "typecheck": "tsc --noEmit"
+    "build": "node scripts/build.js"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com",
