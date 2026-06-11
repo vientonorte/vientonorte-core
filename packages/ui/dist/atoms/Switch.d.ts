@@ -1,4 +1,4 @@
-import * as react_jsx_runtime from 'react/jsx-runtime';
+import React from 'react';
 
 interface SwitchProps {
     checked?: boolean;
@@ -8,6 +8,6 @@ interface SwitchProps {
     label?: string;
     id?: string;
 }
-declare function Switch({ checked, defaultChecked, onCheckedChange, disabled, label, id }: SwitchProps): react_jsx_runtime.JSX.Element;
+declare function Switch({ checked, defaultChecked, onCheckedChange, disabled, label, id }: SwitchProps): React.JSX.Element;
 
 export { Switch, type SwitchProps, Switch as default };
