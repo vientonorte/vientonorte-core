@@ -2,6 +2,12 @@
 # Disparo manual (workflow_dispatch): pnpm -r publish omite versiones ya
 # publicadas, así que es seguro re-ejecutarlo tras cada bump de versión.
 # analytics y cli están marcados private y no se publican (Fase 4/5).
+#
+# Auth: setup-node escribe el token en el ~/.npmrc del runner (user-level),
+# que pnpm 10 sí acepta — el .npmrc del repo se ignora por seguridad.
+# Si GITHUB_TOKEN no tiene acceso de escritura a un paquete ya existente
+# (publicado fuera de este repo), definir el secret VN_PACKAGES_TOKEN con
+# un PAT classic con scope write:packages.
 name: Publish (GitHub Packages)
 
 on:
@@ -10,6 +16,9 @@ on:
 permissions:
   contents: read
   packages: write
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   publish:
@@ -25,11 +34,13 @@ jobs:
         with:
           node-version: 20
           cache: pnpm
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@vientonorte'
 
       - name: Instalar dependencias
         run: pnpm install --frozen-lockfile
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.VN_PACKAGES_TOKEN || secrets.GITHUB_TOKEN }}
 
       - name: Verificar (typecheck + build + test)
         run: |
@@ -40,4 +51,4 @@ jobs:
       - name: Publicar paquetes con versión nueva
         run: pnpm -r publish --no-git-checks
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.VN_PACKAGES_TOKEN || secrets.GITHUB_TOKEN }}
