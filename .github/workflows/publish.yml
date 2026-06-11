@@ -1,0 +1,43 @@
+# Publica los paquetes del workspace en GitHub Packages (scope @vientonorte).
+# Disparo manual (workflow_dispatch): pnpm -r publish omite versiones ya
+# publicadas, así que es seguro re-ejecutarlo tras cada bump de versión.
+# analytics y cli están marcados private y no se publican (Fase 4/5).
+name: Publish (GitHub Packages)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - name: Instalar dependencias
+        run: pnpm install --frozen-lockfile
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Verificar (typecheck + build + test)
+        run: |
+          pnpm -r typecheck
+          pnpm -r build
+          pnpm -r test
+
+      - name: Publicar paquetes con versión nueva
+        run: pnpm -r publish --no-git-checks
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

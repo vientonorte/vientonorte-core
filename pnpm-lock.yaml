@@ -72,8 +72,8 @@ importers:
   packages/ui:
     dependencies:
       '@vientonorte/a11y':
-        specifier: file:../a11y
-        version: file:packages/a11y(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+        specifier: workspace:^
+        version: link:../a11y
       react:
         specifier: '>=18'
         version: 19.2.7
@@ -704,12 +704,6 @@ packages:
 
   '@types/react@18.3.31':
     resolution: {integrity: sha512-vfEqpXTvwT91yhmwdfouStN2hSKwTvyRs8qpLfADyrq/kxDw0hZM7Wk9Ug1FELj8hIby+S/+kQCSRFF32nv2Qw==}
-
-  '@vientonorte/a11y@file:packages/a11y':
-    resolution: {directory: packages/a11y, type: directory}
-    peerDependencies:
-      react: '>=18'
-      react-dom: '>=18'
 
   '@vitest/expect@2.1.9':
     resolution: {integrity: sha512-UJCIkTBenHeKT1TTlKMJWy1laZewsRIzYighyYiJKZreqtdxSos/S1t+ktRMQWu2CKqaarrkeszJx1cgC5tGZw==}
@@ -2127,11 +2121,6 @@ snapshots:
     dependencies:
       '@types/prop-types': 15.7.15
       csstype: 3.2.3
-
-  '@vientonorte/a11y@file:packages/a11y(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
-    dependencies:
-      react: 19.2.7
-      react-dom: 19.2.7(react@19.2.7)
 
   '@vitest/expect@2.1.9':
     dependencies:

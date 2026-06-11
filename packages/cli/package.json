@@ -1,6 +1,7 @@
 {
   "name": "@vientonorte/cli",
   "version": "0.1.0",
+  "private": true,
   "description": "CLI scaffold para proyectos vientonorte",
   "license": "MIT",
   "bin": { "vientonorte": "./dist/index.js" },
