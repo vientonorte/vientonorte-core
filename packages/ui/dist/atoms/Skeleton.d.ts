@@ -1,4 +1,3 @@
-import * as react_jsx_runtime from 'react/jsx-runtime';
 import React from 'react';
 
 interface SkeletonProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -6,6 +5,6 @@ interface SkeletonProps extends React.HTMLAttributes<HTMLDivElement> {
     height?: string | number;
     radius?: string;
 }
-declare function Skeleton({ width, height, radius, style, ...props }: SkeletonProps): react_jsx_runtime.JSX.Element;
+declare function Skeleton({ width, height, radius, style, ...props }: SkeletonProps): React.JSX.Element;
 
 export { Skeleton, type SkeletonProps, Skeleton as default };

@@ -6,6 +6,12 @@ Versioning: [SemVer](https://semver.org/lang/es/)
 
 ---
 
+## [0.1.1] — 2026-06-11
+
+### Added
+- Setup de build (`tsup`, `tsconfig.json`) y scripts `build`/`dev`/`typecheck`. El paquete ahora genera `dist/` (ESM + types), requerido por `@vientonorte/ui` que lo consume vía `file:../a11y`.
+- `repository` field y `peerDependencies` (`react`, `react-dom`) en `package.json`, alineado con `@vientonorte/ui` y `@vientonorte/tokens`.
+
 ## [0.1.0] — 2026-04-23
 
 ### Added

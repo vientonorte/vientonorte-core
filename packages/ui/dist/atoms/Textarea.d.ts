@@ -1,4 +1,3 @@
-import * as react_jsx_runtime from 'react/jsx-runtime';
 import React from 'react';
 
 interface TextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
@@ -6,6 +5,6 @@ interface TextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement
     error?: string;
     hint?: string;
 }
-declare function Textarea({ label, error, hint, id, style, ...props }: TextareaProps): react_jsx_runtime.JSX.Element;
+declare function Textarea({ label, error, hint, id, style, ...props }: TextareaProps): React.JSX.Element;
 
 export { Textarea, type TextareaProps, Textarea as default };

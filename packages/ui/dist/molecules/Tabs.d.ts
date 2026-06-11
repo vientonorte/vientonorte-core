@@ -1,4 +1,3 @@
-import * as react_jsx_runtime from 'react/jsx-runtime';
 import React from 'react';
 
 interface TabsProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -18,9 +17,9 @@ interface TabsContentProps extends React.HTMLAttributes<HTMLDivElement> {
     value: string;
     children: React.ReactNode;
 }
-declare function Tabs({ defaultValue, value, onValueChange, children, style, ...props }: TabsProps): react_jsx_runtime.JSX.Element;
-declare function TabsList({ children, style, ...props }: TabsListProps): react_jsx_runtime.JSX.Element;
-declare function TabsTrigger({ value, children, style, ...props }: TabsTriggerProps): react_jsx_runtime.JSX.Element;
-declare function TabsContent({ value, children, style, ...props }: TabsContentProps): react_jsx_runtime.JSX.Element;
+declare function Tabs({ defaultValue, value, onValueChange, children, style, ...props }: TabsProps): React.JSX.Element;
+declare function TabsList({ children, style, ...props }: TabsListProps): React.JSX.Element;
+declare function TabsTrigger({ value, children, style, ...props }: TabsTriggerProps): React.JSX.Element;
+declare function TabsContent({ value, children, style, ...props }: TabsContentProps): React.JSX.Element;
 
 export { Tabs, TabsContent, type TabsContentProps, TabsList, type TabsListProps, type TabsProps, TabsTrigger, type TabsTriggerProps };
