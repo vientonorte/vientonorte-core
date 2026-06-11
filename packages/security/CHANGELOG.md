@@ -6,6 +6,13 @@ Versioning: [SemVer](https://semver.org/lang/es/)
 
 ---
 
+## [0.1.1] — 2026-06-11
+
+### Added
+- Setup de build (`tsup`, `tsconfig.json`) y scripts `build`/`dev`/`typecheck`/`test`. El paquete ahora genera `dist/` (ESM + types), igual que `@vientonorte/a11y@0.1.1`.
+- `repository` field y `type: module` en `package.json`, alineado con el resto de paquetes del core.
+- Suite de tests Vitest (`vitest.config.ts`, entorno jsdom) — ver commits de test.
+
 ## [0.1.0] — 2026-04-23
 
 ### Added

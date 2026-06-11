@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════
-   @vientonorte/tokens v0.1.0
+   @vientonorte/tokens v0.2.0
    Design tokens del colectivo vientonorte
    ───────────────────────────────────────────────────────────────
    Convenciones:
@@ -25,6 +25,7 @@
   --vn-primitive-azul-evo:    #1A8FDC;
   --vn-primitive-amarillo:    #F5B945;
   --vn-primitive-success:     #2d9a5a;
+  --vn-primitive-pizarra-claro: #94a3b8;  /* muted legible sobre azul-noche: 6.6:1 */
 
   /* ── Paleta semántica (light mode) ─────────────────────────── */
   --vn-color-brand:           var(--vn-primitive-azul-evo);
@@ -33,6 +34,7 @@
   --vn-color-warning:         var(--vn-primitive-amarillo);
   --vn-color-success:         var(--vn-primitive-success);
   --vn-color-surface:         var(--vn-primitive-marfil);
+  --vn-color-surface-1:       #eee9e0;  /* superficie elevada: marfil + 4% azul-noche */
   --vn-color-on-surface:      var(--vn-primitive-azul-noche);
   --vn-color-muted:           var(--vn-primitive-pizarra);
 
@@ -137,6 +139,29 @@
   --vn-bp-xl:  1280px;
   --vn-bp-2xl: 1536px;
 
+}
+
+/* ── Modo oscuro (opt-in) ───────────────────────────────────── */
+/*    Activar con <html class="dark"> o data-vn-theme="dark".      */
+/*    Opt-in deliberado: no se usa prefers-color-scheme automático  */
+/*    para no alterar proyectos LIVE diseñados en light. Proyectos  */
+/*    que quieran seguir la preferencia del SO pueden togglear la   */
+/*    clase via matchMedia('(prefers-color-scheme: dark)').         */
+/*    Contrastes verificados sobre azul-noche (WCAG 2.2 AA):        */
+/*    marfil 15.2:1 · pizarra-claro 6.6:1 · azul-evo 4.8:1 ·        */
+/*    success 4.7:1 · amarillo 9.6:1                                */
+
+.dark,
+[data-vn-theme="dark"] {
+  --vn-color-surface:    var(--vn-primitive-azul-noche);
+  --vn-color-surface-1:  #192646;  /* superficie elevada: azul-noche + 5% marfil */
+  --vn-color-on-surface: var(--vn-primitive-marfil);
+  --vn-color-muted:      var(--vn-primitive-pizarra-claro);
+
+  /* Bordes claros sobre superficie oscura (tinte marfil) */
+  --vn-border-subtle:    rgba(247, 242, 231, 0.08);
+  --vn-border-medium:    rgba(247, 242, 231, 0.16);
+  --vn-border-strong:    rgba(247, 242, 231, 0.32);
 }
 
 /* ── Accesibilidad base ─────────────────────────────────────── */

@@ -31,6 +31,7 @@ const vnPreset = {
         'vn-brand':      'var(--vn-color-brand)',
         'vn-accent':     'var(--vn-color-accent)',
         'vn-surface':    'var(--vn-color-surface)',
+        'vn-surface-1':  'var(--vn-color-surface-1)',
         'vn-on-surface': 'var(--vn-color-on-surface)',
         'vn-muted':      'var(--vn-color-muted)',
       },

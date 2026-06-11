@@ -1,5 +1,26 @@
 # @vientonorte/tokens — Changelog
 
+## 0.2.0 — 2026-06-11
+
+### Modo oscuro opt-in · desbloquea migración de `table-ro` y `Contra-Archivo`
+
+**Added:**
+- Bloque dark `.dark` / `[data-vn-theme="dark"]` que remapea los tokens semánticos:
+  `--vn-color-surface` → azul-noche, `--vn-color-on-surface` → marfil,
+  `--vn-color-muted` → pizarra-claro, bordes con tinte marfil
+- `--vn-primitive-pizarra-claro: #94a3b8` — muted legible sobre azul-noche (6.6:1,
+  mismo valor del fix de contraste aplicado a table-ro en Fase 3)
+- `--vn-color-surface-1` — superficie elevada (light: marfil + 4% azul-noche;
+  dark: azul-noche + 5% marfil). Cubre los `--s1` de table-ro y Contra-Archivo
+- Tailwind preset: color `vn-surface-1`
+
+**Decisiones:**
+- Opt-in por clase, **sin** `prefers-color-scheme` automático: los consumidores
+  actuales (mi-portafolio, dashfin) no cambian de apariencia al actualizar.
+  Proyectos que quieran seguir al SO pueden togglear `.dark` via `matchMedia`.
+- Contrastes verificados sobre azul-noche (WCAG 2.2 AA): marfil 15.2:1 ·
+  pizarra-claro 6.6:1 · azul-evo 4.8:1 · success 4.7:1 · amarillo 9.6:1
+
 ## 0.1.0 — 2026-04-23
 
 ### Lanzamiento inicial · Fase 1 del colectivo

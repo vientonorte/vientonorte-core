@@ -1,6 +1,6 @@
 {
   "name": "@vientonorte/tokens",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Design tokens del colectivo vientonorte — paleta, tipografía, espaciado, motion, a11y",
   "license": "MIT",
   "type": "module",
@@ -19,8 +19,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "node scripts/build.js",
-    "typecheck": "tsc --noEmit"
+    "build": "node scripts/build.js"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com",
