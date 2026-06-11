@@ -6,6 +6,14 @@ Versioning: [SemVer](https://semver.org/lang/es/)
 
 ---
 
+## [0.3.2] — 2026-06-11
+
+### Fixed
+- `@vientonorte/a11y` declarado como `workspace:^` en vez de `file:../a11y`. El protocolo `file:` quedaba literal en el paquete publicado y los consumidores no podían resolverlo; `workspace:^` se sustituye por `^0.1.1` al publicar.
+- Eliminado `package-lock.json` residual de npm (el workspace usa pnpm).
+
+> Nota: las entradas 0.1.0 → 0.3.1 de este changelog se documentaron en los commits `feat(ui)` correspondientes; este archivo retoma el registro desde 0.3.2.
+
 ## [0.1.0] — 2026-04-23
 
 ### Added
