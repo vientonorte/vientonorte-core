@@ -86,11 +86,10 @@ function printHelp(): void {
 // ─── Main ────────────────────────────────────────────────────────────────────
 
 async function main(): Promise<void> {
-  console.log(BANNER);
-
   const parsed = parseArgs();
   if (!parsed) return;
 
+  console.log(BANNER);
   const { name, options } = parsed;
 
   await createProject({

@@ -71,6 +71,7 @@ grafo force-directed (Contra-Archivo), sync Calendar (table-ro), RBAC (dashfin).
 - **Fase 0** ✅ Audit de duplicación (`docs/audit-duplicacion.md`)
 - **Fase 1** ✅ Tokens — `@vientonorte/tokens@0.1.0` publicado en GH Packages, consumido en `mi-portafolio` y `dashfin`
 - **Fase 2** ✅ UI base components — `@vientonorte/ui@0.3.1` (18 componentes). Migración completa en mi-portafolio y dashfin. shadcn eliminado de ambos repos.
-- **Fase 3** ⬜ A11y + Security
-- **Fase 4** ⬜ Analytics + Docs
-- **Fase 5** ⬜ CLI + Scaffolding
+- **Fase 3** ✅ A11y + Security — `@vientonorte/a11y@0.1.0` + `@vientonorte/security@0.1.0` publicados. SkipLink + CSP integrados en mi-portafolio y dashfin.
+- **Fase 4** ✅ Analytics + Docs — `@vientonorte/analytics@0.1.0` publicado + migrado en mi-portafolio. Storybook 8 en `apps/storybook` con 8 stories (Button, Input, Badge, Card, Alert, Dialog, Tabs, FormControls).
+- **Fase 5** ✅ CLI + Scaffolding — `@vientonorte/cli@0.1.1` publicado. `vientonorte init <nombre>` genera proyecto Vite+React+TS con todos los paquetes del core, SkipLink, CSP y git init incluidos.
+- **Fase 6** 🔄 Migración repos vanilla → React — `uxtools` ✅ (React 19 + Vite 6 + TS strict, 4 rutas, RadarChart SVG, UXFlow parser, 82 kB gzip). `antropologia-corrupcion` ✅ (React 19 + Vite 6 + TS strict, grafo SVG imperativo Fruchterman-Reingold, WebAuthn MVP, Buscador con scoring de fricción, 79 kB gzip). Pendiente: `table-ro`.

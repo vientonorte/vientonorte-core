@@ -41,7 +41,7 @@ export class VNTracker {
       ga4Id: config.ga4Id ?? '',
       project: config.project,
       debug: config.debug ?? false,
-      enabled: config.enabled ?? (typeof process !== 'undefined' && process.env?.['NODE_ENV'] === 'production'),
+      enabled: config.enabled ?? false,
     };
   }
 
@@ -135,7 +135,7 @@ export class VNTracker {
     result: VNResult,
     props?: Record<string, string | number | boolean>
   ): void {
-    this.track({ feature, step, result, properties: props });
+    this.track({ feature, step, result, ...(props !== undefined && { properties: props }) });
   }
 
   /**

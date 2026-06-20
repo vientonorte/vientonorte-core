@@ -1,0 +1,41 @@
+/* Global styles — PROYECTO_NAME */
+
+html {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  background: var(--vn-color-background, #0d1b3d);
+  color: var(--vn-color-on-surface, #f7f2e7);
+  font-family: var(--vn-font-ui, system-ui, sans-serif);
+  min-height: 100dvh;
+}
+
+:focus-visible {
+  outline: 3px solid var(--vn-azul-evo, #1A8FDC);
+  outline-offset: 2px;
+}
+
+.vn-skip-link {
+  position: absolute;
+  top: -9999px;
+  left: 1rem;
+  z-index: 9999;
+  padding: var(--vn-space-2, 0.5rem) var(--vn-space-4, 1rem);
+  background: var(--vn-azul-noche, #0d1b3d);
+  color: var(--vn-marfil, #f7f2e7);
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: var(--vn-radius-sm, 4px);
+}
+.vn-skip-link:focus {
+  top: 1rem;
+  outline: 3px solid var(--vn-azul-evo, #1A8FDC);
+  outline-offset: 2px;
+}

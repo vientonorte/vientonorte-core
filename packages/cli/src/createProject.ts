@@ -57,9 +57,11 @@ export async function createProject(options: ProjectOptions): Promise<void> {
 
   const deps: Record<string, string> = {
     '@vientonorte/tokens': '^0.1.0',
+    '@vientonorte/ui': '^0.3.1',
+    '@vientonorte/a11y': '^0.1.0',
+    '@vientonorte/security': '^0.1.0',
   };
 
-  if (withAuth) deps['@vientonorte/security'] = '^0.1.0';
   if (withAnalytics) deps['@vientonorte/analytics'] = '^0.1.0';
 
   const finalPkg = {
@@ -76,26 +78,52 @@ export async function createProject(options: ProjectOptions): Promise<void> {
       test: 'vitest run',
       ...pkgContent.scripts,
     },
-    dependencies: { ...pkgContent.dependencies, ...deps },
+    dependencies: {
+      ...pkgContent.dependencies,
+      ...deps,
+      ...(template !== 'vanilla' ? { react: '^19.0.0', 'react-dom': '^19.0.0' } : {}),
+    },
     devDependencies: {
       typescript: '^5.4.0',
-      ...(template !== 'vanilla' ? { vite: '^5.0.0', react: '^18.0.0', 'react-dom': '^18.0.0' } : {}),
+      ...(template !== 'vanilla' ? {
+        vite: '^6.0.0',
+        '@vitejs/plugin-react': '^4.0.0',
+        '@types/react': '^19.0.0',
+        '@types/react-dom': '^19.0.0',
+      } : {}),
       ...pkgContent.devDependencies,
     },
   };
 
   writeFileSync(pkgPath, JSON.stringify(finalPkg, null, 2) + '\n');
 
-  // 4. Crear/personalizar CLAUDE.md
-  const claudeMdTemplate = join(templateDir, 'CLAUDE.md');
-  const claudeMdTarget = join(targetDir, 'CLAUDE.md');
-  if (existsSync(claudeMdTemplate)) {
-    const content = readFileSync(claudeMdTemplate, 'utf-8')
-      .replace(/PROYECTO_NAME/g, name)
-      .replace(/PROYECTO_TEMPLATE/g, template);
-    writeFileSync(claudeMdTarget, content);
-  } else {
-    writeFileSync(claudeMdTarget, generateClaudeMd(name, template));
+  // 3b. Escribir .npmrc (npm ignora dotfiles en tarballs, se escribe explícitamente)
+  writeFileSync(
+    join(targetDir, '.npmrc'),
+    '@vientonorte:registry=https://npm.pkg.github.com\n'
+  );
+
+  // 4. Personalizar placeholders PROYECTO_NAME en todos los archivos de template
+  const filesToPersonalize = [
+    'CLAUDE.md',
+    'index.html',
+    'vite.config.ts',
+    'src/main.tsx',
+    'src/App.tsx',
+    'src/styles/global.css',
+  ];
+  for (const relPath of filesToPersonalize) {
+    const filePath = join(targetDir, relPath);
+    if (existsSync(filePath)) {
+      const content = readFileSync(filePath, 'utf-8')
+        .replace(/PROYECTO_NAME/g, name)
+        .replace(/PROYECTO_TEMPLATE/g, template);
+      writeFileSync(filePath, content);
+    }
+  }
+  // CLAUDE.md fallback si no existe el template
+  if (!existsSync(join(targetDir, 'CLAUDE.md'))) {
+    writeFileSync(join(targetDir, 'CLAUDE.md'), generateClaudeMd(name, template));
   }
 
   // 5. Crear .github/workflows/ci.yml

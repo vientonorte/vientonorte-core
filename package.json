@@ -14,7 +14,9 @@
     "test": "pnpm -r test",
     "changeset": "changeset",
     "version": "changeset version",
-    "release": "changeset publish"
+    "release": "changeset publish",
+    "storybook": "pnpm --filter @vientonorte/storybook dev",
+    "storybook:build": "pnpm --filter @vientonorte/storybook build"
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.0",

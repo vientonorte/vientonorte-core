@@ -1,0 +1,34 @@
+{
+  "name": "@vientonorte/storybook",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Documentación interactiva de componentes vientonorte",
+  "scripts": {
+    "dev": "storybook dev -p 6006",
+    "build": "storybook build -o dist",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@vientonorte/tokens": "workspace:^",
+    "@vientonorte/ui": "workspace:^",
+    "@vientonorte/a11y": "workspace:^",
+    "@vientonorte/security": "workspace:^",
+    "@vientonorte/analytics": "workspace:^"
+  },
+  "devDependencies": {
+    "@chromatic-com/storybook": "^3.0.0",
+    "@storybook/addon-a11y": "^8.0.0",
+    "@storybook/addon-docs": "^8.0.0",
+    "@storybook/addon-essentials": "^8.0.0",
+    "@storybook/addon-interactions": "^8.0.0",
+    "@storybook/react": "^8.0.0",
+    "@storybook/react-vite": "^8.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "storybook": "^8.0.0",
+    "typescript": "^5.4.0",
+    "vite": "^6.0.0"
+  }
+}

@@ -9,12 +9,5 @@
     "lint": "eslint src --ext .ts,.tsx",
     "typecheck": "tsc --noEmit",
     "test": "vitest run"
-  },
-  "dependencies": {
-    "@vientonorte/tokens": "^0.1.0"
-  },
-  "devDependencies": {
-    "typescript": "^5.4.0",
-    "vite": "^5.0.0"
   }
 }
