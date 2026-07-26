@@ -2,9 +2,9 @@
   "name": "vientonorte-core",
   "version": "0.1.0",
   "private": true,
-  "description": "Monorepo raíz del colectivo vientonorte",
+  "description": "Monorepo ra\u00edz del colectivo vientonorte",
   "engines": {
-    "node": ">=20.10",
+    "node": ">=22",
     "pnpm": ">=8"
   },
   "scripts": {
