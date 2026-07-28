@@ -94,3 +94,7 @@ npx vientonorte init mi-app --template=react-ts
 - PAT en git
 
 Ver también: [publish-packages.md](./publish-packages.md)
+
+## Branding
+
+Ver [BRANDING-VN.md](./BRANDING-VN.md) — contrato multi-repo Viento Norte.
