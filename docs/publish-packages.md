@@ -24,6 +24,7 @@ El sitio Figma es la **referencia de marca**. Los paquetes npm son la **implemen
 | `@vientonorte/security` | no | 0.1.1 | public |
 | `@vientonorte/analytics` | yes | — | no publish |
 | `@vientonorte/cli` | yes | — | no publish |
+| `@vientonorte/skills` | no | 0.1.0 | public · MCP/API/KV |
 
 ## Auth (una vez)
 

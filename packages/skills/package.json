@@ -1,0 +1,34 @@
+{
+  "name": "@vientonorte/skills",
+  "version": "0.1.0",
+  "description": "Catálogo público de skills VN para MCP, Worker KV y agentes",
+  "license": "MIT",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vientonorte/vientonorte-core.git",
+    "directory": "packages/skills"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./catalog.json": "./src/catalog.json"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test src/catalog.test.mjs"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "public"
+  }
+}
