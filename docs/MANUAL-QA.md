@@ -22,6 +22,7 @@ Corre **antes** de publicar packages o de consumir un bump en `mi-portafolio` / 
 | Security | `packages/security` | lib |
 | Analytics | `packages/analytics` | lib |
 | CLI | `packages/cli` | tool |
+| Skills | `packages/skills` | catálogo MCP / API / KV |
 | ADRs | `docs/adr` | docs |
 
 Stories conocidas: Alert, Badge, Button, Card, Dialog, FormControls, Input, Tabs.
