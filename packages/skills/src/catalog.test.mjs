@@ -28,4 +28,11 @@ test("cierre DoD requires Retro deploy + VN branding", () => {
   assert.match(catalog.metodo_ro.cierre_mail, /Retro deploy/);
 });
 
+test("vn-agent body is mounted in the package", () => {
+  const agent = catalog.skills.find((s) => s.id === "vn-agent");
+  assert.equal(agent.local, "mounted/vn-agent/SKILL.md");
+  const body = readFileSync(new URL("../mounted/vn-agent/SKILL.md", import.meta.url), "utf8");
+  assert.match(body, /Agente Viento Norte/);
+});
+
 void fileURLToPath;

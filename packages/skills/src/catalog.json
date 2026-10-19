@@ -1,13 +1,21 @@
 {
   "version": "0.1.0",
-  "updated": "2026-08-18",
+  "updated": "2026-10-18",
   "hosted": "https://vientonorte.io/ops/skills/",
   "mcp": "https://contact.vientonorte.io/mcp",
   "api": "https://contact.vientonorte.io/api/skills",
   "kv": "vn:skills",
   "metodo_ro": {
-    "hours": { "m1": 5.5, "vn": 1.5, "post": 0.75, "algonova": 3.5 },
-    "no": ["80/10/10", "80/20"],
+    "hours": {
+      "m1": 5.5,
+      "vn": 1.5,
+      "post": 0.75,
+      "algonova": 3.5
+    },
+    "no": [
+      "80/10/10",
+      "80/20"
+    ],
     "contact": "contacto@vientonorte.io",
     "sem": "$0 until Test",
     "cierre_mail": "draft Gmail branding VN + ## Retro deploy"
@@ -19,7 +27,8 @@
       "kind": "router",
       "public": true,
       "mcp": true,
-      "hosted": "https://vientonorte.io/ops/skills/vn-agent/SKILL.md"
+      "hosted": "https://vientonorte.io/ops/skills/vn-agent/SKILL.md",
+      "local": "mounted/vn-agent/SKILL.md"
     },
     {
       "id": "check-work",
@@ -27,7 +36,8 @@
       "kind": "qa",
       "public": true,
       "mcp": true,
-      "hosted": "https://vientonorte.io/ops/skills/check-work/SKILL.md"
+      "hosted": "https://vientonorte.io/ops/skills/check-work/SKILL.md",
+      "local": "mounted/check-work/SKILL.md"
     },
     {
       "id": "check-safety",
@@ -35,7 +45,8 @@
       "kind": "qa",
       "public": true,
       "mcp": true,
-      "hosted": "https://vientonorte.io/ops/skills/check-safety/SKILL.md"
+      "hosted": "https://vientonorte.io/ops/skills/check-safety/SKILL.md",
+      "local": "mounted/check-safety-thresholds/SKILL.md"
     },
     {
       "id": "org-hygiene",
@@ -43,7 +54,8 @@
       "kind": "ops",
       "public": true,
       "mcp": true,
-      "hosted": "https://vientonorte.io/ops/skills/org-hygiene/SKILL.md"
+      "hosted": "https://vientonorte.io/ops/skills/org-hygiene/SKILL.md",
+      "local": "mounted/org-hygiene/SKILL.md"
     },
     {
       "id": "preprod-qa",
@@ -51,17 +63,144 @@
       "kind": "qa",
       "public": true,
       "mcp": true,
-      "hosted": "https://vientonorte.io/ops/skills/preprod-qa/SKILL.md"
+      "hosted": "https://vientonorte.io/ops/skills/preprod-qa/SKILL.md",
+      "local": "mounted/preprod-qa/SKILL.md"
     },
-    { "id": "docs-vn", "slash": "/docs-vn", "kind": "vn", "public": true, "mcp": true },
-    { "id": "seo-vn", "slash": "/seo-vn", "kind": "vn", "public": true, "mcp": true },
-    { "id": "google-ads-vn", "slash": "/google-ads-vn", "kind": "vn", "public": true, "mcp": true },
-    { "id": "ux-writing-vn", "slash": "/ux-writing-vn", "kind": "vn", "public": true, "mcp": true },
-    { "id": "lead-a11y-vn", "slash": "/lead-a11y-vn", "kind": "vn", "public": true, "mcp": true },
-    { "id": "kpi-vn", "slash": "/kpi-vn", "kind": "vn", "public": true, "mcp": true },
-    { "id": "design-sprint-vn", "slash": "/design-sprint-vn", "kind": "vn", "public": true, "mcp": true },
-    { "id": "cierre-sesion-vn", "slash": "/cierre-sesion-vn", "kind": "vn", "public": true, "mcp": true },
-    { "id": "cierre-vn-hoy", "slash": "/CierreVNHOY", "kind": "vn", "public": true, "mcp": true },
-    { "id": "m5-vn", "slash": "/m5-vn", "kind": "vn", "public": true, "mcp": true }
+    {
+      "id": "docs-vn",
+      "slash": "/docs-vn",
+      "kind": "vn",
+      "public": true,
+      "mcp": true,
+      "local": "mounted/docs-vn/SKILL.md"
+    },
+    {
+      "id": "seo-vn",
+      "slash": "/seo-vn",
+      "kind": "vn",
+      "public": true,
+      "mcp": true,
+      "local": "mounted/seo-vn/SKILL.md"
+    },
+    {
+      "id": "google-ads-vn",
+      "slash": "/google-ads-vn",
+      "kind": "vn",
+      "public": true,
+      "mcp": true,
+      "local": "mounted/google-ads-vn/SKILL.md"
+    },
+    {
+      "id": "ux-writing-vn",
+      "slash": "/ux-writing-vn",
+      "kind": "vn",
+      "public": true,
+      "mcp": true,
+      "local": "mounted/ux-writing-vn/SKILL.md"
+    },
+    {
+      "id": "lead-a11y-vn",
+      "slash": "/lead-a11y-vn",
+      "kind": "vn",
+      "public": true,
+      "mcp": true,
+      "local": "mounted/lead-a11y-vn/SKILL.md"
+    },
+    {
+      "id": "kpi-vn",
+      "slash": "/kpi-vn",
+      "kind": "vn",
+      "public": true,
+      "mcp": true,
+      "local": "mounted/kpi-vn/SKILL.md"
+    },
+    {
+      "id": "design-sprint-vn",
+      "slash": "/design-sprint-vn",
+      "kind": "vn",
+      "public": true,
+      "mcp": true,
+      "local": "mounted/design-sprint-vn/SKILL.md"
+    },
+    {
+      "id": "cierre-sesion-vn",
+      "slash": "/cierre-sesion-vn",
+      "kind": "vn",
+      "public": true,
+      "mcp": true,
+      "local": "mounted/cierre-sesion-vn/SKILL.md"
+    },
+    {
+      "id": "cierre-vn-hoy",
+      "slash": "/CierreVNHOY",
+      "kind": "vn",
+      "public": true,
+      "mcp": true,
+      "local": "mounted/cierre-vn-hoy/SKILL.md"
+    },
+    {
+      "id": "m5-vn",
+      "slash": "/m5-vn",
+      "kind": "vn",
+      "public": true,
+      "mcp": true,
+      "local": "mounted/m5-vn/SKILL.md"
+    },
+    {
+      "id": "gtm-vn",
+      "slash": "/gtm-vn",
+      "kind": "vn",
+      "public": true,
+      "mcp": true,
+      "local": "mounted/gtm-vn/SKILL.md"
+    },
+    {
+      "id": "linkedin-seo-vn",
+      "slash": "/linkedin-seo-vn",
+      "kind": "vn",
+      "public": true,
+      "mcp": true,
+      "local": "mounted/linkedin-seo-vn/SKILL.md"
+    },
+    {
+      "id": "mcp-vn",
+      "slash": "/mcp-vn",
+      "kind": "vn",
+      "public": true,
+      "mcp": true,
+      "local": "mounted/mcp-vn/SKILL.md"
+    },
+    {
+      "id": "grok-bot-handoff",
+      "slash": "/grok-bot-handoff",
+      "kind": "vn",
+      "public": true,
+      "mcp": true,
+      "local": "mounted/grok-bot-handoff/SKILL.md"
+    },
+    {
+      "id": "vn-improve",
+      "slash": "/vn-improve",
+      "kind": "vn",
+      "public": true,
+      "mcp": true,
+      "local": "mounted/vn-improve/SKILL.md"
+    },
+    {
+      "id": "mail-session-result",
+      "slash": "/mail-session-result",
+      "kind": "vn",
+      "public": true,
+      "mcp": true,
+      "local": "mounted/mail-session-result/SKILL.md"
+    },
+    {
+      "id": "micro1-pipeline",
+      "slash": "/micro1-pipeline",
+      "kind": "vn",
+      "public": true,
+      "mcp": true,
+      "local": "mounted/micro1-pipeline/SKILL.md"
+    }
   ]
 }

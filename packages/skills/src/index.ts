@@ -7,6 +7,8 @@ export type SkillEntry = {
   public?: boolean;
   mcp?: boolean;
   hosted?: string;
+  /** Path inside this package, relative to packages/skills. The body is on disk. */
+  local?: string;
 };
 
 export type SkillsCatalog = {
