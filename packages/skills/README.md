@@ -17,3 +17,13 @@ import { listSkills, getSkill, cierreDod } from '@vientonorte/skills';
 ```
 
 Publish: workflow `Publish (GitHub Packages)` en `vientonorte-core`.
+
+## A necesidad
+
+`listSkills()` sigue siendo el catálogo público.
+
+`src/on-demand.json` nombra el resto. El cuerpo está en `~/.grok/skills/<id>/SKILL.md` de la máquina que lo tiene. Esos markdown no entran al paquete ni a `/ops/skills/`.
+
+`src/connectors.json` nombra los MCP. El servidor stdio GET está en `mcp/vn/server.mjs`.
+
+En la máquina: `node scripts/resolve-on-demand.mjs`.

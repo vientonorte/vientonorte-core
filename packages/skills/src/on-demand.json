@@ -1,0 +1,162 @@
+{
+  "public": false,
+  "bodyHome": "~/.grok/skills/<id>/SKILL.md",
+  "note": "listSkills no incluye esta lista. El SKILL.md no está en el repo.",
+  "skills": [
+    {
+      "id": "ask-before-advancing",
+      "slash": "/ask-before-advancing",
+      "public": false,
+      "body": "machine",
+      "use": "Pregunta antes de avanzar un plan."
+    },
+    {
+      "id": "bujo-ro",
+      "slash": "/bujo-ro",
+      "public": false,
+      "body": "machine",
+      "use": "Cuaderno manuscrito. El cuerpo queda en la máquina."
+    },
+    {
+      "id": "canva-safari",
+      "slash": "/canva-safari",
+      "public": false,
+      "body": "machine",
+      "use": "Abre Canva en Safari con la sesión de esa máquina."
+    },
+    {
+      "id": "catalog",
+      "slash": "/catalog",
+      "public": false,
+      "body": "machine",
+      "use": "Índice local de fuentes de research."
+    },
+    {
+      "id": "check-safety-thresholds",
+      "slash": "/check-safety-thresholds",
+      "public": false,
+      "body": "mounted",
+      "local": "mounted/check-safety-thresholds/SKILL.md",
+      "use": "Mismo cuerpo que check-safety, ya montado."
+    },
+    {
+      "id": "cierre-penji",
+      "slash": "/cierre-penji",
+      "public": false,
+      "body": "machine",
+      "use": "Cierre Penji. El cuerpo queda en la máquina."
+    },
+    {
+      "id": "desk-dualboot",
+      "slash": "/desk-dualboot",
+      "public": false,
+      "body": "machine",
+      "use": "Periféricos del escritorio compartido. El cuerpo queda en la máquina."
+    },
+    {
+      "id": "ficha-contra-archivo",
+      "slash": "/ficha-contra-archivo",
+      "public": false,
+      "body": "machine",
+      "use": "Fichas del contra-archivo. El cuerpo queda en la máquina."
+    },
+    {
+      "id": "github-analyze",
+      "slash": "/gh-analyze",
+      "public": false,
+      "body": "machine",
+      "use": "Informe de salud de un repo GitHub."
+    },
+    {
+      "id": "job-hunt-ro",
+      "slash": "/job-hunt-ro",
+      "public": false,
+      "body": "machine",
+      "use": "Búsqueda de trabajo personal. El cuerpo queda en la máquina."
+    },
+    {
+      "id": "lectura-clave-b",
+      "slash": "/lectura-clave-b",
+      "public": false,
+      "body": "machine",
+      "use": "Citas de libros anotados. El cuerpo queda en la máquina."
+    },
+    {
+      "id": "micro1-cierre",
+      "slash": "/micro1-cierre",
+      "public": false,
+      "body": "machine",
+      "use": "Cierre Micro1. El cuerpo queda en la máquina."
+    },
+    {
+      "id": "micro1-delivery",
+      "slash": "/micro1-delivery",
+      "public": false,
+      "body": "machine",
+      "use": "Entrega Micro1. El cuerpo queda en la máquina."
+    },
+    {
+      "id": "notebooklm",
+      "slash": "/notebooklm",
+      "public": false,
+      "body": "machine",
+      "use": "NotebookLM en la máquina que tenga el CLI."
+    },
+    {
+      "id": "ollama",
+      "slash": "/ollama",
+      "public": false,
+      "body": "machine",
+      "use": "Modelo local antes de nube. La política no se copia aquí."
+    },
+    {
+      "id": "penji",
+      "slash": "/penji",
+      "public": false,
+      "body": "machine",
+      "use": "Piezas Penji. El cuerpo queda en la máquina."
+    },
+    {
+      "id": "penji-youtube-thumb",
+      "slash": "/penji-youtube-thumb",
+      "public": false,
+      "body": "machine",
+      "use": "Miniaturas. El cuerpo queda en la máquina."
+    },
+    {
+      "id": "poema-revision",
+      "slash": "/poema-revision",
+      "public": false,
+      "body": "machine",
+      "use": "Revisión de un poema. El cuerpo queda en la máquina."
+    },
+    {
+      "id": "pr-babysit",
+      "slash": "/pr-babysit",
+      "public": false,
+      "body": "machine",
+      "use": "Seguimiento de un PR. El cuerpo queda en la máquina."
+    },
+    {
+      "id": "prospecto-local",
+      "slash": "/prospecto-local",
+      "public": false,
+      "body": "machine",
+      "use": "Suma prospectos con la plantilla existente. No envía correo."
+    },
+    {
+      "id": "wcag22-audit",
+      "slash": "/wcag22-audit",
+      "public": false,
+      "body": "machine",
+      "use": "Auditoría WCAG 2.2 AA. El cuerpo queda en la máquina."
+    },
+    {
+      "id": "yt-to-notebooklm",
+      "slash": "/yt-research",
+      "public": false,
+      "body": "machine",
+      "use": "YouTube hacia NotebookLM en la máquina que tenga el script."
+    }
+  ]
+}

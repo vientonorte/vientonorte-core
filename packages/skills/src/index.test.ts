@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { cierreDod, getSkill, listSkills, metodoRo } from './index';
+import { cierreDod, getSkill, listConnectors, listOnDemand, listSkills, metodoRo, resolveSkill } from './index';
 
 describe('@vientonorte/skills', () => {
   it('lists public MCP skills', () => {
@@ -17,5 +17,13 @@ describe('@vientonorte/skills', () => {
     const d = cierreDod();
     expect(d.mail.required_block).toBe('## Retro deploy');
     expect(d.mail.contact).toBe('contacto@vientonorte.io');
+  });
+
+  it('resolves on-demand skills without listing them', () => {
+    expect(listSkills().some((s) => s.id === 'prospecto-local')).toBe(false);
+    expect(getSkill('prospecto-local')).toBeUndefined();
+    expect(resolveSkill('prospecto-local')?.where).toBe('machine');
+    expect(listOnDemand().every((s) => s.public === false)).toBe(true);
+    expect(listConnectors().find((c) => c.id === 'nvidia-cuda-docs')?.auth).toBe('oauth');
   });
 });

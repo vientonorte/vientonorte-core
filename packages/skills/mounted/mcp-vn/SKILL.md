@@ -13,7 +13,7 @@ Padre: `/vn-agent`. Canon: `~/.grok/skills/vn-agent/references/canon.md`.
 
 **Ya existe prod:** `GET https://contact.vientonorte.io/mcp` (catálogo + write con `VN_API_KEY`). Grok **no** lo handshakea como streamable HTTP.
 
-**Stdio (este skill):** `node ~/.grok/mcp/vn/server.mjs` · config `[mcp_servers.vn]`.  
+**Stdio (este skill):** el fuente es `packages/skills/mcp/vn/server.mjs`. En el M5, `~/.grok/mcp/vn/server.mjs` apunta ahí. Config `[mcp_servers.vn]`.  
 Transporte: **NDJSON** (una línea JSON-RPC). No Content-Length. Gate: `grok mcp doctor vn` healthy. Tras editar config: `/mcps` → `r`.
 
 ## Tools (GET only)
@@ -32,10 +32,10 @@ No PII. No wrangler. No Ads.
 
 ## Orden de MCPs (no reinventar)
 
-1. **Usar** los que ya handshakean: github, gmail, google_calendar, google_drive, tasks, figma, chrome-devtools (Preview ≠ este Chrome), cloudflare + docs/bindings/builds/observability, nvidia-elements.
+1. **Usar** los que ya handshakean: github, gmail, google_calendar, google_drive, tasks, figma, buffer, cursor, vercel, chrome-devtools (Preview ≠ este Chrome), cloudflare + docs/bindings/builds/observability, nvidia-elements. Índice: `packages/skills/src/connectors.json`.
 2. **stdio mcp-vn** (ops live · `grok mcp doctor vn` healthy). Con el TUI abierto, `/model ollama-qwen-light` lee y redacta y no publica `main`. Si el binario está cerrado, `grok -m ollama-qwen-light` y `ollmcp` no reemplazan las skills. Corre `/Users/ro/bin/vn-night-local.sh --now` o `--work`. Esa corrida no toca QA de `/servicios/`, Figma, GitHub, correo, DNS ni un ship.
 3. **Más tarde:** conteo leads en Worker (API key, sin dump). No es un segundo proceso: tool extra en este server.
-4. **Nunca MCP propio** para GTM Preview, Ads ENABLED, LinkedIn 2FA, GSC. PARK: wix, aws-*, graphos, nvidia-cuda-docs (OAuth OK, no trabajo).
+4. **Nunca MCP propio** para GTM Preview, Ads ENABLED, LinkedIn 2FA, GSC. PARK: wix, aws-*, graphos. `nvidia-cuda-docs` entra solo si esa máquina ya pasó el OAuth. En W11 sigue pidiendo `/mcps` → `nvidia-cuda-docs` → `i`.
 
 ## GitHub MCP (plugin · no stdio)
 
@@ -70,3 +70,5 @@ En la app: **Settings → Plugins → Marketplace → GitHub** (auth en browser)
 ## Slash
 
 `/mcp-vn`
+
+Skills fuera del catálogo público: `packages/skills/src/on-demand.json`. El cuerpo sigue en `~/.grok/skills/<id>/SKILL.md`.
