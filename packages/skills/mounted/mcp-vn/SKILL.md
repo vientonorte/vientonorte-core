@@ -28,7 +28,7 @@ Transporte: **NDJSON** (una línea JSON-RPC). No Content-Length. Gate: `grok mcp
 | `vn_ops` | `GET /ops/` + `ops/finanzas/ledger.json` |
 | `vn_gtm_coverage` | GET `/` `/servicios/` · GTM-PM5LBQRP |
 
-No PII. No wrangler. No Ads.
+No PII. No wrangler. No Ads. Prospecto no es una de estas tools. No se agrega ni se manda correo hasta que exista `~/vn-w11-inbox/W11-prospecto-medida-2026-10-19.md`. Node del repo: `.nvmrc` = 22.
 
 ## Orden de MCPs (no reinventar)
 

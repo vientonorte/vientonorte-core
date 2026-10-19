@@ -65,6 +65,16 @@ PRs / issues / CI / Dependabot: **GitHub MCP** (`github__*`), no `gh` CLI. `owne
 
 DS prod **sigue** `@vientonorte/*`. Elements no reemplaza tokens/UI VN.
 
+## Máquinas (2026-10-19)
+
+| Máquina | Entrada | Queda fuera |
+|---------|---------|-------------|
+| M5 | Tailscale del Mac, `tailscale ip -4`. El 2026-10-19 era `100.108.15.17`. sshd del sistema escucha ahí. | `en0` cuando no está en `192.168.100.0/24`. En la cafetería era `192.168.1.86`. |
+| W11 `user` | La torre abre `ssh -4 ro@<Tailscale del Mac>`. Peer `100.94.6.83`. | Puertos 22, 3389, 5985, 11434 y 4000 de la torre. El Mac no entra. |
+| iPhone | `@VientonorteRo_bot`. QA manual en `https://vientonorte.io/qa/`. Firma `vn-telegram-say m5` o `w11`. | Un segundo long-poll del mismo token. Hermes gateway. |
+
+El MCP local `vn` son los siete GET de `packages/skills/mcp/vn/server.mjs`. Prospecto no es tool. La cola `Sprints/prospecto-cola.csv` y la caja `/workspace/prospeccion-vn` no están en el Mac. La medida de la torre se escribe en `~/vn-w11-inbox/W11-prospecto-medida-2026-10-19.md`. Hasta ese archivo no hay tool nueva ni correo.
+
 ## GTM
 
 Skill `/gtm-vn`. Contenedor `GTM-PM5LBQRP` · GA4 `G-G7JXJKGCDV`. Versión 4 (20 ago): Event `generate_lead` **y** `book_call` live. `submit_contact_form` no. No MCP GTM.
