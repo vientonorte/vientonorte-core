@@ -50,6 +50,13 @@ SSOT pipeline: vault `Resources/PIPELINE Design Ops SSOT.md`
 | copy, microcopy, hero, CTA | `/ux-writing-vn` |
 | lead gratis a11y, draft Gmail, Calendar hold | `/lead-a11y-vn` |
 | prospecto, cola, categoría, plantilla, sumar prospectos | `/prospecto-local` · `~/.grok/skills/prospecto-local/SKILL.md` |
+| salir a producción, preprod, gate | `/preprod-qa` |
+| verificar el cambio, check work | `/check-work` |
+| auditoría WCAG, checklist a11y | `/wcag22-audit` · `~/.grok/skills/wcag22-audit/SKILL.md` |
+| Calendar, evento, bloque | MCP `google_calendar` |
+| Figma | MCP `figma` |
+| Cloudflare | MCP `cloudflare` · `cloudflare-docs` |
+| sonda GET, health, finanzas, sitemap, ops | servidor `vn` · `/mcp-vn` |
 | Fintoc, botón de pago, Paga con tu banco, X\|CMS cobro | `/vn-bdp` |
 | stamp KPI, medir proceso | `/kpi-vn` |
 | Design Sprint, Map/Sketch/Decide | `/design-sprint-vn` |
@@ -63,14 +70,15 @@ SSOT pipeline: vault `Resources/PIPELINE Design Ops SSOT.md`
 | GitHub PRs, issues, CI, Dependabot | `/mcp-vn` (plugin `github`, owner `vientonorte`) · hygiene = `/org-hygiene` |
 | NVIDIA Elements, `nve-*`, tokens Elements, playground | MCP `nvidia-elements` (`nve mcp`) · **no** sustituye `@vientonorte/*` |
 | CUDA, GPU, docs NVIDIA, NIM | MCP `nvidia-cuda-docs` (OAuth OK · **PARK** más trabajo) |
-| Micro1, claims, captura W11, Realm | `/micro1-pipeline` · **claims_open=0** hasta **21 ago 09:00** Captura AM |
+| Micro1, Strike, claims, captura | Break hasta Strike 3. `/micro1-pipeline` es slash de Rö. Este router no lo abre. |
 | Algonova, tutorías, onboarding | Calendar · plataforma `learn.alg.academy` (creds en mail Alena; no guardar clave en skills) |
 | SEO Austral 1:1 / form diagnóstico | vault `Resources/SEM/2026-08-26 BENCHMARK SEO Austral Diagnostico 1a1.md` · no copiar gate 1–6 M a FO |
 | mejorar live, `$` stale, `/vn-improve` | workflow `vn-improve` (score en script, no wrangler) |
 | todo el stack / “qué hacemos” | este agente: estado + 1 siguiente paso |
 | Hermes en el sprint, borrador del corte, clasificar una lista medida | modo `sprint` · «Dos modos de Hermes» |
 | loop nocturno de Hermes | modo `noche` · `vn-hermes-loop.sh` |
-| tokens xAI acabados, ollama, sin cuota | sección «Tokens xAI = 0» · `vn-skill-local <id>` · noche `vn-night-local.sh` |
+| tokens xAI acabados, sin cuota | sección «Tokens xAI = 0» · `vn-skill-local <id>` · noche `vn-night-local.sh` |
+| el paso cabe en un modelo local | `/ollama` · `~/.grok/skills/ollama/SKILL.md` |
 
 ## Dos modos de Hermes
 
@@ -105,8 +113,9 @@ Al día siguiente, el modo sprint lee esa nota como entrada medida. Una viñeta 
 - `main` protegido → PR. Worker: `wrangler deploy --keep-vars`.
 - Mejora live: `/vn-improve` (o `/workflow vn-improve`). El **score es Rhai**, no el agente. 100=`$` stale → P0 `wrangler deploy --keep-vars` (Decider). El workflow **nunca** despliega.
 - Design Ops: `/workflow vn-design-ops` (Empathize→Test = DS). MCP = evidencia. Decider en Decide. `apply=true` para Prototype.
-- NVIDIA: Elements = referencia / playground. DS **prod** = `@vientonorte/*`. CUDA OAuth OK · PARK más trabajo. Cloudflare MCP Grok OAuth PARK. Detalle en canon.
-- Micro1: `claims_open=0`. Claim 1–3 **21 ago 09:00**. Sin claim no hay F7. W11 no se verifica desde M5.
+- NVIDIA: Elements = referencia / playground. DS **prod** = `@vientonorte/*`. CUDA OAuth OK · PARK más trabajo. Cloudflare: MCP `cloudflare` y `cloudflare-docs` si esa máquina ya hizo el handshake. Detalle en canon.
+- Micro1 está en break hasta que reactiven Strike 3. `/micro1-pipeline` es slash de Rö. Este router no lo abre.
+- Penji ya no es empleador (Rö, 2026-10-19). Este router no abre esas skills.
 - Algonova: continue on learn.alg.academy until Rö says done. M1 20 ago is historical. 40 h = escenario, no plantilla. No auto-mail Alena.
 
 ## Tokens xAI = 0 (M5 · Ollama)
