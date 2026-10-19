@@ -49,6 +49,7 @@ SSOT pipeline: vault `Resources/PIPELINE Design Ops SSOT.md`
 | GTM, Tag Assistant, Preview, `generate_lead`/`book_call`, cobertura | `/gtm-vn` |
 | copy, microcopy, hero, CTA | `/ux-writing-vn` |
 | lead gratis a11y, draft Gmail, Calendar hold | `/lead-a11y-vn` |
+| prospecto, cola, categoría, plantilla, sumar prospectos | `/prospecto-local` · `~/.grok/skills/prospecto-local/SKILL.md` |
 | Fintoc, botón de pago, Paga con tu banco, X\|CMS cobro | `/vn-bdp` |
 | stamp KPI, medir proceso | `/kpi-vn` |
 | Design Sprint, Map/Sketch/Decide | `/design-sprint-vn` |
