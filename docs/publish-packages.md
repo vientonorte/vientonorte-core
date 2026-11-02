@@ -1,3 +1,5 @@
+> **Core org:** ver [PACKAGES-CORE.md](./PACKAGES-CORE.md) — este registry es el DS compartido entre todos los repos.
+
 # Publish @vientonorte/* → GitHub Packages
 
 PDF automaciones P3 · design system live · 2026-07-26

@@ -38,6 +38,13 @@
   --vn-color-on-surface:      var(--vn-primitive-azul-noche);
   --vn-color-muted:           var(--vn-primitive-pizarra);
 
+  /* ── Branding Viento Norte (wordmark / gradiente oficial) ─── */
+  /*    Usar en todos los repos del org vía @vientonorte/tokens   */
+  --vn-brand-name:            "Viento Norte";
+  --vn-brand-tagline:         "UXtech · módulos a medida · dueño del dato";
+  --vn-brand-gradient:        linear-gradient(135deg, #E8401C 0%, #1A8FDC 100%);
+  --vn-brand-gradient-soft:   linear-gradient(135deg, rgba(232, 64, 28, 0.12), rgba(26, 143, 220, 0.12));
+
   /* ── Bordes derivados ───────────────────────────────────────── */
   --vn-border-subtle:   rgba(13, 27, 61, 0.08);
   --vn-border-medium:   rgba(13, 27, 61, 0.16);

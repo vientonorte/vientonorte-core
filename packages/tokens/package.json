@@ -1,7 +1,7 @@
 {
   "name": "@vientonorte/tokens",
-  "version": "0.2.0",
-  "description": "Design tokens del colectivo vientonorte — paleta, tipografía, espaciado, motion, a11y",
+  "version": "0.2.1",
+  "description": "Design tokens del colectivo vientonorte \u2014 paleta, tipograf\u00eda, espaciado, motion, a11y",
   "license": "MIT",
   "type": "module",
   "repository": {
