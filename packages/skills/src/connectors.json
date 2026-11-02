@@ -1,0 +1,107 @@
+{
+  "note": "Sin tokens. list_skills del catalogo publico no cambia.",
+  "connectors": [
+    {
+      "id": "github",
+      "transport": "plugin",
+      "auth": "account",
+      "use": "PRs, issues y Actions de la org vientonorte."
+    },
+    {
+      "id": "gmail",
+      "transport": "plugin",
+      "auth": "account",
+      "use": "Borradores. Enviar pide OK de Ro."
+    },
+    {
+      "id": "google_calendar",
+      "transport": "plugin",
+      "auth": "account",
+      "use": "Eventos ya creados. send_updates none."
+    },
+    {
+      "id": "google_drive",
+      "transport": "plugin",
+      "auth": "account",
+      "use": "Archivos de Drive."
+    },
+    {
+      "id": "tasks",
+      "transport": "plugin",
+      "auth": "account",
+      "use": "Tareas."
+    },
+    {
+      "id": "figma",
+      "transport": "plugin",
+      "auth": "account",
+      "use": "DS visual. Produccion sigue en --vn-*."
+    },
+    {
+      "id": "buffer",
+      "transport": "plugin",
+      "auth": "account",
+      "use": "Cola de Buffer."
+    },
+    {
+      "id": "cursor",
+      "transport": "plugin",
+      "auth": "account",
+      "use": "Cursor."
+    },
+    {
+      "id": "vercel",
+      "transport": "plugin",
+      "auth": "account",
+      "use": "Proyectos Vercel."
+    },
+    {
+      "id": "cloudflare",
+      "transport": "http",
+      "auth": "account",
+      "url": "https://mcp.cloudflare.com/mcp",
+      "use": "Cloudflare."
+    },
+    {
+      "id": "cloudflare-docs",
+      "transport": "http",
+      "auth": "none",
+      "url": "https://docs.mcp.cloudflare.com/mcp",
+      "use": "Docs de Cloudflare."
+    },
+    {
+      "id": "nvidia-elements",
+      "transport": "stdio",
+      "auth": "none",
+      "command": "nve",
+      "args": [
+        "mcp"
+      ],
+      "use": "Referencia de UI. No reemplaza --vn-*."
+    },
+    {
+      "id": "nvidia-cuda-docs",
+      "transport": "http",
+      "auth": "oauth",
+      "url": "https://api.copilot.nsight.ngc.nvidia.com/mcp/cuda-docs",
+      "use": "CUDA y Nsight. No esta listo hasta el OAuth de esa maquina."
+    },
+    {
+      "id": "vn",
+      "transport": "stdio",
+      "auth": "none",
+      "command": "node",
+      "args": [
+        "packages/skills/mcp/vn/server.mjs"
+      ],
+      "use": "Sondas GET. No wrangler. No Ads."
+    },
+    {
+      "id": "contact",
+      "transport": "http",
+      "auth": "none",
+      "url": "https://contact.vientonorte.io/mcp",
+      "use": "list_skills y get_skill del catalogo publico."
+    }
+  ]
+}
