@@ -177,7 +177,7 @@ PDF_OUT = ~/Library/Mobile Documents/com~apple~CloudDocs/Documents/Viento Norte/
 - Omitir nota Obsidian
 - Confundir este skill con deploy (deploy ya ocurre al push main)
 - **Enviar** el mail sin QA humano y sin el visto bueno de Rö, o enviarlo **sin `## Retro deploy`**
-- Listar como “live” una URL que el smoke diga stale ($4.62 / split viejo / `updated` 13 ago vs plantilla 18 ago)
+- Listar como “live” una URL que el smoke diga stale (monto viejo / split viejo / `updated` 13 ago vs plantilla 18 ago)
 - Cerrar con `$` desfasado sin dejar **P0 = deploy Worker finanzas** (solo humano, por orden del TL: `cd worker && npm ci && npx --no-install wrangler deploy --keep-vars`)
 
 ## Slash

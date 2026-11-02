@@ -28,7 +28,7 @@ Tras el verdict, un agente **solo mide** ledger/MCP/health. El script puntúa:
 
 | id | score | acción |
 |----|------:|--------|
-| `finanzas-stale` | 100 | `wrangler deploy --keep-vars` (Decider) |
+| `finanzas-stale` | 100 | Solo humano, por orden del TL: `cd worker && npm ci && npx --no-install wrangler deploy --keep-vars` |
 | `finanzas-unreachable` | 90 | re-curl; no wrangler |
 | `api-health` | 80 | check contact worker |
 | `mcp-skills-missing` | 70 | merge FO#202 + wrangler contact |

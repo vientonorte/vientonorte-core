@@ -72,7 +72,7 @@ SSOT pipeline: vault `Resources/PIPELINE Design Ops SSOT.md`
 | NVIDIA Elements, `nve-*`, tokens Elements, playground | MCP `nvidia-elements` (`nve mcp`) · **no** sustituye `@vientonorte/*` |
 | CUDA, GPU, docs NVIDIA, NIM | MCP `nvidia-cuda-docs` (OAuth OK · **PARK** más trabajo) |
 | Micro1, Strike, claims, captura | Break hasta Strike 3. Micro1 archivado; skill fuera del paquete. Este router no lo abre. |
-| Algonova, tutorías, onboarding | Calendar · plataforma `learn.alg.academy` (creds en mail Alena; no guardar clave en skills) |
+| Algonova, tutorías, onboarding | Calendar · plataforma `learn.alg.academy` (creds: ver vault; no guardar clave en skills) |
 | SEO Austral 1:1 / form diagnóstico | vault `Resources/SEM/2026-08-26 BENCHMARK SEO Austral Diagnostico 1a1.md` · no copiar gate 1–6 M a FO |
 | mejorar live, `$` stale, `/vn-improve` | workflow `vn-improve` (score en script, no wrangler) |
 | todo el stack / “qué hacemos” | este agente: estado + 1 siguiente paso |
@@ -125,7 +125,7 @@ Al día siguiente, el modo sprint lee esa nota como entrada medida. Una viñeta 
 - NVIDIA: Elements = referencia / playground. DS **prod** = `@vientonorte/*`. CUDA OAuth OK · PARK más trabajo. Cloudflare: MCP `cloudflare` y `cloudflare-docs` si esa máquina ya hizo el handshake. Detalle en canon.
 - Micro1 está en break hasta que reactiven Strike 3. Micro1 archivado; skill fuera del paquete. Este router no lo abre.
 - Penji ya no es empleador (Rö, 2026-10-19). Este router no abre esas skills.
-- Algonova: continue on learn.alg.academy until Rö says done. M1 20 ago is historical. 40 h = escenario, no plantilla. No auto-mail Alena.
+- Algonova: continue on learn.alg.academy until Rö says done. M1 20 ago is historical. 40 h = escenario, no plantilla. No auto-mail a la coordinación Algonova (contacto: ver vault).
 
 ## Tokens xAI = 0 (M5 · Ollama)
 

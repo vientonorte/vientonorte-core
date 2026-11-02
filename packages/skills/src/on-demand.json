@@ -82,20 +82,6 @@
       "use": "Citas de libros anotados. El cuerpo queda en la máquina."
     },
     {
-      "id": "micro1-cierre",
-      "slash": "/micro1-cierre",
-      "public": false,
-      "body": "machine",
-      "use": "Cierre Micro1. El cuerpo queda en la máquina."
-    },
-    {
-      "id": "micro1-delivery",
-      "slash": "/micro1-delivery",
-      "public": false,
-      "body": "machine",
-      "use": "Entrega Micro1. El cuerpo queda en la máquina."
-    },
-    {
       "id": "notebooklm",
       "slash": "/notebooklm",
       "public": false,

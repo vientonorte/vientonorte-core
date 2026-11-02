@@ -46,7 +46,7 @@ Script: `/Users/ro/bin/vn-m5`
 | `ops` | open `https://vientonorte.io/ops/` |
 | `log` | path `Sessions/YYYY-MM-DD.md` si existe |
 | `status` | git HEADs + loop/vite/ollama + stamp log |
-| `watch` / `ab` | `vn-watch-ab` · Algo $4/h live + Calendar M1 · 0 LLM |
+| `watch` / `ab` | `vn-watch-ab` · tarifa Algonova live (ver vault) + Calendar M1 · 0 LLM |
 | `cromatico` | `vn-cromatico` · Clave A/B + table-ro proxy |
 | `board` | mapa C-suite token-out |
 | `roles` | `vn-watch-ab roles` · Ollama local (`qwen2.5:1.5b`) |
