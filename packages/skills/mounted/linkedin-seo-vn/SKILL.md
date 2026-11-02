@@ -3,7 +3,7 @@ name: linkedin-seo-vn
 description: >
   Orgánico LinkedIn Viento Norte (no pauta): posts semanales en página empresa
   + newsletter mensual (covers vault SEM/news-covers; sin hop /s/news).
-  Cola JSON, Calendar mié 08:15, Safari abre compose, publish humano.
+  Cola JSON, Calendar franja semanal (ver vault), Safari abre compose, publish humano.
   Use when: /linkedin-seo-vn, LinkedIn weekly, newsletter VN, SEO LinkedIn,
   tráfico orgánico vientonorte, o /vn-agent pide LinkedIn público.
 ---
@@ -24,7 +24,7 @@ Cubiertas: vault `Resources/SEM/news-covers/` (attach en LinkedIn).
 |--|---------|---------------------|
 | Dónde | Página empresa **Vientonorte** (ver vault) | Perfil de Rö (ver vault) |
 | SSOT | vault `linkedin-weekly-queue.json` | FO `news-editions.json` + covers vault |
-| Reloj | Mié **08:15–09:00** CL · Post 0.75 | Primer mié del mes, mismo slot |
+| Reloj | franja semanal (ver vault) · Post 0.75 | Primer mié del mes, mismo slot |
 | Apply | `vn-linkedin-weekly` | `vn-linkedin-news --clipboard --open-safari` |
 | Publicar | Humano en admin drafts | Humano pega en compose Safari |
 

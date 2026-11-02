@@ -87,9 +87,9 @@ Session.app automation (`session_end`) → preferir `vn-session-stamp`, no el me
 
 ## SSOT paths (2026-08-06 QA)
 
-- **Obsidian canónico:** `iCloud~md~obsidian/Documents/Ro/Viento Norte`.  
+- **Obsidian canónico:** vault Obsidian (ruta local, ver vault).  
   No escribir Sessions en vaults paralelos (`CloudDocs/Documents/Obsidian Vault`).
-- **Horas:** Método Ro (canon) — M1 0 PARK · VN 1.5 · Post 0.75 · empleo principal 4º (ver vault). Ledger `MICRO 1/07-pagos/dashboard/ledger.json` · live puede ir atrasado vs plantilla.
+- **Horas:** Método Ro (canon) — M1 0 PARK · VN 1.5 · Post 0.75 · empleo principal (ver vault). Ledger `MICRO 1/07-pagos/dashboard/ledger.json` · live puede ir atrasado vs plantilla.
 - **QA única:** `https://vientonorte.io/qa/` es la página de pruebas del `main` publicado. El canvas del sprint es `https://vientonorte.io/ops/`.
 - **ĀRŪḾA:** checklist `ops/ARUMA-CHECKLIST.md` · bloqueado en cuenta Google humana.
 

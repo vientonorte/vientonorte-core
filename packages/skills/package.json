@@ -27,11 +27,14 @@
   "scripts": {
     "build": "tsc",
     "typecheck": "tsc --noEmit",
-    "test": "node --test src/catalog.test.mjs",
+    "test": "node --test src/catalog.test.mjs && vitest run",
     "on-demand": "node scripts/resolve-on-demand.mjs"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com",
-    "access": "public"
+    "access": "restricted"
+  },
+  "devDependencies": {
+    "vitest": "^2.1.0"
   }
 }

@@ -6,8 +6,8 @@ Leer esto antes de editar skills `*-vn` o el agente `vn-agent`. No duplicar tabl
 
 | Rol | Path |
 |-----|------|
-| Repo FO | ruta en vault (ver MAQUINAS-Y-MODELOS) |
-| Obsidian | ruta en vault (ver MAQUINAS-Y-MODELOS) |
+| Repo FO | ruta en vault (ver vault, 00-sistema) |
+| Obsidian | ruta en vault (ver vault, 00-sistema) |
 | Live FO | `https://vientonorte.io/` |
 | **UI interna / QA** | `https://vientonorte.io/#/consultoria` (HashRouter · `ConsultoriaVientoNorte`). Solo ruta técnica; nunca salida a clientes. |
 | **POC Apple (PR #130)** | `https://vientonorte.io/#/consultoria/modulos/dashboard` (`PocProductOnboarding`). No es el embudo. `/#/poc/product-onboarding` redirige al embudo. |
@@ -67,7 +67,7 @@ DS prod **sigue** `@vientonorte/*`. Elements no reemplaza tokens/UI VN.
 
 ## Máquinas
 
-IPs, peers, SSH y bots: ver vault `00-sistema/MAQUINAS-Y-MODELOS.md` (privado).
+IPs, peers, SSH y bots: ver vault (00-sistema).
 
 El MCP local `vn` son los siete GET de `packages/skills/mcp/vn/server.mjs`. Prospecto no es tool. La cola `Sprints/prospecto-cola.csv` y la caja `/workspace/prospeccion-vn` no están en el Mac. La medida de la torre se escribe en `~/vn-w11-inbox/W11-prospecto-medida-2026-10-19.md`. Hasta ese archivo no hay tool nueva ni correo.
 
@@ -123,7 +123,7 @@ Contrato, datos personales y tarifas: ver vault Obsidian (privado).
 SSOT: vault `00-sistema/CALENDAR-SESSION-UNIFICADO.md` · `00-sistema/METODO-RO-AGENT.md`.  
 **No 80/10/10 ni 80/20.** Decider **2026-08-28** (plantilla Calendar).
 
-Horarios y empleos: ver vault `00-sistema/VN-DATOS-PRIVADOS-SKILLS.md`.
+Horarios y empleos: ver vault (00-sistema).
 
 Ledger $: `MICRO 1/07-pagos/dashboard/ledger.json` · live `https://finanzas.vientonorte.io/` (puede ir atrasado vs plantilla).
 
@@ -161,7 +161,7 @@ Benchmark Ilógica / Modyo / Multiplica, 17 oct 2026: `Viento Norte/Research/Ben
 SSOT: vault `00-sistema/CALENDAR-SESSION-UNIFICADO.md` · `00-sistema/METODO-RO-AGENT.md`.  
 **No 80/10/10 ni 80/20.** Decider **2026-08-28** (plantilla Calendar).
 
-Horarios y empleos: ver vault `00-sistema/VN-DATOS-PRIVADOS-SKILLS.md`.
+Horarios y empleos: ver vault (00-sistema).
 
 Ledger $: `MICRO 1/07-pagos/dashboard/ledger.json` · live `https://finanzas.vientonorte.io/` (puede ir atrasado vs plantilla).
 

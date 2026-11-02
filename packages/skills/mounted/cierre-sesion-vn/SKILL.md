@@ -12,7 +12,7 @@ description: >
 
 Padre: `/vn-agent`. Paths/live: `~/.grok/skills/vn-agent/references/canon.md`. Continuum día+Session: `/cierre-vn-hoy`.
 
-**Horas:** Método Ro (canon) — M1 0 PARK · VN 1.5 · Post 0.75 · empleo principal 4º (ver vault). Cerrar sesión no mueve captura M1 ni el empleo principal.
+**Horas:** Método Ro (canon) — M1 0 PARK · VN 1.5 · Post 0.75 · empleo principal (ver vault). Cerrar sesión no mueve captura M1 ni el empleo principal.
 
 **DoD mail:** el modelo local redacta. Grok deja borrador (`gmail__create_draft` / DraftExternalMessage). Única excepción documentada: el Retro deploy se envía solo a los 2 correos personales de Rö (ver vault), después de QA humano y del visto bueno de Rö. Voz **Viento Norte** y bloque `## Retro deploy`. Sin visto bueno no hay correo. Con visto bueno, un borrador no cierra. Cierre canónico: `/cierre-vn-hoy`.
 
@@ -166,7 +166,7 @@ Ver vault: `Resources/Estandar log dia y ops.md`
 
 ```text
 GH_ROOT = ~/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub
-OBS_VN  = ~/Library/Mobile Documents/iCloud~md~obsidian/Documents/Ro/Viento Norte
+OBS_VN  = vault Obsidian (ruta local, ver vault)
 PDF_OUT = ~/Library/Mobile Documents/com~apple~CloudDocs/Documents/Viento Norte/entregables-pdf
 ```
 
