@@ -4,7 +4,8 @@ description: >
   Agente orquestador Viento Norte: enruta a las 13 skills VN y 3 workflows
   (vn-design-ops, vn-improve, cierre-vn-hoy).
   Use when: VN, Viento Norte, "agente VN", /vn-agent, orquestar skills VN,
-  upgrade stack, o el pedido cruza docs+SEO+ads+cierre+admin/MCP.
+  upgrade stack, qué skills tenemos, workflows, pipelines, qué aprendimos,
+  ajustar palabras, o el pedido cruza docs+SEO+ads+cierre+admin/MCP.
 ---
 
 # Agente Viento Norte
@@ -79,6 +80,14 @@ SSOT pipeline: vault `Resources/PIPELINE Design Ops SSOT.md`
 | loop nocturno de Hermes | modo `noche` · `vn-hermes-loop.sh` |
 | tokens xAI acabados, sin cuota | sección «Tokens xAI = 0» · `vn-skill-local <id>` · noche `vn-night-local.sh` |
 | el paso cabe en un modelo local | `/ollama` · `~/.grok/skills/ollama/SKILL.md` |
+| arranca, qué sigue, dale | el plan ya cerrado en este chat. No abras otra skill |
+| corre la matriz, matriz, smoke | `/m5-vn` |
+| cierre vn, cierra el día | workflow `cierre-vn-hoy` |
+| qué aprendimos, quedó en el workflow | leer `Sessions/` del día. No edites los `.rhai` |
+| skills, workflows, pipelines, refinar, ajustar las palabras | este agente: estado + 1 siguiente paso |
+| w11, modelo local, no gastar | `/ollama`. Sin LiteLLM |
+
+Rö escribe corto y con letras de más o de menos. Elegí la fila por el sentido. No pidas que reescriba el pedido.
 
 ## Dos modos de Hermes
 

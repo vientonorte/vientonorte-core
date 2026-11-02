@@ -39,7 +39,8 @@ Script: `/Users/ro/bin/vn-m5`
 | `sync` | payload Calendar Session (`vn-sync-session-close`) |
 | `stamp` | `vn-session-stamp` (focus → Sessions) |
 | `daily`…`sprint2` / `1`–`7` | scripts en `~/Developer/scripts/vientonorte-sprint/` |
-| `smoke` | `npm run smoke:cierre` en iCloud `mi-portafolio` **si** `http://localhost:3000/` escucha (check antes de que Rö haga merge; no mergeamos) |
+| `smoke` | `npm run smoke:cierre` en `~/code/mi-portafolio` (`VN_REPO`) **si** `http://localhost:3000/` escucha (check antes de que Rö haga merge; no mergeamos). `:5173` es obsoleto |
+| `audio` | `vn-audio-native`: micrófono y altavoces integrados del MacBook Pro. No desinstala NDI |
 | `ollama-light` | `ollama list` (dato) + recordatorio ≤8B / 1.5b |
 | `ollama-unload` | `pkill -f ollama-loop-sprint2` si existe |
 | `ops` | open `https://vientonorte.io/ops/` |
@@ -97,7 +98,7 @@ Session.app automation (`session_end`) → preferir `vn-session-stamp`, no el me
 - Estimar “llevamos X horas en el M5”
 - Decir smoke PASS sin salida del script
 - Confundir M5 (hardware/stack local) con carpeta Obsidian `Sessions/`
-- Usar `~/code/mi-portafolio` en vez de iCloud `Documents/GitHub` sin decirdelo
+- Apuntar el smoke a otro clone sin acuerdo. Desde 2026-10-23 `vn-m5 smoke` usa `~/code/mi-portafolio`. La carpeta iCloud no se mueve. No correr git en los otros clones de Documents/GitHub
 - `git pull` en iCloud con `refs/remotes/origin/*.lock` (mmap): no `reset --hard`. Stash WIP (medicinal), `git fetch origin main:refs/remotes/origin/main-tmp`, ff, `branch -u origin/main`. Tabs con SW viejo (`id-medicinal-v1`) → incógnito; live uxtools = `uxtools-suite-v5`.
 
 ## Slash

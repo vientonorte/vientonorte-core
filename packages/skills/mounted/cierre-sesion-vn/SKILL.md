@@ -14,7 +14,7 @@ Padre: `/vn-agent`. Paths/live: `~/.grok/skills/vn-agent/references/canon.md`. C
 
 **Horas:** Método Ro (canon) — M1 0 PARK · VN 1.5 · Post 0.75 · Algonova 4º. Cerrar sesión no mueve captura M1 ni Algonova.
 
-**DoD mail:** borrador Gmail, nunca envío. `to: [gaete.gaona@icloud.com, gaete.gaona@gmail.com]`, voz **Viento Norte** y bloque `## Retro deploy`. Rö revisa y envía. Cierre canónico: `/workflow cierre-vn-hoy`. `gmail__send_message` y `gmail__send_draft` no se usan.
+**DoD mail:** el modelo local redacta. Grok envía con `gmail__send_message` después de QA humano y del visto bueno de Rö. `to: [gaete.gaona@icloud.com, gaete.gaona@gmail.com]`, voz **Viento Norte** y bloque `## Retro deploy`. Sin visto bueno no hay correo. Con visto bueno, un borrador no cierra. Cierre canónico: `/cierre-vn-hoy`.
 
 ## Comando único (humano o agente)
 
@@ -85,7 +85,7 @@ git push origin main
 
 ## Regla de oro · mail de cierre
 
-El cierre deja un **borrador** (`gmail__create_draft`). Rö lo revisa y lo envía. Nunca `gmail__send_message` ni `gmail__send_draft`. El body lleva **`## Retro deploy`**.
+El modelo local no envía. Grok envía (`gmail__send_message`) después de QA humano y del visto bueno de Rö. Sin visto bueno no hay correo. Con visto bueno no se deja en borradores. El body lleva **`## Retro deploy`**.
 
 Aplica también si el humano dice: “manda mail”, “email resumen”, “al finalizar email”, “cierre por mail”.
 
@@ -138,7 +138,7 @@ Si **no hubo deploy** ese día: el bloque va igual con `Qué se desplegó: ningu
 - …
 ```
 
-El **Retro deploy** va **dentro del borrador**. El chat no reemplaza ese borrador. El agente no lo envía.
+El **Retro deploy** va **dentro del mail enviado**. El chat no reemplaza ese mail.
 
 ## Estándar (canon)
 
@@ -176,7 +176,7 @@ PDF_OUT = ~/Library/Mobile Documents/com~apple~CloudDocs/Documents/Viento Norte/
 - Inventar ship no mergeado
 - Omitir nota Obsidian
 - Confundir este skill con deploy (deploy ya ocurre al push main)
-- **Enviar** el mail de cierre, o dejarlo **sin bloque `## Retro deploy`**
+- **Enviar** el mail sin QA humano y sin el visto bueno de Rö, o enviarlo **sin `## Retro deploy`**
 - Listar como “live” una URL que el smoke diga stale ($4.62 / split viejo / `updated` 13 ago vs plantilla 18 ago)
 - Cerrar con `$` desfasado sin dejar **P0 = `wrangler deploy --keep-vars`** (Worker finanzas)
 

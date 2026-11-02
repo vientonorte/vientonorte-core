@@ -5,7 +5,7 @@ description: >
   Sessions, brief en clipboard para el foco CierreVNHOY. NO abre Session.app
   salvo que el humano pida "abre Session" o se pase --open-session.
   DATA DRIVEN. Use when: /CierreVNHOY, /workflow cierre-vn-hoy, "cierre vn hoy",
-  "documenta lo de Obsidian para Session", resumen a mail. Mail = borrador que Rö revisa, nunca envío directo.
+  "documenta lo de Obsidian para Session", resumen a mail. El modelo local redacta. Grok envía a las dos bandejas después de QA humano y del visto bueno de Rö. Sin visto bueno no hay correo. Con visto bueno, un borrador no cierra.
 ---
 
 # /CierreVNHOY · Session ← Obsidian (explícito)
@@ -59,7 +59,7 @@ vn-cierre-hoy --open-session   # solo si el humano pidió abrir la app
 4. ATAJO-PASTE = puntero a paths + “ver Calendar vivo”, **no** lista FO re-sintetizada
 5. Reportar: qué había en Calendar (dato) vs qué se tocó (delta)
 6. **No** ejecutar `open -a Session` ni `vn-cierre-hoy --open-session` salvo pedido explícito
-7. **Regla de oro — mail de cierre (Decider 27-sep):** siempre **borrador** que Rö revisa y envía (`drafted`/`draft_id`). `to: [gaete.gaona@icloud.com, gaete.gaona@gmail.com]` vía `gmail__create_draft`. **Nunca `gmail__send_message` ni `gmail__send_draft`.** Links VN en el body: solo `https://vientonorte.io/servicios/` (+UTM, ancla opcional). Body **siempre** `## Retro deploy`. To/Inbox: canon. Workflow: `/workflow cierre-vn-hoy`. También append en `Sessions/YYYY-MM-DD.md`.
+7. **Mail de cierre.** El modelo local redacta la nota y `## Retro deploy` y para. Grok envía con `gmail__send_message` solo después de QA humano y del visto bueno de Rö en el chat. `to: [gaete.gaona@icloud.com, gaete.gaona@gmail.com]`. Sin ese visto bueno el workflow corre con el envío apagado. Con el visto bueno, un borrador no es cierre: si el envío falla, reintentar en el mismo turno. Body **siempre** `## Retro deploy`. Links VN en el body: solo `https://vientonorte.io/servicios/` (+UTM, ancla opcional). También append en `Sessions/YYYY-MM-DD.md`.
 8. **Si `$` live (`finanzas.vientonorte.io`) está stale vs plantilla Calendar:** P0 del cierre = `wrangler deploy --keep-vars` en el Worker finanzas. No es opcional frente a H2/favicon.
 9. Pegar en clipboard el link SSOT Design Ops (`obsidian://open?vault=Ro&file=Viento%20Norte%2FResources%2FPIPELINE%20Design%20Ops%20SSOT`). Si hubo ciclo DS hoy, apuntar `Sprints/DS-*.md` active.
 10. Si no corrió `vn-improve` hoy: decirlo. If $ stale, P0 remains wrangler deploy --keep-vars (step 8). No wrangler otherwise.
@@ -71,7 +71,8 @@ vn-cierre-hoy --open-session   # solo si el humano pidió abrir la app
 - Sobrescribir sin leer
 - **Abrir Session.app automáticamente** (bug reportado 2026-08-02)
 - **Email o resumen de cierre sin `## Retro deploy`**
-- **Enviar el mail de cierre directo** (Decider 27-sep: siempre borrador que Rö revisa)
+- **Enviar sin QA humano y sin el visto bueno de Rö**
+- **Dejar el mail en borradores después de ese visto bueno**
 
 ## En Session.app (humano, cuando quiera, 30 s)
 
