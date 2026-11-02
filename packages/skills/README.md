@@ -9,7 +9,7 @@ Catálogo público para **MCP**, **GET /api/skills** y KV `vn:skills`.
 
 ## Método Ro (DoD)
 
-Horas: M1 5.5 · VN 1.5 · Post 0.75 · Algonova 4º. No 80/10/10.  
+Horas: M1 0 PARK · VN 1.5 · Post 0.75 · Algonova 4º. No 80/10/10.  
 Cierre VN: draft mail branding **Viento Norte** + bloque `## Retro deploy`.
 
 ```ts
