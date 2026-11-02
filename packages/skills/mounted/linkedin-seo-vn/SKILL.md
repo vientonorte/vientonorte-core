@@ -22,7 +22,7 @@ Cubiertas: vault `Resources/SEM/news-covers/` (attach en LinkedIn).
 
 | | Semanal | Newsletter mensual |
 |--|---------|---------------------|
-| Dónde | Página empresa **Vientonorte** org `135136519` | Perfil `/in/rodrigo-gaete-ux/` |
+| Dónde | Página empresa **Vientonorte** (ver vault) | Perfil de Rö (ver vault) |
 | SSOT | vault `linkedin-weekly-queue.json` | FO `news-editions.json` + covers vault |
 | Reloj | Mié **08:15–09:00** CL · Post 0.75 | Primer mié del mes, mismo slot |
 | Apply | `vn-linkedin-weekly` | `vn-linkedin-news --clipboard --open-safari` |

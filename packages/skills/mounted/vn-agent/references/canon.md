@@ -123,10 +123,7 @@ Contrato, datos personales y tarifas: ver vault Obsidian (privado).
 SSOT: vault `00-sistema/CALENDAR-SESSION-UNIFICADO.md` · `00-sistema/METODO-RO-AGENT.md`.  
 **No 80/10/10 ni 80/20.** Decider **2026-08-28** (plantilla Calendar).
 
-L–V: **Algonova 4.0** (cupo 20 h/sem; +6 finde = 26) · **Post 0.75** · **VN citas 09–13** + **OPS 14:00–15:30** · **CIPER 15:30–16:15** · **M1 0 PARK**. Un stamp `✓ SESSION` en Personal.
-Audit horas: vault `00-sistema/CALENDAR-SESSION-UNIFICADO.md` **2026-08-28**.
-
-**Penji (Rö, 2026-10-06):** el turno es L–V **09:00–17:00** America/Santiago. Ese bloque es empleo Penji. No entra en el cupo Método Ro (M1, VN, Post, Algonova): Penji ya no ocupa el tiempo de Rö. Fuera de 09:00–17:00 no hay ticket, Figma ni cierre Penji.
+Horarios y empleos (Algonova, Penji, CIPER): ver vault `00-sistema/VN-DATOS-PRIVADOS-SKILLS.md`.
 
 Ledger $: `MICRO 1/07-pagos/dashboard/ledger.json` · live `https://finanzas.vientonorte.io/` (puede ir atrasado vs plantilla).
 
@@ -164,10 +161,7 @@ Benchmark Ilógica / Modyo / Multiplica, 17 oct 2026: `Viento Norte/Research/Ben
 SSOT: vault `00-sistema/CALENDAR-SESSION-UNIFICADO.md` · `00-sistema/METODO-RO-AGENT.md`.  
 **No 80/10/10 ni 80/20.** Decider **2026-08-28** (plantilla Calendar).
 
-L–V: **Algonova 4.0** (cupo 20 h/sem; +6 finde = 26) · **Post 0.75** · **VN citas 09–13** + **OPS 14:00–15:30** · **CIPER 15:30–16:15** · **M1 0 PARK**. Un stamp `✓ SESSION` en Personal.
-Audit horas: vault `00-sistema/CALENDAR-SESSION-UNIFICADO.md` **2026-08-28**.
-
-**Penji (Rö, 2026-10-06):** el turno es L–V **09:00–17:00** America/Santiago. Ese bloque es empleo Penji. No entra en el cupo Método Ro (M1, VN, Post, Algonova): Penji ya no ocupa el tiempo de Rö. Fuera de 09:00–17:00 no hay ticket, Figma ni cierre Penji.
+Horarios y empleos (Algonova, Penji, CIPER): ver vault `00-sistema/VN-DATOS-PRIVADOS-SKILLS.md`.
 
 Ledger $: `MICRO 1/07-pagos/dashboard/ledger.json` · live `https://finanzas.vientonorte.io/` (puede ir atrasado vs plantilla).
 

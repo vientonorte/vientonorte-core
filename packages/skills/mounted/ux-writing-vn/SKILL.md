@@ -32,7 +32,7 @@ If a note is missing, proceed with repo i18n (`src/lib/i18n/locales/es.ts` + `en
 | Headline | Diseño que **reduce el ruido.** / Design that **cuts the noise.** |
 | Positioning | Design Ops en productos regulados · fintech & mobility |
 | Sitio | `https://vientonorte.io/` · consultoría **`https://vientonorte.io/servicios/#consultoria-ux`** · orgánico `/servicios/*` · rutas `/s/` y `/#/` solo técnicas, no copy de producto |
-| LinkedIn (reclutadores, no landing B2B) | `https://www.linkedin.com/in/rodrigo-gaete-ux/` |
+| LinkedIn (reclutadores, no landing B2B) | ver vault `00-sistema/VN-DATOS-PRIVADOS-SKILLS.md` |
 | Email público | `contacto@vientonorte.io` |
 | Core brands | SURA Investments · Transvip · Karri |
 | Extended brands | Valuesite · Havas/Claro · Walmart · Maraña · Desafío Latam · Pareti · Freelance |
