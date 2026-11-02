@@ -193,14 +193,6 @@
       "public": true,
       "mcp": true,
       "local": "mounted/mail-session-result/SKILL.md"
-    },
-    {
-      "id": "micro1-pipeline",
-      "slash": "/micro1-pipeline",
-      "kind": "vn",
-      "public": true,
-      "mcp": true,
-      "local": "mounted/micro1-pipeline/SKILL.md"
     }
   ]
 }

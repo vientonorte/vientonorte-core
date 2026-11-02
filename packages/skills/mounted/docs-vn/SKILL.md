@@ -100,7 +100,7 @@ Keep this table accurate when documenting navigation:
 
 - Conventional commits: `feat(consultoria):`, `fix(nav):`, `docs:`
 - Body: motivation + user-visible result; no file laundry lists
-- No force-push `main` (protegido). Cambios: PR. Worker: `wrangler deploy --keep-vars`.
+- No force-push `main` (protegido). Cambios: PR. Worker: deploy solo humano.
 
 ## Anti-patterns
 

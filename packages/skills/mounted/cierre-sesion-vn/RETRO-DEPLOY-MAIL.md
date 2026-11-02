@@ -1,6 +1,6 @@
 # Regla de oro · Retro deploy en mails de cierre
 
-**Obligatorio** en todo email **enviado a Inbox** (`gaete.gaona@icloud.com` + `gaete.gaona@gmail.com`). Draft Gmail **no** cierra el día (Decider 22 ago). To: canon. Workflow: `~/.grok/workflows/cierre-vn-hoy.rhai`.
+**Obligatorio** en el mail de cierre. Por defecto es borrador (`gmail__create_draft` / DraftExternalMessage). Única excepción: envío solo a los 2 correos personales de Rö (ver vault), tras QA humano y visto bueno de Rö. To: canon. Workflow: `~/.grok/workflows/cierre-vn-hoy.rhai`.
 
 ## Plantilla (pegar en el body del mail)
 
@@ -24,7 +24,7 @@
 2. Nunca marcar como live una URL que falle smoke.
 3. El mismo bloque va en chat de cierre **y** en el mail (no solo en uno).
 4. Opcional: copiar a `Sessions/YYYY-MM-DD.md` bajo `## Retro deploy`.
-5. **Si `finanzas.vientonorte.io/ledger.json` (`updated` / plantilla / split) ≠ Calendar Método Ro o el ledger del repo:** no está shipped. **P0 deploy =** `wrangler deploy --keep-vars` en el Worker finanzas (cwd del worker, no Pages). No sustituir por smoke FO ni por “mañana H2”.
+5. **Si `finanzas.vientonorte.io/ledger.json` (`updated` / plantilla / split) ≠ Calendar Método Ro o el ledger del repo:** no está shipped. **P0 deploy =** Worker finanzas, solo humano, por orden del TL: `cd worker && npm ci && npx --no-install wrangler deploy --keep-vars` (no Pages). No sustituir por smoke FO ni por “mañana H2”.
 
 ## Skills
 

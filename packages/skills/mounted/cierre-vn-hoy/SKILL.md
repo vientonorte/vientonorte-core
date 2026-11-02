@@ -59,10 +59,10 @@ vn-cierre-hoy --open-session   # solo si el humano pidió abrir la app
 4. ATAJO-PASTE = puntero a paths + “ver Calendar vivo”, **no** lista FO re-sintetizada
 5. Reportar: qué había en Calendar (dato) vs qué se tocó (delta)
 6. **No** ejecutar `open -a Session` ni `vn-cierre-hoy --open-session` salvo pedido explícito
-7. **Mail de cierre.** El modelo local redacta la nota y `## Retro deploy` y para. Grok envía con `gmail__send_message` solo después de QA humano y del visto bueno de Rö en el chat. `to: [gaete.gaona@icloud.com, gaete.gaona@gmail.com]`. Sin ese visto bueno el workflow corre con el envío apagado. Con el visto bueno, un borrador no es cierre: si el envío falla, reintentar en el mismo turno. Body **siempre** `## Retro deploy`. Links VN en el body: solo `https://vientonorte.io/servicios/` (+UTM, ancla opcional). También append en `Sessions/YYYY-MM-DD.md`.
-8. **Si `$` live (`finanzas.vientonorte.io`) está stale vs plantilla Calendar:** P0 del cierre = `wrangler deploy --keep-vars` en el Worker finanzas. No es opcional frente a H2/favicon.
+7. **Mail de cierre.** El modelo local redacta la nota y `## Retro deploy` y para. Grok deja borrador (`gmail__create_draft` / DraftExternalMessage); nunca envío directo (ver `vn-agent`). Única excepción documentada: el Retro deploy se envía solo a los 2 correos personales de Rö (ver vault), después de QA humano y del visto bueno de Rö en el chat. Sin ese visto bueno, solo borrador. Body **siempre** `## Retro deploy`. Links VN en el body: solo `https://vientonorte.io/servicios/` (+UTM, ancla opcional). También append en `Sessions/YYYY-MM-DD.md`.
+8. **Si `$` live (`finanzas.vientonorte.io`) está stale vs plantilla Calendar:** P0 del cierre = deploy del Worker finanzas, solo humano, por orden del TL: `cd worker && npm ci && npx --no-install wrangler deploy --keep-vars`. El agente no despliega; lo deja como P0 para el humano.
 9. Pegar en clipboard el link SSOT Design Ops (`obsidian://open?vault=Ro&file=Viento%20Norte%2FResources%2FPIPELINE%20Design%20Ops%20SSOT`). Si hubo ciclo DS hoy, apuntar `Sprints/DS-*.md` active.
-10. Si no corrió `vn-improve` hoy: decirlo. If $ stale, P0 remains wrangler deploy --keep-vars (step 8). No wrangler otherwise.
+10. Si no corrió `vn-improve` hoy: decirlo. Si `$` stale, el P0 sigue siendo el deploy del paso 8 (solo humano por orden TL). El agente nunca corre wrangler.
 
 ### Prohibido
 

@@ -19,7 +19,7 @@ Leer esto antes de editar skills `*-vn` o el agente `vn-agent`. No duplicar tabl
 | QA única | `https://vientonorte.io/qa/` (`noindex`). Una página para las pruebas del `main` publicado. |
 | Local Vite | `http://localhost:3000/` (Vite `server.port` 3000; base `/`). `127.0.0.1:5173/mi-portafolio` obsoleto. Gate `npm run smoke:cierre` contra localhost:3000 antes de que Rö haga merge (check, no merge nuestro). |
 | Contacto | `contacto@vientonorte.io` |
-| Cierre mail | Borrador, nunca envío → `gaete.gaona@icloud.com` **y** `gaete.gaona@gmail.com`. Body `## Retro deploy`. Workflow `cierre-vn-hoy`. Rö envía. |
+| Cierre mail | Borrador, nunca envío → los 2 correos personales de Rö (ver vault). Body `## Retro deploy`. Workflow `cierre-vn-hoy`. Rö envía. |
 
 Nunca documentar clones fuera de iCloud salvo que Rö lo pida.
 
@@ -65,13 +65,9 @@ PRs / issues / CI / Dependabot: **GitHub MCP** (`github__*`), no `gh` CLI. `owne
 
 DS prod **sigue** `@vientonorte/*`. Elements no reemplaza tokens/UI VN.
 
-## Máquinas (2026-10-19)
+## Máquinas
 
-| Máquina | Entrada | Queda fuera |
-|---------|---------|-------------|
-| M5 | Tailscale del Mac, `tailscale ip -4`. El 2026-10-19 era `100.108.15.17`. sshd del sistema escucha ahí. | `en0` cuando no está en `192.168.100.0/24`. En la cafetería era `192.168.1.86`. |
-| W11 `user` | La torre abre `ssh -4 ro@<Tailscale del Mac>`. Peer `100.94.6.83`. | Puertos 22, 3389, 5985, 11434 y 4000 de la torre. El Mac no entra. |
-| iPhone | `@VientonorteRo_bot`. QA manual en `https://vientonorte.io/qa/`. Firma `vn-telegram-say m5` o `w11`. | Un segundo long-poll del mismo token. Hermes gateway. |
+IPs, peers, SSH y bots: ver vault `00-sistema/MAQUINAS-Y-MODELOS.md` (privado).
 
 El MCP local `vn` son los siete GET de `packages/skills/mcp/vn/server.mjs`. Prospecto no es tool. La cola `Sprints/prospecto-cola.csv` y la caja `/workspace/prospeccion-vn` no están en el Mac. La medida de la torre se escribe en `~/vn-w11-inbox/W11-prospecto-medida-2026-10-19.md`. Hasta ese archivo no hay tool nueva ni correo.
 
@@ -92,23 +88,51 @@ No saltar. Skills: `/gtm-vn` → `/google-ads-vn` → `/seo-vn`.
 
 SEO orgánico: crawler lee **HTTP** (`/servicios/*`, no hash, no `/s/` como producto). `/s/consultoria/` = página de redirección (200, noindex, meta refresh a `../../servicios/#consultoria-ux`, canonical `/servicios/`); nunca salida a clientes. Sitemap live 12 locs (14-sep · descubiertas ≠ indexadas; 4 «descubierta sin indexar»). Canonical = HTML `rel=canonical`, **no** dentro del XML. Vite: `/servicios/foo/` debe servir `public/servicios/foo/index.html`, no el shell SPA. **No** crear `https://vientonorte.io/consultoria/` estática. Curso SEO Austral no desbloquea Ads.
 
-**No mezclar silos:** FO (`mi-portafolio`, `/servicios`) ≠ Contra-Archivo (tesis). Bot CA: `antropologia-corrupcion/docs/GROK-BOT-CA.md`. Prosa Drive ≠ figs (v18 Drive / v20 `.docx` 11 MB). Pegar INDEX a GDoc **mata** láminas. Etnografía = método, no anexo. C1 sin voz.
+**No mezclar silos:** FO (`mi-portafolio`, `/servicios`) ≠ Contra-Archivo (tesis). Bot CA: ver vault (privado). Prosa Drive ≠ figs (v18 Drive / v20 `.docx` 11 MB). Pegar INDEX a GDoc **mata** láminas. Etnografía = método, no anexo. C1 sin voz.
 
 **Git FO:** `main` protegido → PR. iCloud git puede `mmap` fail → PRs desde clone `~/code/mi-portafolio-solid`. GitHub MCP `create_pull_request` a menudo **403** → `gh` CLI como `vientonorte`. `fix/qa-hash-ui` sucio: no mezclar SOLID/SEO ahí.
 
-## Micro1 (W11 / GWin)
+## Micro1
 
-- Portal Realm: `https://realm.micro1.ai/`
-- **`claims_open = 0` · PARK 27 ago** (Decider M5). Sin captura / sin F7 hasta nuevo aviso.
-- MTD **59 · $90.86** (`__ssot` 19 ago · worker v21 git-proxy). Skill `/micro1-pipeline`. STATE: `MICRO 1/03-software/pipeline/STATE.md`.
+Archivado (obsoleto). Detalles: ver vault Obsidian (privado).
 
 ## Algonova
 
-- **P0 ingreso:** bienvenida 28 ago (pegada; **no** en Gmail Personal). Contrato **Deel** + cédula (humano). Coordinador: **Mario Villaseñor**. Telegram + reunión mensual obligatoria.
-- **Carga mín. contrato: 15 h/sem.** $4 ind. / $6 grupal. Pago mensual días 5–10. Franjas ops: L–V **15:00–19:00 CDMX** (= 17:00–21:00 CL ago; 18:00–22:00 post-DST) + **finde mañana**.
-- **Calendar 28 ago:** L–V 17:00–21:00 CL (15–19 CDMX) = 20 h · S–D 10:00–13:00 = +6 · cupo **26 h**. Piso 15 h = **$60/sem**. Cupo L–V = **$80/sem** ($16/día). Cupo 26 = **$104/sem**. 40 h SUPERSEDED. Arranque **lun 31**. Vie 28 EXDATE. Dom 30 EXDATE.
-- **Onboarding:** M1 avisado 21 ago (no reenviar). Safari `https://learn.alg.academy/`. Lesson 29616 pendiente login. $0 hasta clases + Deel.
-- One-shot Camila/vida → **saltar**. Comms: vault `Resources/ALGONOVA-COMUNICACION.md`.
+Contrato, datos personales y tarifas: ver vault Obsidian (privado).
+
+## Skills hijas (13)
+
+| # | Skill | Para qué |
+|---|-------|----------|
+| 1 | `docs-vn` | Changelog, arquitectura, canon nav |
+| 2 | `seo-vn` | SEO / onboarding local-first |
+| 3 | `google-ads-vn` | SEM / message match · final `https://vientonorte.io/servicios/` (+UTM) |
+| 4 | `gtm-vn` | Tag Assistant, Preview, tags `generate_lead`/`book_call` |
+| 5 | `ux-writing-vn` | Copy marca |
+| 6 | `lead-a11y-vn` | Pipeline Radar gratis (Gmail/Drive/Calendar) |
+| 7 | `kpi-vn` | Stamp proceso/valor |
+| 8 | `design-sprint-vn` | Marco DS |
+| 9 | `cierre-sesion-vn` | Cierre de sesión |
+| 10 | `cierre-vn-hoy` | Cierre del día → Session |
+| 11 | `m5-vn` | Atajos locales /ops |
+| 12 | `vn-bdp` | Botones de pago · Fintoc / X\|CMS cobro |
+| 13 | `linkedin-seo-vn` | Orgánico LinkedIn: weekly company + news perfil (no pauta; no `/s/`) |
+
+## Horas (Método Ro)
+
+SSOT: vault `00-sistema/CALENDAR-SESSION-UNIFICADO.md` · `00-sistema/METODO-RO-AGENT.md`.  
+**No 80/10/10 ni 80/20.** Decider **2026-08-28** (plantilla Calendar).
+
+L–V: **Algonova 4.0** (cupo 20 h/sem; +6 finde = 26) · **Post 0.75** · **VN citas 09–13** + **OPS 14:00–15:30** · **CIPER 15:30–16:15** · **M1 0 PARK**. Un stamp `✓ SESSION` en Personal.
+Audit horas: vault `00-sistema/CALENDAR-SESSION-UNIFICADO.md` **2026-08-28**.
+
+**Penji (Rö, 2026-10-06):** el turno es L–V **09:00–17:00** America/Santiago. Ese bloque es empleo Penji. No entra en el cupo Método Ro (M1, VN, Post, Algonova): Penji ya no ocupa el tiempo de Rö. Fuera de 09:00–17:00 no hay ticket, Figma ni cierre Penji.
+
+Ledger $: `MICRO 1/07-pagos/dashboard/ledger.json` · live `https://finanzas.vientonorte.io/` (puede ir atrasado vs plantilla).
+
+## Decider
+
+Rö. Ship prod y spend: solo con ok explícito.
 
 Design Ops unificado: workflow `~/.grok/workflows/vn-design-ops.rhai` (Design Thinking = DS). `/design-sprint-vn` es el marco; el workflow orquesta LLM. MCP chrome/elements **pueden no existir en hijos** — evidencia = curl + FO.
 

@@ -14,7 +14,7 @@ Padre: `/vn-agent`. Paths/live: `~/.grok/skills/vn-agent/references/canon.md`. C
 
 **Horas:** Método Ro (canon) — M1 0 PARK · VN 1.5 · Post 0.75 · Algonova 4º. Cerrar sesión no mueve captura M1 ni Algonova.
 
-**DoD mail:** el modelo local redacta. Grok envía con `gmail__send_message` después de QA humano y del visto bueno de Rö. `to: [gaete.gaona@icloud.com, gaete.gaona@gmail.com]`, voz **Viento Norte** y bloque `## Retro deploy`. Sin visto bueno no hay correo. Con visto bueno, un borrador no cierra. Cierre canónico: `/cierre-vn-hoy`.
+**DoD mail:** el modelo local redacta. Grok deja borrador (`gmail__create_draft` / DraftExternalMessage). Única excepción documentada: el Retro deploy se envía solo a los 2 correos personales de Rö (ver vault), después de QA humano y del visto bueno de Rö. Voz **Viento Norte** y bloque `## Retro deploy`. Sin visto bueno no hay correo. Con visto bueno, un borrador no cierra. Cierre canónico: `/cierre-vn-hoy`.
 
 ## Comando único (humano o agente)
 
@@ -78,14 +78,14 @@ Si hay cambios en `ops/canvas-state.json` del hub:
 cd "$GH_ROOT/vientonorte.github.io"   # o ~/code/…
 git add ops/canvas-state.json
 git commit -m "ops: last_close session stamp"
-git push origin main
+# abre PR; push/merge solo con OK de Rö
 ```
 
-(Confirmar push solo si el usuario no está en modo yolo restrictivo; default: push ops stamp OK.)
+(Nunca `push` directo a `main`. Abre PR; push/merge solo con OK de Rö.)
 
 ## Regla de oro · mail de cierre
 
-El modelo local no envía. Grok envía (`gmail__send_message`) después de QA humano y del visto bueno de Rö. Sin visto bueno no hay correo. Con visto bueno no se deja en borradores. El body lleva **`## Retro deploy`**.
+El modelo local no envía. Grok deja borrador (`gmail__create_draft` / DraftExternalMessage). Única excepción: el Retro deploy se envía solo a los 2 correos personales de Rö (ver vault), después de QA humano y del visto bueno de Rö. Sin visto bueno no hay envío. A cualquier otro destinatario: solo borrador. El body lleva **`## Retro deploy`**.
 
 Aplica también si el humano dice: “manda mail”, “email resumen”, “al finalizar email”, “cierre por mail”.
 
@@ -100,7 +100,7 @@ Plantilla mínima del bloque (copiar en el body del mail):
 | **DoD pedido vs real** | ✓ / parcial / ✗ (URL pedida vs lo que quedó live) |
 | **Smoke** | MTD · split · header o “NO DATO” |
 | **Bloqueos** | Pages outage · DNS grey · secret faltante · ninguno |
-| **P0 mañana (deploy)** | 1 acción max. Si `$` live stale vs plantilla Calendar → `wrangler deploy --keep-vars` (Worker finanzas) |
+| **P0 mañana (deploy)** | 1 acción max. Si `$` live stale vs plantilla Calendar → deploy Worker finanzas — solo humano, por orden del TL: `cd worker && npm ci && npx --no-install wrangler deploy --keep-vars` |
 | **Tokens locales vs cloud** | salida de `vn-tokens-saved --since today` (Ahorrado). Si no corrió: **NO DATO** |
 | **No usar** | URLs deprecadas (apex stale, jsDelivr @commit, …) |
 ```
@@ -178,7 +178,7 @@ PDF_OUT = ~/Library/Mobile Documents/com~apple~CloudDocs/Documents/Viento Norte/
 - Confundir este skill con deploy (deploy ya ocurre al push main)
 - **Enviar** el mail sin QA humano y sin el visto bueno de Rö, o enviarlo **sin `## Retro deploy`**
 - Listar como “live” una URL que el smoke diga stale ($4.62 / split viejo / `updated` 13 ago vs plantilla 18 ago)
-- Cerrar con `$` desfasado sin dejar **P0 = `wrangler deploy --keep-vars`** (Worker finanzas)
+- Cerrar con `$` desfasado sin dejar **P0 = deploy Worker finanzas** (solo humano, por orden del TL: `cd worker && npm ci && npx --no-install wrangler deploy --keep-vars`)
 
 ## Slash
 
