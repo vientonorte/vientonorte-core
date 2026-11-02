@@ -29,7 +29,7 @@ vn-m5 list
 vn-m5 <atajo>
 ```
 
-Script: `/Users/ro/bin/vn-m5`
+Script: `~/bin/vn-m5`
 
 ## Mapa de atajos
 
@@ -46,7 +46,7 @@ Script: `/Users/ro/bin/vn-m5`
 | `ops` | open `https://vientonorte.io/ops/` |
 | `log` | path `Sessions/YYYY-MM-DD.md` si existe |
 | `status` | git HEADs + loop/vite/ollama + stamp log |
-| `watch` / `ab` | `vn-watch-ab` · tarifa Algonova live (ver vault) + Calendar M1 · 0 LLM |
+| `watch` / `ab` | `vn-watch-ab` · tarifa del empleo principal live (ver vault) + Calendar M1 · 0 LLM |
 | `cromatico` | `vn-cromatico` · Clave A/B + table-ro proxy |
 | `board` | mapa C-suite token-out |
 | `roles` | `vn-watch-ab roles` · Ollama local (`qwen2.5:1.5b`) |
@@ -67,9 +67,9 @@ Script: `/Users/ro/bin/vn-m5`
 Crear atajos que ejecuten shell:
 
 ```bash
-/Users/ro/bin/vn-m5 status
-/Users/ro/bin/vn-m5 close
-/Users/ro/bin/vn-m5 smoke
+~/bin/vn-m5 status
+~/bin/vn-m5 close
+~/bin/vn-m5 smoke
 ```
 
 Nombres sugeridos: `VN M5 Status`, `VN M5 Cierre`, `VN M5 Smoke`.
@@ -89,7 +89,7 @@ Session.app automation (`session_end`) → preferir `vn-session-stamp`, no el me
 
 - **Obsidian canónico:** `iCloud~md~obsidian/Documents/Ro/Viento Norte`.  
   No escribir Sessions en vaults paralelos (`CloudDocs/Documents/Obsidian Vault`).
-- **Horas:** Método Ro (canon) — M1 0 PARK · VN 1.5 · Post 0.75 · Algonova 4º. Ledger `MICRO 1/07-pagos/dashboard/ledger.json` · live puede ir atrasado vs plantilla.
+- **Horas:** Método Ro (canon) — M1 0 PARK · VN 1.5 · Post 0.75 · empleo principal 4º (ver vault). Ledger `MICRO 1/07-pagos/dashboard/ledger.json` · live puede ir atrasado vs plantilla.
 - **QA única:** `https://vientonorte.io/qa/` es la página de pruebas del `main` publicado. El canvas del sprint es `https://vientonorte.io/ops/`.
 - **ĀRŪḾA:** checklist `ops/ARUMA-CHECKLIST.md` · bloqueado en cuenta Google humana.
 

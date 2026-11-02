@@ -11,7 +11,7 @@ description: >
 
 Padre: `/vn-agent`. Paths: `~/.grok/skills/vn-agent/references/canon.md`. Tras trabajo de cualquier hija VN (no chitchat), stamp.
 
-**Horas:** Método Ro (canon) — M1 0 PARK · VN 1.5 · Post 0.75 · Algonova 4º. Este stamp mide proceso; no reasigna Calendar.
+**Horas:** Método Ro (canon) — M1 0 PARK · VN 1.5 · Post 0.75 · empleo principal 4º (ver vault). Este stamp mide proceso; no reasigna Calendar.
 
 ## Regla dura
 
@@ -28,7 +28,7 @@ vn-kpi-stamp \
   --roadmap "<DS|FO día|PASOS-A-PRODUCCION|NO_DATO>"
 ```
 
-Script: `/Users/ro/bin/vn-kpi-stamp`  
+Script: `~/bin/vn-kpi-stamp`  
 Definiciones: `Resources/KPI proceso aprendizaje valor.md`
 
 ## DATA DRIVEN

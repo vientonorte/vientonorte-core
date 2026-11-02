@@ -14,4 +14,4 @@ vn-m5 ops
 vn-m5 log
 ```
 
-Raycast: Script Command → `/Users/ro/bin/vn-m5 status`
+Raycast: Script Command → `~/bin/vn-m5 status`

@@ -43,7 +43,7 @@ No van en el hero ni en mensajes las rutas internas `/#/`. CTA weekly usa `/serv
 
 Paid: **PAUSED**. Covers: vault `news-covers` OK (Figma News exports).
 
-No pisa citas 09–13 ni Algonova 17–21.
+No pisa los bloques fijos de citas ni del empleo principal (horarios: ver vault).
 
 ## Automatización (0 tokens al aplicar)
 

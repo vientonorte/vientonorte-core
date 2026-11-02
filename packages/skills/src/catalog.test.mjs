@@ -15,7 +15,7 @@ test("lists public MCP skills", () => {
 
 test("Método Ro hours are Calendar 18 ago", () => {
   assert.deepEqual(catalog.metodo_ro.hours, {
-    m1: 5.5,
+    m1: 0,
     vn: 1.5,
     post: 0.75,
     algonova: 3.5,
@@ -41,7 +41,7 @@ test("on-demand ids stay out of the public catalog", () => {
   const extra = JSON.parse(readFileSync(new URL("./on-demand.json", import.meta.url), "utf8"));
   const publicIds = new Set(catalog.skills.map((s) => s.id));
   assert.equal(extra.public, false);
-  assert.ok(extra.skills.length >= 20);
+  assert.ok(extra.skills.length >= 17);
   for (const skill of extra.skills) {
     assert.equal(skill.public, false);
     assert.equal(publicIds.has(skill.id), false);

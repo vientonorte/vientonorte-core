@@ -12,7 +12,7 @@ description: >
 
 Padre: `/vn-agent`. Paths/live: `~/.grok/skills/vn-agent/references/canon.md`. Continuum día+Session: `/cierre-vn-hoy`.
 
-**Horas:** Método Ro (canon) — M1 0 PARK · VN 1.5 · Post 0.75 · Algonova 4º. Cerrar sesión no mueve captura M1 ni Algonova.
+**Horas:** Método Ro (canon) — M1 0 PARK · VN 1.5 · Post 0.75 · empleo principal 4º (ver vault). Cerrar sesión no mueve captura M1 ni el empleo principal.
 
 **DoD mail:** el modelo local redacta. Grok deja borrador (`gmail__create_draft` / DraftExternalMessage). Única excepción documentada: el Retro deploy se envía solo a los 2 correos personales de Rö (ver vault), después de QA humano y del visto bueno de Rö. Voz **Viento Norte** y bloque `## Retro deploy`. Sin visto bueno no hay correo. Con visto bueno, un borrador no cierra. Cierre canónico: `/cierre-vn-hoy`.
 
@@ -24,7 +24,7 @@ vn-cierre-sesion
 vn-cierre-sesion --title "Packages core + CI verde"
 ```
 
-Script: `/Users/ro/bin/vn-cierre-sesion`
+Script: `~/bin/vn-cierre-sesion`
 
 ## Qué hace (automático)
 
@@ -62,7 +62,7 @@ Calendar:
 - **Nunca** recrear bloques FO 28–31 si ya están en Calendar.
 
 Payload local: `~/Library/Caches/viento-norte/session-close-calendar-*.json`  
-Script: `/Users/ro/bin/vn-sync-session-close`
+Script: `~/bin/vn-sync-session-close`
 
 **Enriquecer** la nota solo con dato que falte (1 pass, sin inventar):
 
@@ -172,7 +172,7 @@ PDF_OUT = ~/Library/Mobile Documents/com~apple~CloudDocs/Documents/Viento Norte/
 
 ## Anti-patterns
 
-- Cerrar sesión documentando desde `/Users/ro/code` sin mirar iCloud GitHub
+- Cerrar sesión documentando desde `~/code` sin mirar iCloud GitHub
 - Inventar ship no mergeado
 - Omitir nota Obsidian
 - Confundir este skill con deploy (deploy ya ocurre al push main)

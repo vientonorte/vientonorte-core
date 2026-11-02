@@ -31,7 +31,7 @@ description: >
 | `nvidia-elements-down` | 45 | P2 | `nve mcp` / `grok mcp doctor nvidia-elements` |
 | `ops-skills-hours` | 40 | P2 | hard refresh (docs en main) |
 
-Stale `$` = `updated` < `args.calendar` (default `2026-08-27`) **o** hours ≠ 0 / 1.5 / 0.75 **o** `split_policy` ≠ `algo40_lv_m1_park` **o** tarifa Algonova ≠ la del vault (ver vault; sin cifras aquí). Hub PR #91 merged; git-proxy lee `main`. Workflow never auto-runs wrangler. If $ stale, surface P0 deploy (solo humano, por orden del TL: `cd worker && npm ci && npx --no-install wrangler deploy --keep-vars`); the agent never merges or deploys.
+Stale `$` = `updated` < `args.calendar` (default `2026-08-27`) **o** hours ≠ 0 / 1.5 / 0.75 **o** `split_policy` ≠ `algo40_lv_m1_park` **o** tarifa del empleo principal ≠ la del vault (ver vault; sin cifras aquí). Hub PR #91 merged; git-proxy lee `main`. Workflow never auto-runs wrangler. If $ stale, surface P0 deploy (solo humano, por orden del TL: `cd worker && npm ci && npx --no-install wrangler deploy --keep-vars`); the agent never merges or deploys.
 
 Loop token-out (0 LLM, sí dejar corriendo): `vn-watch-ab` / `vn-m5 watch`. Search ENABLED no.
 
@@ -43,6 +43,6 @@ Padre loop: `/vn-agent`. Después de un Test de `vn-design-ops`, correr esto ant
 
 Método Ro (canon). Este run es tramo **VN 1.5h**. No gastar Ads. M1 está en 0, PARK.
 
-Si el pedido es un upload Penji y dice "aplica dodo y metodo ro para upload", "homologa con metodo ro y aplica dodo para upload", o "/vn-improve aplica metodo ro para todo", aplicá Método Ro a ese upload (ticket → pieza → ZIP DoD). No uses este canon de horas para miniaturas de YouTube.
+Si el pedido es un upload de cliente de diseño (ex-empleador, ver vault) y dice "aplica dodo y metodo ro para upload", "homologa con metodo ro y aplica dodo para upload", o "/vn-improve aplica metodo ro para todo", aplicá Método Ro a ese upload (ticket → pieza → ZIP DoD). No uses este canon de horas para miniaturas de YouTube.
 
 Padre: `/vn-agent`.

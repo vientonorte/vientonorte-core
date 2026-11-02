@@ -40,13 +40,6 @@
       "use": "Mismo cuerpo que check-safety, ya montado."
     },
     {
-      "id": "cierre-penji",
-      "slash": "/cierre-penji",
-      "public": false,
-      "body": "machine",
-      "use": "Cierre Penji. El cuerpo queda en la máquina."
-    },
-    {
       "id": "desk-dualboot",
       "slash": "/desk-dualboot",
       "public": false,
@@ -94,20 +87,6 @@
       "public": false,
       "body": "machine",
       "use": "Modelo local antes de nube. La política no se copia aquí."
-    },
-    {
-      "id": "penji",
-      "slash": "/penji",
-      "public": false,
-      "body": "machine",
-      "use": "Piezas Penji. El cuerpo queda en la máquina."
-    },
-    {
-      "id": "penji-youtube-thumb",
-      "slash": "/penji-youtube-thumb",
-      "public": false,
-      "body": "machine",
-      "use": "Miniaturas. El cuerpo queda en la máquina."
     },
     {
       "id": "poema-revision",

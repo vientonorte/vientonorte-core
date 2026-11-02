@@ -72,7 +72,7 @@ SSOT pipeline: vault `Resources/PIPELINE Design Ops SSOT.md`
 | NVIDIA Elements, `nve-*`, tokens Elements, playground | MCP `nvidia-elements` (`nve mcp`) · **no** sustituye `@vientonorte/*` |
 | CUDA, GPU, docs NVIDIA, NIM | MCP `nvidia-cuda-docs` (OAuth OK · **PARK** más trabajo) |
 | Micro1, Strike, claims, captura | Break hasta Strike 3. Micro1 archivado; skill fuera del paquete. Este router no lo abre. |
-| Algonova, tutorías, onboarding | Calendar · plataforma `learn.alg.academy` (creds: ver vault; no guardar clave en skills) |
+| Empleo principal (tutorías, onboarding) | Calendar · plataforma y creds: ver vault (no guardar en skills) |
 | SEO Austral 1:1 / form diagnóstico | vault `Resources/SEM/2026-08-26 BENCHMARK SEO Austral Diagnostico 1a1.md` · no copiar gate 1–6 M a FO |
 | mejorar live, `$` stale, `/vn-improve` | workflow `vn-improve` (score en script, no wrangler) |
 | todo el stack / “qué hacemos” | este agente: estado + 1 siguiente paso |
@@ -105,7 +105,7 @@ Esa llamada clasifica una lista ya medida (ramas, PRs, paths, checks), propone e
 
 ### Noche
 
-El loop ya hace el trabajo nocturno. LaunchAgent `io.vientonorte.hermes-loop`, script `/Users/ro/bin/vn-hermes-loop.sh`, a las 22:35, 00:15, 02:15 y 04:15 America/Santiago. Lee git y el listado de `gh` y escribe la nota en `90-daily/hermes-loop/`. A las 22:00, `vn-night-local.sh` usa solo `qwen2.5:1.5b`.
+El loop ya hace el trabajo nocturno. LaunchAgent `io.vientonorte.hermes-loop`, script `~/bin/vn-hermes-loop.sh`, a las 22:35, 00:15, 02:15 y 04:15 America/Santiago. Lee git y el listado de `gh` y escribe la nota en `90-daily/hermes-loop/`. A las 22:00, `vn-night-local.sh` usa solo `qwen2.5:1.5b`.
 
 Al día siguiente, el modo sprint lee esa nota como entrada medida. Una viñeta cuya rama, PR o path no está en los `inputs` de la nota se descarta.
 
@@ -124,8 +124,8 @@ Al día siguiente, el modo sprint lee esa nota como entrada medida. Una viñeta 
 - Design Ops: `/workflow vn-design-ops` (Empathize→Test = DS). MCP = evidencia. Decider en Decide. `apply=true` para Prototype.
 - NVIDIA: Elements = referencia / playground. DS **prod** = `@vientonorte/*`. CUDA OAuth OK · PARK más trabajo. Cloudflare: MCP `cloudflare` y `cloudflare-docs` si esa máquina ya hizo el handshake. Detalle en canon.
 - Micro1 está en break hasta que reactiven Strike 3. Micro1 archivado; skill fuera del paquete. Este router no lo abre.
-- Penji ya no es empleador (Rö, 2026-10-19). Este router no abre esas skills.
-- Algonova: continue on learn.alg.academy until Rö says done. M1 20 ago is historical. 40 h = escenario, no plantilla. No auto-mail a la coordinación Algonova (contacto: ver vault).
+- Ex-empleador de diseño (ver vault): ya no es empleador (2026-10-19). Este router no abre esas skills.
+- Empleo principal (ver vault): continuar hasta que Rö diga lo contrario. M1 20 ago es histórico. 40 h = escenario, no plantilla. No auto-mail a la coordinación (contacto: ver vault).
 
 ## Tokens xAI = 0 (M5 · Ollama)
 

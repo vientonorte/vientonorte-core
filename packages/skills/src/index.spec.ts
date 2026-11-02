@@ -9,7 +9,7 @@ describe('@vientonorte/skills', () => {
   });
 
   it('Método Ro hours are Calendar 18 ago', () => {
-    expect(metodoRo().hours).toEqual({ m1: 5.5, vn: 1.5, post: 0.75, algonova: 3.5 });
+    expect(metodoRo().hours).toEqual({ m1: 0, vn: 1.5, post: 0.75, algonova: 3.5 });
     expect(metodoRo().no).toContain('80/10/10');
   });
 
