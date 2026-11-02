@@ -150,8 +150,6 @@ importers:
 
   packages/skills: {}
 
-  packages/skills: {}
-
   packages/tokens: {}
 
   packages/ui:
