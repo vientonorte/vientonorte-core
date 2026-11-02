@@ -17,6 +17,8 @@ describe('@vientonorte/skills', () => {
     const d = cierreDod();
     expect(d.mail.required_block).toBe('## Retro deploy');
     expect(d.mail.contact).toBe('contacto@vientonorte.io');
+    expect(cierreDod({}).mail.to).toEqual([]);
+    expect(cierreDod({ VN_CIERRE_MAIL_TO: 'a@x.test, b@x.test' }).mail.to).toEqual(['a@x.test', 'b@x.test']);
   });
 
   it('resolves on-demand skills without listing them', () => {

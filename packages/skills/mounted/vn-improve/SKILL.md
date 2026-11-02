@@ -26,7 +26,7 @@ description: >
 | `finanzas-stale` | 100 | P0 | Worker finanzas — solo humano, por orden del TL: `cd worker && npm ci && npx --no-install wrangler deploy --keep-vars` |
 | `finanzas-unreachable` | 90 | P0 | re-curl; no wrangler |
 | `api-health` | 80 | P0 | check contact worker |
-| `mcp-skills-missing` | 70 | P1 | merge FO#202 + wrangler contact |
+| `mcp-skills-missing` | 70 | P1 | merge FO#202 + deploy Worker contact — solo con OK de Rö + orden TL (humano) |
 | `nvidia-cuda-oauth` | 50 | P2 | si doctor falla: re-OAuth NVIDIA (`mcp_credentials.json`) |
 | `nvidia-elements-down` | 45 | P2 | `nve mcp` / `grok mcp doctor nvidia-elements` |
 | `ops-skills-hours` | 40 | P2 | hard refresh (docs en main) |

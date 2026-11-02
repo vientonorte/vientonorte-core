@@ -94,11 +94,13 @@ export function metodoRo() {
 }
 
 /** DoD Método Ro · cierre incluye mail resumen con branding VN. */
-export function cierreDod() {
+/** Destinatario del mail de cierre: env VN_CIERRE_MAIL_TO (coma-separado); nunca en el repo. */
+export function cierreDod(env: Record<string, string | undefined> = (globalThis as any).process?.env ?? {}) {
+  const to = (env.VN_CIERRE_MAIL_TO ?? '').split(',').map((s) => s.trim()).filter(Boolean);
   return {
     hours: catalog.metodo_ro.hours,
     mail: {
-      to: ['gaete.gaona@icloud.com'],
+      to,
       voice: 'Viento Norte',
       contact: catalog.metodo_ro.contact,
       required_block: '## Retro deploy',

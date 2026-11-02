@@ -31,6 +31,6 @@ Tras el verdict, un agente **solo mide** ledger/MCP/health. El script puntúa:
 | `finanzas-stale` | 100 | Solo humano, por orden del TL: `cd worker && npm ci && npx --no-install wrangler deploy --keep-vars` |
 | `finanzas-unreachable` | 90 | re-curl; no wrangler |
 | `api-health` | 80 | check contact worker |
-| `mcp-skills-missing` | 70 | merge FO#202 + wrangler contact |
+| `mcp-skills-missing` | 70 | merge FO#202 + deploy Worker contact — solo con OK de Rö + orden TL (humano) |
 
 `args.improve=false` salta la fase. Nunca wrangler desde el workflow. Human Test path sigue abierto.
