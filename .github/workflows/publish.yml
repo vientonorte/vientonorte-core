@@ -12,35 +12,51 @@ name: Publish (GitHub Packages)
 
 on:
   workflow_dispatch:
+    inputs:
+      package:
+        description: 'Paquete a publicar (ej. @vientonorte/skills). Vacío = todos (pnpm -r).'
+        type: string
+        required: false
+        default: ''
+      tag:
+        description: 'dist-tag npm. latest exige versión estable; otro tag exige prerelease (-algo).'
+        type: string
+        required: false
+        default: 'latest'
 
 permissions:
   contents: read
   packages: write
+
+concurrency:
+  group: publish
+  cancel-in-progress: false
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   publish:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
 
-      - uses: pnpm/action-setup@v4
+      - uses: pnpm/action-setup@b906affcce14559ad1aafd4ab0e942779e9f58b1 # v4.3.0
         with:
           version: 10
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
           node-version-file: .nvmrc
           cache: pnpm
           registry-url: 'https://npm.pkg.github.com'
           scope: '@vientonorte'
 
+      # Sin token: no hay dependencias privadas @vientonorte fuera del workspace,
+      # así los scripts de install no ven credenciales de publicación.
       - name: Instalar dependencias
         run: pnpm install --frozen-lockfile
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.VN_PACKAGES_TOKEN || secrets.GITHUB_TOKEN }}
 
       - name: Verificar (typecheck + build + test)
         run: |
@@ -48,7 +64,53 @@ jobs:
           pnpm -r build
           pnpm -r test
 
-      - name: Publicar paquetes con versión nueva
-        run: pnpm -r publish --no-git-checks
+      - name: Validar inputs y versiones
         env:
+          PKG: ${{ inputs.package }}
+          TAG: ${{ inputs.tag || 'latest' }}
+        run: |
+          set -euo pipefail
+          if ! [[ "$TAG" =~ ^[a-z][a-z0-9-]{0,31}$ ]]; then
+            echo "::error::tag inválido: '$TAG' (esperado ^[a-z][a-z0-9-]{0,31}$)"; exit 1
+          fi
+          if [ -n "$PKG" ]; then
+            if ! [[ "$PKG" =~ ^@vientonorte/[a-z0-9-]+$ ]]; then
+              echo "::error::package inválido: '$PKG' (esperado ^@vientonorte/[a-z0-9-]+$)"; exit 1
+            fi
+            list=$(pnpm --filter "$PKG" exec node -p "const p=require('./package.json'); p.private ? '' : p.name+'@'+p.version")
+          else
+            list=$(pnpm -r exec node -p "const p=require('./package.json'); p.private ? '' : p.name+'@'+p.version")
+          fi
+          list=$(printf '%s\n' "$list" | grep -E '^@' || true)
+          if [ -z "$list" ]; then
+            echo "::error::el filtro no seleccionó paquetes publicables (package='$PKG')"; exit 1
+          fi
+          bad=0
+          while IFS= read -r line; do
+            v="${line##*@}"
+            if [ "$TAG" = "latest" ]; then
+              case "$v" in
+                *-*) echo "::error::tag latest no admite prerelease: $line"; bad=1 ;;
+                *) echo "ok: $line" ;;
+              esac
+            else
+              case "$v" in
+                *-*) echo "ok: $line" ;;
+                *) echo "::error::tag '$TAG' requiere versión prerelease (-algo): $line"; bad=1 ;;
+              esac
+            fi
+          done <<< "$list"
+          exit $bad
+
+      - name: Publicar paquetes con versión nueva
+        env:
+          PKG: ${{ inputs.package }}
+          TAG: ${{ inputs.tag || 'latest' }}
           NODE_AUTH_TOKEN: ${{ secrets.VN_PACKAGES_TOKEN || secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          if [ -n "$PKG" ]; then
+            pnpm --filter "$PKG" publish --no-git-checks --tag "$TAG"
+          else
+            pnpm -r publish --no-git-checks --tag "$TAG"
+          fi
