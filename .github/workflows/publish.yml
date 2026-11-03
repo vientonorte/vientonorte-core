@@ -12,6 +12,17 @@ name: Publish (GitHub Packages)
 
 on:
   workflow_dispatch:
+    inputs:
+      package:
+        description: 'Paquete a publicar (ej. @vientonorte/skills). Vacío = todos (pnpm -r).'
+        type: string
+        required: false
+        default: ''
+      tag:
+        description: 'dist-tag npm. Distinto de latest exige versión prerelease (-algo).'
+        type: string
+        required: false
+        default: 'latest'
 
 permissions:
   contents: read
@@ -48,7 +59,31 @@ jobs:
           pnpm -r build
           pnpm -r test
 
-      - name: Publicar paquetes con versión nueva
-        run: pnpm -r publish --no-git-checks
+      - name: Validar prerelease si tag != latest
+        if: ${{ inputs.tag != '' && inputs.tag != 'latest' }}
         env:
+          PKG: ${{ inputs.package }}
+          TAG: ${{ inputs.tag }}
+        run: |
+          if [ -n "$PKG" ]; then SEL="--filter $PKG"; else SEL="-r"; fi
+          bad=0
+          for line in $(pnpm $SEL exec node -p "const p=require('./package.json'); p.private ? '' : p.name+'@'+p.version"); do
+            v="${line##*@}"
+            case "$v" in
+              *-*) echo "ok: $line" ;;
+              *) echo "::error::tag '$TAG' requiere versión prerelease (-algo); $line no la tiene"; bad=1 ;;
+            esac
+          done
+          exit $bad
+
+      - name: Publicar paquetes con versión nueva
+        env:
+          PKG: ${{ inputs.package }}
+          TAG: ${{ inputs.tag || 'latest' }}
           NODE_AUTH_TOKEN: ${{ secrets.VN_PACKAGES_TOKEN || secrets.GITHUB_TOKEN }}
+        run: |
+          if [ -n "$PKG" ]; then
+            pnpm --filter "$PKG" publish --no-git-checks --tag "$TAG"
+          else
+            pnpm -r publish --no-git-checks --tag "$TAG"
+          fi
