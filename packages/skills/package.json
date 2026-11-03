@@ -1,6 +1,6 @@
 {
   "name": "@vientonorte/skills",
-  "version": "0.1.1",
+  "version": "0.1.1-pr16.1",
   "description": "Catálogo público de skills VN para MCP, Worker KV y agentes",
   "license": "MIT",
   "type": "module",
