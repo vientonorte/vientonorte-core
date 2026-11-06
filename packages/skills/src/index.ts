@@ -1,6 +1,6 @@
-import catalogJson from './catalog.json';
-import connectorsJson from './connectors.json';
-import onDemandJson from './on-demand.json';
+import catalogJson from './catalog.json' with { type: 'json' };
+import connectorsJson from './connectors.json' with { type: 'json' };
+import onDemandJson from './on-demand.json' with { type: 'json' };
 
 export type SkillEntry = {
   id: string;
@@ -50,6 +50,7 @@ export type Connector = {
   args?: string[];
 };
 
+/** `version` tracks this package's package.json version. */
 export const catalog = catalogJson as SkillsCatalog;
 
 export function listSkills(filter?: { kind?: string; mcp?: boolean }): SkillEntry[] {

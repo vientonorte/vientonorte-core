@@ -37,11 +37,29 @@ test("vn-agent body is mounted in the package", () => {
 
 void fileURLToPath;
 
+test("catalog version tracks the package version", () => {
+  const pkg = JSON.parse(readFileSync(new URL("../package.json", import.meta.url), "utf8"));
+  assert.equal(catalog.version, pkg.version);
+});
+
+test("catalog ids match mounted skill folders and frontmatter", () => {
+  for (const skill of catalog.skills) {
+    assert.equal(skill.local, `mounted/${skill.id}/SKILL.md`);
+    const body = readFileSync(new URL(`../${skill.local}`, import.meta.url), "utf8");
+    const id = skill.id.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    assert.match(body, new RegExp(`^name:\\s*${id}\\s*$`, "m"));
+  }
+  const safety = catalog.skills.find((s) => s.id === "check-safety-thresholds");
+  assert.equal(safety.slash, "/check-safety-thresholds");
+  assert.equal(catalog.skills.some((s) => s.id === "check-safety"), false);
+});
+
 test("on-demand ids stay out of the public catalog", () => {
   const extra = JSON.parse(readFileSync(new URL("./on-demand.json", import.meta.url), "utf8"));
   const publicIds = new Set(catalog.skills.map((s) => s.id));
   assert.equal(extra.public, false);
-  assert.ok(extra.skills.length >= 17);
+  assert.ok(extra.skills.length >= 16);
+  assert.equal(extra.skills.some((s) => s.id === "check-safety-thresholds"), false);
   for (const skill of extra.skills) {
     assert.equal(skill.public, false);
     assert.equal(publicIds.has(skill.id), false);

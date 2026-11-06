@@ -21,6 +21,15 @@ describe('@vientonorte/skills', () => {
     expect(cierreDod({ VN_CIERRE_MAIL_TO: 'a@x.test, b@x.test' }).mail.to).toEqual(['a@x.test', 'b@x.test']);
   });
 
+  it('check-safety-thresholds id matches its mounted folder', () => {
+    const skill = getSkill('check-safety-thresholds');
+    expect(skill?.id).toBe('check-safety-thresholds');
+    expect(skill?.slash).toBe('/check-safety-thresholds');
+    expect(skill?.local).toBe('mounted/check-safety-thresholds/SKILL.md');
+    expect(getSkill('check-safety')).toBeUndefined();
+    expect(resolveSkill('check-safety-thresholds')?.where).toBe('catalog');
+  });
+
   it('resolves on-demand skills without listing them', () => {
     expect(listSkills().some((s) => s.id === 'prospecto-local')).toBe(false);
     expect(getSkill('prospecto-local')).toBeUndefined();

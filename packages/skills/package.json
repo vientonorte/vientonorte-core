@@ -27,7 +27,7 @@
   "scripts": {
     "build": "tsc",
     "typecheck": "tsc --noEmit",
-    "test": "node --test src/catalog.test.mjs && vitest run",
+    "test": "tsc && node --test src/catalog.test.mjs src/esm-import.test.mjs && vitest run",
     "on-demand": "node scripts/resolve-on-demand.mjs"
   },
   "publishConfig": {

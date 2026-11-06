@@ -16,6 +16,8 @@ Cierre VN: draft mail branding **Viento Norte** + bloque `## Retro deploy`.
 import { listSkills, getSkill, cierreDod } from '@vientonorte/skills';
 ```
 
+`catalog.version` tracks `package.json` `version`.
+
 Publish: workflow `Publish (GitHub Packages)` en `vientonorte-core`.
 
 ## A necesidad
