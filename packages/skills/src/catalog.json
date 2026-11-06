@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.1.1-pr16.1",
   "updated": "2026-10-18",
   "hosted": "https://vientonorte.io/ops/skills/",
   "mcp": "https://contact.vientonorte.io/mcp",
@@ -40,12 +40,12 @@
       "local": "mounted/check-work/SKILL.md"
     },
     {
-      "id": "check-safety",
-      "slash": "/check-safety",
+      "id": "check-safety-thresholds",
+      "slash": "/check-safety-thresholds",
       "kind": "qa",
       "public": true,
       "mcp": true,
-      "hosted": "https://vientonorte.io/ops/skills/check-safety/SKILL.md",
+      "hosted": "https://vientonorte.io/ops/skills/check-safety-thresholds/SKILL.md",
       "local": "mounted/check-safety-thresholds/SKILL.md"
     },
     {

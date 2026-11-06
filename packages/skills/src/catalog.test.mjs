@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { readFileSync } from "node:fs";
+import { readdirSync, readFileSync } from "node:fs";
 import { test } from "node:test";
 import { fileURLToPath } from "node:url";
 
@@ -28,6 +28,36 @@ test("cierre DoD requires Retro deploy + VN branding", () => {
   assert.match(catalog.metodo_ro.cierre_mail, /Retro deploy/);
 });
 
+test("catalog version matches package.json", () => {
+  const pkg = JSON.parse(readFileSync(new URL("../package.json", import.meta.url), "utf8"));
+  assert.equal(catalog.version, pkg.version);
+});
+
+test("catalog ids match mounted skill folders", () => {
+  const mountedRoot = new URL("../mounted/", import.meta.url);
+  const mountedIds = readdirSync(mountedRoot, { withFileTypes: true })
+    .filter((entry) => entry.isDirectory())
+    .map((entry) => entry.name)
+    .filter((name) => {
+      try {
+        readFileSync(new URL(`${name}/SKILL.md`, mountedRoot));
+        return true;
+      } catch {
+        return false;
+      }
+    })
+    .sort();
+  const catalogIds = catalog.skills.map((skill) => skill.id).sort();
+  assert.deepEqual(catalogIds, mountedIds);
+  for (const skill of catalog.skills) {
+    assert.equal(skill.local, `mounted/${skill.id}/SKILL.md`);
+  }
+  const safety = catalog.skills.find((skill) => skill.id === "check-safety-thresholds");
+  assert.ok(safety);
+  assert.equal(safety.slash, "/check-safety-thresholds");
+  assert.equal(catalog.skills.some((skill) => skill.id === "check-safety"), false);
+});
+
 test("vn-agent body is mounted in the package", () => {
   const agent = catalog.skills.find((s) => s.id === "vn-agent");
   assert.equal(agent.local, "mounted/vn-agent/SKILL.md");
@@ -41,7 +71,11 @@ test("on-demand ids stay out of the public catalog", () => {
   const extra = JSON.parse(readFileSync(new URL("./on-demand.json", import.meta.url), "utf8"));
   const publicIds = new Set(catalog.skills.map((s) => s.id));
   assert.equal(extra.public, false);
-  assert.ok(extra.skills.length >= 17);
+  assert.ok(extra.skills.length >= 16);
+  assert.equal(
+    extra.skills.some((skill) => skill.id === "check-safety-thresholds"),
+    false
+  );
   for (const skill of extra.skills) {
     assert.equal(skill.public, false);
     assert.equal(publicIds.has(skill.id), false);
