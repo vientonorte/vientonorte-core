@@ -32,14 +32,6 @@
       "use": "Índice local de fuentes de research."
     },
     {
-      "id": "check-safety-thresholds",
-      "slash": "/check-safety-thresholds",
-      "public": false,
-      "body": "mounted",
-      "local": "mounted/check-safety-thresholds/SKILL.md",
-      "use": "Mismo cuerpo que check-safety, ya montado."
-    },
-    {
       "id": "desk-dualboot",
       "slash": "/desk-dualboot",
       "public": false,
