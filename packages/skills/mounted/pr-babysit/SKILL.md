@@ -560,7 +560,10 @@ If `gt restack` encounters conflicts:
 
 After restacking, submit the entire stack:
 
+`gt submit` updates the remote stack and can force-push. Do not run it unless Rö has explicitly authorized this submit in this chat for this action. Invoking `/pr-babysit` is not permission. Without that authorization, leave the commits local and report that the stack was not submitted.
+
 ```bash
+# Only after Rö authorizes this gt submit in chat.
 gt submit --stack --no-edit --no-interactive
 ```
 
@@ -594,7 +597,10 @@ If `gh stack rebase` encounters conflicts:
 
 After rebasing, push the entire stack:
 
+`gh stack push` updates the remote stack and can force-push. Do not run it unless Rö has explicitly authorized this push in this chat for this action. Invoking `/pr-babysit` is not permission. Without that authorization, leave the commits local and report that the stack was not pushed.
+
 ```bash
+# Only after Rö authorizes this gh stack push in chat.
 gh stack push || { EXIT=$?; if [ $EXIT -eq 8 ]; then sleep 2 && gh stack push; fi; }
 ```
 
@@ -687,11 +693,17 @@ For each failed check, the fix counts as one fix action — check the per-cycle 
    git add -A && git commit -m "fix: address CI failure in <check_name>"
    ```
    If graphite-managed (`stack_type: "graphite"`):
+   `gt submit` updates the remote stack and can force-push. Do not run it unless Rö has explicitly authorized this submit in this chat for this action. Invoking `/pr-babysit` is not permission. Without that authorization, leave the commits local and report that the stack was not submitted.
+
    ```bash
+   # Only after Rö authorizes this gt submit in chat.
    gt submit --stack --no-edit --no-interactive
    ```
    If GitHub stacked PR (`stack_type: "github"`):
+   `gh stack push` updates the remote stack and can force-push. Do not run it unless Rö has explicitly authorized this push in this chat for this action. Invoking `/pr-babysit` is not permission. Without that authorization, leave the commits local and report that the stack was not pushed.
+
    ```bash
+   # Only after Rö authorizes this gh stack push in chat.
    gh stack push || { EXIT=$?; if [ $EXIT -eq 8 ]; then sleep 2 && gh stack push; fi; }
    ```
    If plain git (`stack_type: null`):
@@ -738,11 +750,17 @@ This comment does not count toward the fix cap. Then move on to the next section
    git add -A && git commit -m "fix: address review feedback"
    ```
    If graphite-managed (`stack_type: "graphite"`):
+   `gt submit` updates the remote stack and can force-push. Do not run it unless Rö has explicitly authorized this submit in this chat for this action. Invoking `/pr-babysit` is not permission. Without that authorization, leave the commits local and report that the stack was not submitted.
+
    ```bash
+   # Only after Rö authorizes this gt submit in chat.
    gt submit --stack --no-edit --no-interactive
    ```
    If GitHub stacked PR (`stack_type: "github"`):
+   `gh stack push` updates the remote stack and can force-push. Do not run it unless Rö has explicitly authorized this push in this chat for this action. Invoking `/pr-babysit` is not permission. Without that authorization, leave the commits local and report that the stack was not pushed.
+
    ```bash
+   # Only after Rö authorizes this gh stack push in chat.
    gh stack push || { EXIT=$?; if [ $EXIT -eq 8 ]; then sleep 2 && gh stack push; fi; }
    ```
    If plain git (`stack_type: null`):
@@ -821,11 +839,17 @@ If the review body contained actionable feedback that was addressed, set `last_s
      git add -A && git commit -m "fix: address review comment on <path>"
      ```
      If graphite-managed (`stack_type: "graphite"`):
+     `gt submit` updates the remote stack and can force-push. Do not run it unless Rö has explicitly authorized this submit in this chat for this action. Invoking `/pr-babysit` is not permission. Without that authorization, leave the commits local and report that the stack was not submitted.
+
      ```bash
+     # Only after Rö authorizes this gt submit in chat.
      gt submit --stack --no-edit --no-interactive
      ```
      If GitHub stacked PR (`stack_type: "github"`):
+     `gh stack push` updates the remote stack and can force-push. Do not run it unless Rö has explicitly authorized this push in this chat for this action. Invoking `/pr-babysit` is not permission. Without that authorization, leave the commits local and report that the stack was not pushed.
+
      ```bash
+     # Only after Rö authorizes this gh stack push in chat.
      gh stack push || { EXIT=$?; if [ $EXIT -eq 8 ]; then sleep 2 && gh stack push; fi; }
      ```
      If plain git (`stack_type: null`):

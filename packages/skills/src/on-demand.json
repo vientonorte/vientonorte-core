@@ -1,147 +1,21 @@
 {
   "public": false,
   "bodyHome": "~/.grok/skills/<id>/SKILL.md",
-  "note": "listSkills no incluye esta lista. El SKILL.md no está en el repo.",
+  "note": "listSkills no incluye esta lista. Solo ejemplos genéricos. Los ids personales no se escriben en el repo; su cuerpo queda en la máquina.",
   "skills": [
     {
-      "id": "an-lisis-financiero-hogar",
-      "slash": "/an-lisis-financiero-hogar",
+      "id": "example-local-draft",
+      "slash": "/example-local-draft",
       "public": false,
       "body": "machine",
-      "use": "Finanzas del hogar. El cuerpo queda en la máquina."
+      "use": "Ejemplo genérico de un borrador local. No nombra a una persona, un cliente ni un trámite."
     },
     {
-      "id": "bujo-ro",
-      "slash": "/bujo-ro",
+      "id": "example-read-only",
+      "slash": "/example-read-only",
       "public": false,
       "body": "machine",
-      "use": "Cuaderno manuscrito. El cuerpo queda en la máquina."
-    },
-    {
-      "id": "ca-index-drive-link",
-      "slash": "/ca-index-drive-link",
-      "public": false,
-      "body": "machine",
-      "use": "Índice local. El cuerpo queda en la máquina."
-    },
-    {
-      "id": "ca-local-sin-cloud",
-      "slash": "/ca-local-sin-cloud",
-      "public": false,
-      "body": "machine",
-      "use": "Trabajo local sin nube. El cuerpo queda en la máquina."
-    },
-    {
-      "id": "cierre-penji",
-      "slash": "/cierre-penji",
-      "public": false,
-      "body": "machine",
-      "use": "Cierre de ese cliente. El cuerpo queda en la máquina."
-    },
-    {
-      "id": "contadur-a-y-gesti-n-sii",
-      "slash": "/contadur-a-y-gesti-n-sii",
-      "public": false,
-      "body": "machine",
-      "use": "Gestión contable. El cuerpo queda en la máquina."
-    },
-    {
-      "id": "daily",
-      "slash": "/daily",
-      "public": false,
-      "body": "machine",
-      "use": "Ritual diario. El cuerpo queda en la máquina."
-    },
-    {
-      "id": "desk-dualboot",
-      "slash": "/desk-dualboot",
-      "public": false,
-      "body": "machine",
-      "use": "Periféricos del escritorio compartido. El cuerpo queda en la máquina."
-    },
-    {
-      "id": "ficha-contra-archivo",
-      "slash": "/ficha-contra-archivo",
-      "public": false,
-      "body": "machine",
-      "use": "Fichas del contra-archivo. El cuerpo queda en la máquina."
-    },
-    {
-      "id": "integrar-evidencia-etnogr-fica-a-la-tesis",
-      "slash": "/integrar-evidencia-etnogr-fica-a-la-tesis",
-      "public": false,
-      "body": "machine",
-      "use": "Evidencia de tesis. El cuerpo queda en la máquina."
-    },
-    {
-      "id": "job-hunt-ro",
-      "slash": "/job-hunt-ro",
-      "public": false,
-      "body": "machine",
-      "use": "Búsqueda de trabajo personal. El cuerpo queda en la máquina."
-    },
-    {
-      "id": "lectura-clave-b",
-      "slash": "/lectura-clave-b",
-      "public": false,
-      "body": "machine",
-      "use": "Citas de libros anotados. El cuerpo queda en la máquina."
-    },
-    {
-      "id": "micro1-cierre",
-      "slash": "/micro1-cierre",
-      "public": false,
-      "body": "machine",
-      "use": "Cierre de esa entrega. El cuerpo queda en la máquina."
-    },
-    {
-      "id": "micro1-delivery",
-      "slash": "/micro1-delivery",
-      "public": false,
-      "body": "machine",
-      "use": "Entrega local. El cuerpo queda en la máquina."
-    },
-    {
-      "id": "micro1-pipeline",
-      "slash": "/micro1-pipeline",
-      "public": false,
-      "body": "machine",
-      "use": "Pipeline local. El cuerpo queda en la máquina."
-    },
-    {
-      "id": "penji",
-      "slash": "/penji",
-      "public": false,
-      "body": "machine",
-      "use": "Cliente externo. El cuerpo queda en la máquina."
-    },
-    {
-      "id": "penji-youtube-thumb",
-      "slash": "/penji-youtube-thumb",
-      "public": false,
-      "body": "machine",
-      "use": "Pieza de ese cliente. El cuerpo queda en la máquina."
-    },
-    {
-      "id": "postulaciones-calendario",
-      "slash": "/postulaciones-calendario",
-      "public": false,
-      "body": "machine",
-      "use": "Calendario de postulaciones. El cuerpo queda en la máquina."
-    },
-    {
-      "id": "research-personas-empresas",
-      "slash": "/research-personas-empresas",
-      "public": false,
-      "body": "machine",
-      "use": "Research local. El cuerpo queda en la máquina."
-    },
-    {
-      "id": "ritual-semanal-bujo-obsidian",
-      "slash": "/ritual-semanal-bujo-obsidian",
-      "public": false,
-      "body": "machine",
-      "use": "Ritual semanal. El cuerpo queda en la máquina."
+      "use": "Ejemplo genérico de una lectura local. No envía, no publica y no escribe fuera de la máquina."
     }
   ]
 }

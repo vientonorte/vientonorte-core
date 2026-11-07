@@ -72,7 +72,8 @@ test("on-demand ids stay out of the public catalog", () => {
   const extra = JSON.parse(readFileSync(new URL("./on-demand.json", import.meta.url), "utf8"));
   const publicIds = new Set(catalog.skills.map((s) => s.id));
   assert.equal(extra.public, false);
-  assert.ok(extra.skills.length >= 16);
+  assert.ok(extra.skills.length >= 1);
+  assert.ok(extra.skills.every((skill) => skill.id.startsWith("example-")));
   assert.equal(
     extra.skills.some((skill) => skill.id === "check-safety-thresholds"),
     false
@@ -90,7 +91,8 @@ test("on-demand ids stay out of the public catalog", () => {
   assert.equal(extra.skills.some((s) => s.id === "ollama"), false);
   assert.equal(publicIds.has("prospecto-local"), true);
   assert.equal(publicIds.has("ollama"), true);
-  assert.ok(extra.skills.some((s) => s.id === "bujo-ro"));
+  assert.ok(extra.skills.some((s) => s.id === "example-local-draft"));
+  assert.ok(extra.skills.some((s) => s.id === "example-read-only"));
 });
 
 test("connectors are addressable and cuda stays oauth", () => {

@@ -32,9 +32,10 @@ describe('@vientonorte/skills', () => {
   });
 
   it('resolves on-demand skills without listing them', () => {
-    expect(listSkills().some((s) => s.id === 'bujo-ro')).toBe(false);
-    expect(getSkill('bujo-ro')).toBeUndefined();
-    expect(resolveSkill('bujo-ro')?.where).toBe('machine');
+    expect(listSkills().some((s) => s.id === 'example-local-draft')).toBe(false);
+    expect(getSkill('example-local-draft')).toBeUndefined();
+    expect(resolveSkill('example-local-draft')?.where).toBe('machine');
+    expect(listOnDemand().every((s) => s.id.startsWith('example-'))).toBe(true);
     expect(getSkill('prospecto-local')?.local).toBe('mounted/prospecto-local/SKILL.md');
     expect(resolveSkill('prospecto-local')?.where).toBe('catalog');
     expect(resolveSkill('ollama')?.where).toBe('catalog');
