@@ -1,10 +1,6 @@
 ---
 name: gtm-vn
-description: >
-  GTM / Tag Assistant / conversiones Viento Norte: Preview, generate_lead,
-  book_call, cobertura /servicios/ vs SPA. No hay MCP GTM. Use when: GTM, Tag Assistant,
-  Preview, generate_lead, book_call, cobertura de etiqueta, /gtm-vn, o
-  "publicar v3" en el contenedor vientonorte.io.
+description: 'GTM / Tag Assistant / conversiones Viento Norte: Preview, generate_lead, book_call, cobertura /servicios/ vs SPA. No hay MCP GTM. Use when: GTM, Tag Assistant, Preview, generate_lead, book_call, cobertura de etiqueta, /gtm-vn, o "publicar v3" en el contenedor vientonorte.io.'
 ---
 
 # GTM · Viento Norte
@@ -13,7 +9,7 @@ Padre: `/vn-agent`. URLs: `references/canon.md` del padre. Receta UI humana: FO 
 
 Landing / message match / UTM → `/google-ads-vn`. Acá solo el **contenedor** y Preview.
 
-**$0 Ads** hasta Tag Assistant muestre `generate_lead` **y** `book_call` en **Etiquetas activadas**. Decider publica spend.
+**sin gasto Ads** hasta Tag Assistant muestre `generate_lead` **y** `book_call` en **Etiquetas activadas**. Decider publica spend.
 
 Lock 24 ago: Preview **Gratis · accesibilidad** → `GA4 · generate_lead` activado. **28 ago 12:53 UI: no activado** (solo Google tag). `book_call` PASS 20 ago (Agendar). Luego Decider *activar campañas*. UTM/Vite = `/google-ads-vn`.
 
@@ -21,10 +17,10 @@ Lock 24 ago: Preview **Gratis · accesibilidad** → `GA4 · generate_lead` acti
 
 | | |
 |--|--|
-| Cuenta | Vientonorte `6365610691` |
-| Contenedor Web | `vientonorte.io` · `GTM-PM5LBQRP` · `258073653` |
+| Cuenta | Vientonorte `<GTM_ACCOUNT_ID>` |
+| Contenedor Web | `vientonorte.io` · `GTM-PM5LBQRP` · `<GTM_CONTAINER_ID>` |
 | GA4 | `G-G7JXJKGCDV` · también `GT-P8VJH8TQ` |
-| UI | [workspace](https://tagmanager.google.com/#/container/accounts/6365610691/containers/258073653/workspaces) |
+| UI | [workspace](https://tagmanager.google.com/#/container/accounts/<GTM_ACCOUNT_ID>/containers/<GTM_CONTAINER_ID>/workspaces) |
 
 Tags live (versión **4** `GA4 · book_call` · 20 ago 17:29 · workspace post-publish cambios 0):
 
@@ -38,11 +34,11 @@ SPA `dataLayer` sí emite ambos. `book_call` vive en chunk lazy `assets/vn-booki
 
 ## Browser
 
-Canon visual = Safari. **GTM Preview = Chrome logueado** (cuenta Rodrigo Gaete).
+Canon visual = Safari. **GTM Preview = Chrome logueado** (cuental usuario).
 
 Safari + AdGuard Mini (content blockers Privacy/General): `google_tag_manager === undefined`, Tag Assistant `connection__timeout`. No diagnosticar “GTM caído” en Safari con AdGuard.
 
-Chrome DevTools MCP usa `~/.cache/chrome-devtools-mcp/chrome-profile` — **sin** login Google. AppleScript `execute javascript` en Chrome está off hasta **Visualización → Opciones para desarrolladores → Permitir JavaScript para eventos de Apple**. No matar el Chrome de Rö para “arreglar” MCP.
+Chrome DevTools MCP usa `~/.cache/chrome-devtools-mcp/chrome-profile` — **sin** login Google. AppleScript `execute javascript` en Chrome está off hasta **Visualización → Opciones para desarrolladores → Permitir JavaScript para eventos de Apple**. No matar el Chrome del usuario para “arreglar” MCP.
 
 No MCP GTM. `gcloud` token = `cloud-platform`, **no** `tagmanager.*`. Crear tags = UI.
 
@@ -78,7 +74,7 @@ Etiquetas → Nueva → **Google Analytics** (lista izquierda, no galería “A�
 
 P0: Preview Chrome 20 ago · Agendar → `GA4 · book_call` **Activado 1 vez** (v4).
 
-**28 ago 12:53 Tag Assistant (UI Rö):** Activadas = `GA4 · vientonorte.io` 1×. `GA4 · generate_lead` y `GA4 · book_call` **no activadas** (page_view). Collect `en=generate_lead` 13:26 = `gtag("event")` del SPA, **no** prueba de la etiqueta Event. TA “No conectado” / timeout = extensión. `submit_contact_form` aún sin tag.
+**28 ago 12:53 Tag Assistant (UI el usuario):** Activadas = `GA4 · vientonorte.io` 1×. `GA4 · generate_lead` y `GA4 · book_call` **no activadas** (page_view). Collect `en=generate_lead` 13:26 = `gtag("event")` del SPA, **no** prueba de la etiqueta Event. TA “No conectado” / timeout = extensión. `submit_contact_form` aún sin tag.
 
 ## Anti-patterns
 

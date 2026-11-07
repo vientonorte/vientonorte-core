@@ -1,11 +1,6 @@
 ---
 name: check-safety-thresholds
-description: >
-  Audit code for hardcoded safety-critical thresholds, magic numbers in control/autopilot/safety paths, and review threshold handling. 
-  Use when the user runs /check-safety-thresholds, asks to "check safety thresholds", review magic numbers in safety code, 
-  audit confidence/limits in critical systems, or analyze proposed changes like the autopilot route confidence check.
-metadata:
-  short-description: "Audit safety-critical numeric thresholds and magic numbers"
+description: Audit code for hardcoded safety-critical thresholds, magic numbers in control/autopilot/safety paths, and review threshold handling. Use when the user runs /check-safety-thresholds, asks to "check safety thresholds", review magic numbers in safety code, audit confidence/limits in critical...
 ---
 
 # Check Safety Thresholds

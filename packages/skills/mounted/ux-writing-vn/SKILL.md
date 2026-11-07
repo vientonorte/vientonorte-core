@@ -1,11 +1,6 @@
 ---
 name: ux-writing-vn
-description: >
-  UX writing agent for Rodrigo Gaete / Viento Norte portfolio and consulting surfaces.
-  Improves copy with brand memory, audience jobs, and writing benchmarks (path cards, KPIs, CTAs, About).
-  Use when the user asks to rewrite, polish, or review microcopy, hero cards, landing text, form copy,
-  or runs /ux-writing-vn. Loads Obsidian memory under vault Ro
-  (vault Obsidian, ruta local, ver vault).
+description: UX writing agent for el usuario / Viento Norte portfolio and consulting surfaces. Improves copy with brand memory, audience jobs, and writing benchmarks (path cards, KPIs, CTAs, About). Use when the user asks to rewrite, polish, or review microcopy, hero cards, landing text, form copy, or...
 ---
 
 # UX Writing · Viento Norte
@@ -16,12 +11,12 @@ Padre: `/vn-agent`. Paths/live/APIs: `~/.grok/skills/vn-agent/references/canon.m
 
 ## Always load memory first
 
-Read these Obsidian notes when available (vault **Ro**):
+Read these Obsidian notes when available (vault configurado):
 
-1. `…/Ro/Viento Norte/Writing/Voice y benchmarks.md`
-2. `…/Ro/Viento Norte/Writing/Landing snapshot 2026-07-21.md` (or latest snapshot)
-3. Brand notes under `…/Ro/Viento Norte/Branding/` when a company is named
-4. Latest sprint: `…/Ro/Viento Norte/Sprints/`
+1. `…/<VAULT>/Viento Norte/Writing/Voice y benchmarks.md`
+2. `…/<VAULT>/Viento Norte/Writing/Landing snapshot 2026-07-21.md` (or latest snapshot)
+3. Brand notes under `…/<VAULT>/Viento Norte/Branding/` when a company is named
+4. Latest sprint: `…/<VAULT>/Viento Norte/Sprints/`
 
 If a note is missing, proceed with repo i18n (`src/lib/i18n/locales/es.ts` + `en.ts`) and update Obsidian after.
 
@@ -33,7 +28,7 @@ If a note is missing, proceed with repo i18n (`src/lib/i18n/locales/es.ts` + `en
 | Positioning | Design Ops en productos regulados · fintech & mobility |
 | Sitio | `https://vientonorte.io/` · consultoría **`https://vientonorte.io/servicios/#consultoria-ux`** · orgánico `/servicios/*` · rutas `/s/` y `/#/` solo técnicas, no copy de producto |
 | LinkedIn (reclutadores, no landing B2B) | ver vault (00-sistema) |
-| Email público | `contacto@vientonorte.io` |
+| Email público | <PUBLIC_EMAIL>` |
 | Core brands | SURA Investments · Transvip · Karri |
 | Extended brands | Valuesite · Havas/Claro · Walmart · Maraña · Desafío Latam · Pareti · Freelance |
 

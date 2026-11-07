@@ -1,11 +1,6 @@
 ---
 name: linkedin-seo-vn
-description: >
-  Orgánico LinkedIn Viento Norte (no pauta): posts semanales en página empresa
-  + newsletter mensual (covers vault SEM/news-covers; sin hop /s/news).
-  Cola JSON, Calendar franja semanal (ver vault), Safari abre compose, publish humano.
-  Use when: /linkedin-seo-vn, LinkedIn weekly, newsletter VN, SEO LinkedIn,
-  tráfico orgánico vientonorte, o /vn-agent pide LinkedIn público.
+description: 'Orgánico LinkedIn Viento Norte (no pauta): posts semanales en página empresa + newsletter mensual (covers vault SEM/news-covers; sin hop /s/news). Cola JSON, Calendar franja semanal (ver vault), Safari abre compose, publish humano. Use when: /linkedin-seo-vn, LinkedIn weekly, newsletter VN, SEO...'
 ---
 
 # /linkedin-seo-vn · orgánico + news
@@ -16,15 +11,15 @@ Voz: vault `Writing/Voice y benchmarks.md`.
 News data (copy/ediciones): FO `src/data/news-editions.json` (no vault duplicado).  
 Cubiertas: vault `Resources/SEM/news-covers/` (attach en LinkedIn).
 
-**Esto no es pauta.** Campaign Manager sigue **PAUSED**. $0 LinkedIn Ads.
+**Esto no es pauta.** Campaign Manager sigue **PAUSED**. sin gasto LinkedIn Ads.
 
 ## Superficies (SSOT I11/I15 2026-09-09)
 
 | | Semanal | Newsletter mensual |
 |--|---------|---------------------|
-| Dónde | Página empresa **Vientonorte** (ver vault) | Perfil de Rö (ver vault) |
+| Dónde | Página empresa **Vientonorte** (ver vault) | Perfil del usuario (ver vault) |
 | SSOT | vault `linkedin-weekly-queue.json` | FO `news-editions.json` + covers vault |
-| Reloj | franja semanal (ver vault) · Post 0.75 | Primer mié del mes, mismo slot |
+| Reloj | horario configurado localmente | horario configurado localmente |
 | Apply | `vn-linkedin-weekly` | `vn-linkedin-news --clipboard --open-safari` |
 | Publicar | Humano en admin drafts | Humano pega en compose Safari |
 

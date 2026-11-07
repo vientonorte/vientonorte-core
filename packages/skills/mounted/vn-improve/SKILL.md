@@ -1,10 +1,6 @@
 ---
 name: vn-improve
-description: >
-  Algoritmo de mejora VN: mide hechos live, puntúa gaps en el workflow
-  (Método Ro / Calendar 18 ago), verifica el top. Workflow never auto-runs wrangler.
-  Use when: /vn-improve, $ live stale, MCP sin list_skills, after cierre,
-  after vn-design-ops Test, o /vn-agent upgrade.
+description: 'Algoritmo de mejora VN: mide hechos live, puntúa gaps en el workflow (Método Ro / Calendar 18 ago), verifica el top. Workflow never auto-runs wrangler. Use when: /vn-improve, $ live stale, MCP sin list_skills, after cierre, after vn-design-ops Test, o /vn-agent upgrade.'
 ---
 
 # /vn-improve
@@ -26,12 +22,12 @@ description: >
 | `finanzas-stale` | 100 | P0 | Worker finanzas — solo humano, por orden del TL: `cd worker && npm ci && npx --no-install wrangler deploy --keep-vars` |
 | `finanzas-unreachable` | 90 | P0 | re-curl; no wrangler |
 | `api-health` | 80 | P0 | check contact worker |
-| `mcp-skills-missing` | 70 | P1 | merge FO#202 + deploy Worker contact — solo con OK de Rö + orden TL (humano) |
+| `mcp-skills-missing` | 70 | P1 | merge FO#202 + deploy Worker contact — solo con OK del usuario + orden TL (humano) |
 | `nvidia-cuda-oauth` | 50 | P2 | si doctor falla: re-OAuth NVIDIA (`mcp_credentials.json`) |
 | `nvidia-elements-down` | 45 | P2 | `nve mcp` / `grok mcp doctor nvidia-elements` |
 | `ops-skills-hours` | 40 | P2 | hard refresh (docs en main) |
 
-Stale `$` = `updated` < `args.calendar` (default `2026-08-27`) **o** hours ≠ 0 / 1.5 / 0.75 **o** `split_policy` ≠ `algo40_lv_m1_park` **o** tarifa del empleo principal ≠ la del vault (ver vault; sin cifras aquí). Hub PR #91 merged; git-proxy lee `main`. Workflow never auto-runs wrangler. If $ stale, surface P0 deploy (solo humano, por orden del TL: `cd worker && npm ci && npx --no-install wrangler deploy --keep-vars`); the agent never merges or deploys.
+Stale `$` = `updated` < `args.calendar` (default `2026-08-27`) **o** hours difiere de la política configurada **o** `split_policy` ≠ la política configurada **o** tarifa del empleo principal ≠ la del vault (ver vault; sin cifras aquí). Hub PR #91 merged; git-proxy lee `main`. Workflow never auto-runs wrangler. If $ stale, surface P0 deploy (solo humano, por orden del TL: `cd worker && npm ci && npx --no-install wrangler deploy --keep-vars`); the agent never merges or deploys.
 
 Loop token-out (0 LLM, sí dejar corriendo): `vn-watch-ab` / `vn-m5 watch`. Search ENABLED no.
 

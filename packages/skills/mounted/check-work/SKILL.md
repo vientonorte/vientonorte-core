@@ -1,10 +1,6 @@
 ---
 name: check-work
-description: >
-  Check your work with a verification pass that reviews diffs, runs builds
-  and tests, and evaluates correctness.
-  Use when: asked to "check work", "verify changes", "self-verify",
-  "/check-work", "/check", "/verify", or "/self-verify".
+description: 'Check your work with a verification pass that reviews diffs, runs builds and tests, and evaluates correctness. Use when: asked to "check work", "verify changes", "self-verify", "/check-work", "/check", "/verify", or "/self-verify".'
 ---
 
 # /check-work

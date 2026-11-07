@@ -1,20 +1,15 @@
 ---
 name: cierre-sesion-vn
-description: >
-  Cierre de sesión Viento Norte en un solo paso: snapshot git multi-device,
-  nota Obsidian, stamp ops canvas, links a loops sprint/packages/multi-device.
-  Use when: user says "cierra sesión", "cierre de día", "cierre sesión",
-  "me voy", "hasta mañana", "/cierre-sesion-vn", or wants automated session close.
-  For full continuum Obsidian+Session+Calendar prefer /CierreVNHOY (cierre-vn-hoy).
+description: 'Cierre de sesión Viento Norte en un solo paso: snapshot git multi-device, nota Obsidian, stamp ops canvas, links a loops sprint/packages/multi-device. Use when: user says "cierra sesión", "cierre de día", "cierre sesión", "me voy", "hasta mañana", "/cierre-sesion-vn", or wants automated session...'
 ---
 
 # Cierre de sesión · un skill
 
 Padre: `/vn-agent`. Paths/live: `~/.grok/skills/vn-agent/references/canon.md`. Continuum día+Session: `/cierre-vn-hoy`.
 
-**Horas:** Método Ro (canon) — M1 0 PARK · VN 1.5 · Post 0.75 · empleo principal (ver vault). Cerrar sesión no mueve captura M1 ni el empleo principal.
+**Horas:** leer la política vigente en la configuración privada; esta skill no contiene horarios personales.
 
-**DoD mail:** el modelo local redacta. Grok deja borrador (`gmail__create_draft` / DraftExternalMessage). Única excepción documentada: el Retro deploy se envía solo a los 2 correos personales de Rö (ver vault), después de QA humano y del visto bueno de Rö. Voz **Viento Norte** y bloque `## Retro deploy`. Sin visto bueno no hay correo. Con visto bueno, un borrador no cierra. Cierre canónico: `/cierre-vn-hoy`.
+**DoD mail:** el modelo local redacta. Grok deja borrador (`gmail__create_draft` / DraftExternalMessage). Única excepción documentada: el Retro deploy se envía solo a los 2 correos personales del usuario (ver vault), después de QA humano y del visto bueno del usuario. Voz **Viento Norte** y bloque `## Retro deploy`. Sin visto bueno no hay correo. Con visto bueno, un borrador no cierra. Cierre canónico: `/cierre-vn-hoy`.
 
 ## Comando único (humano o agente)
 
@@ -78,14 +73,14 @@ Si hay cambios en `ops/canvas-state.json` del hub:
 cd "$GH_ROOT/vientonorte.github.io"   # o ~/code/…
 git add ops/canvas-state.json
 git commit -m "ops: last_close session stamp"
-# abre PR; push/merge solo con OK de Rö
+# abre PR; push/merge solo con OK del usuario
 ```
 
-(Nunca `push` directo a `main`. Abre PR; push/merge solo con OK de Rö.)
+(Nunca `push` directo a `main`. Abre PR; push/merge solo con OK del usuario.)
 
 ## Regla de oro · mail de cierre
 
-El modelo local no envía. Grok deja borrador (`gmail__create_draft` / DraftExternalMessage). Única excepción: el Retro deploy se envía solo a los 2 correos personales de Rö (ver vault), después de QA humano y del visto bueno de Rö. Sin visto bueno no hay envío. A cualquier otro destinatario: solo borrador. El body lleva **`## Retro deploy`**.
+El modelo local no envía. Grok deja borrador (`gmail__create_draft` / DraftExternalMessage). Única excepción: el Retro deploy se envía solo a los 2 correos personales del usuario (ver vault), después de QA humano y del visto bueno del usuario. Sin visto bueno no hay envío. A cualquier otro destinatario: solo borrador. El body lleva **`## Retro deploy`**.
 
 Aplica también si el humano dice: “manda mail”, “email resumen”, “al finalizar email”, “cierre por mail”.
 
@@ -176,7 +171,7 @@ PDF_OUT = ~/Library/Mobile Documents/com~apple~CloudDocs/Documents/Viento Norte/
 - Inventar ship no mergeado
 - Omitir nota Obsidian
 - Confundir este skill con deploy (deploy ya ocurre al push main)
-- **Enviar** el mail sin QA humano y sin el visto bueno de Rö, o enviarlo **sin `## Retro deploy`**
+- **Enviar** el mail sin QA humano y sin el visto bueno del usuario, o enviarlo **sin `## Retro deploy`**
 - Listar como “live” una URL que el smoke diga stale (monto viejo / split viejo / `updated` 13 ago vs plantilla 18 ago)
 - Cerrar con `$` desfasado sin dejar **P0 = deploy Worker finanzas** (solo humano, por orden del TL: `cd worker && npm ci && npx --no-install wrangler deploy --keep-vars`)
 

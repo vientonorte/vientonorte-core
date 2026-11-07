@@ -1,10 +1,6 @@
 ---
 name: m5-vn
-description: >
-  Atajos locales del stack M5 (Apple Silicon 16 GB) para Viento Norte: cierre,
-  Session stamp/sync, sprint menu, smoke:cierre, Ollama liviano, status data-driven.
-  Use when: user says M5, atajos M5, vn-m5, /m5-vn, smoke local, leverage M5,
-  o pide el menú de automaciones locales del PDF M5/Google.
+description: 'Atajos locales del stack M5 (Apple Silicon 16 GB) para Viento Norte: cierre, Session stamp/sync, sprint menu, smoke:cierre, Ollama liviano, status data-driven. Use when: user says M5, atajos M5, vn-m5, /m5-vn, smoke local, leverage M5, o pide el menú de automaciones locales del PDF M5/Google.'
 ---
 
 # M5 · atajos locales VN
@@ -39,14 +35,14 @@ Script: `~/bin/vn-m5`
 | `sync` | payload Calendar Session (`vn-sync-session-close`) |
 | `stamp` | `vn-session-stamp` (focus → Sessions) |
 | `daily`…`sprint2` / `1`–`7` | scripts en `~/Developer/scripts/vientonorte-sprint/` |
-| `smoke` | `npm run smoke:cierre` en `~/code/mi-portafolio` (`VN_REPO`) **si** `http://localhost:3000/` escucha (check antes de que Rö haga merge; no mergeamos). `:5173` es obsoleto |
+| `smoke` | `npm run smoke:cierre` en `~/code/mi-portafolio` (`VN_REPO`) **si** `http://localhost:3000/` escucha (check antes de que el usuario haga merge; no mergeamos). `:5173` es obsoleto |
 | `audio` | `vn-audio-native`: micrófono y altavoces integrados del MacBook Pro. No desinstala NDI |
 | `ollama-light` | `ollama list` (dato) + recordatorio ≤8B / 1.5b |
 | `ollama-unload` | `pkill -f ollama-loop-sprint2` si existe |
 | `ops` | open `https://vientonorte.io/ops/` |
 | `log` | path `Sessions/YYYY-MM-DD.md` si existe |
 | `status` | git HEADs + loop/vite/ollama + stamp log |
-| `watch` / `ab` | `vn-watch-ab` · tarifa del empleo principal live (ver vault) + Calendar M1 · 0 LLM |
+| `watch` / `ab` | consultar la configuración local del usuario; no inferir empleo ni tarifas |
 | `cromatico` | `vn-cromatico` · Clave A/B + table-ro proxy |
 | `board` | mapa C-suite token-out |
 | `roles` | `vn-watch-ab roles` · Ollama local (`qwen2.5:1.5b`) |
@@ -89,7 +85,7 @@ Session.app automation (`session_end`) → preferir `vn-session-stamp`, no el me
 
 - **Obsidian canónico:** vault Obsidian (ruta local, ver vault).  
   No escribir Sessions en vaults paralelos (`CloudDocs/Documents/Obsidian Vault`).
-- **Horas:** Método Ro (canon) — M1 0 PARK · VN 1.5 · Post 0.75 · empleo principal (ver vault). Ledger `MICRO 1/07-pagos/dashboard/ledger.json` · live puede ir atrasado vs plantilla.
+**Horas:** leer la política vigente en la configuración privada; esta skill no contiene horarios personales.
 - **QA única:** `https://vientonorte.io/qa/` es la página de pruebas del `main` publicado. El canvas del sprint es `https://vientonorte.io/ops/`.
 - **ĀRŪḾA:** checklist `ops/ARUMA-CHECKLIST.md` · bloqueado en cuenta Google humana.
 
