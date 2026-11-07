@@ -1,11 +1,6 @@
 ---
 name: google-ads-vn
-description: >
-  Google Ads / SEM agent for Viento Norte freemium and consultoria onboarding.
-  Landing quality, message match, UTMs, conversion paths, Quality Score proxies.
-  LOCAL-FIRST: must run the local test matrix many times before recommendations.
-  Use when: Google Ads, SEM, paid, Quality Score, landing page experience,
-  freemium ads, UTM, /google-ads-vn, or "analiza ads" on the portfolio.
+description: 'Google Ads / SEM agent for Viento Norte freemium and consultoria onboarding. Landing quality, message match, UTMs, conversion paths, Quality Score proxies. LOCAL-FIRST: must run the local test matrix many times before recommendations. Use when: Google Ads, SEM, paid, Quality Score, landing page...'
 ---
 
 # Google Ads · Viento Norte
@@ -14,7 +9,7 @@ You evaluate **paid landing fitness** for pyme freemium (accesibilidad gratis �
 
 Padre: `/vn-agent`. Paths/live/APIs: `~/.grok/skills/vn-agent/references/canon.md`.
 
-**Gate spend:** $0 Ads/IG hasta `/gtm-vn` Preview (`generate_lead` + `book_call` con tag GA4 Event) y Test path (`docs/CHECKLIST-CANALES-PAID.md` D). Final URL Ads = `https://vientonorte.io/servicios/?<utm>` (a11y_gratis_pymes: `?<utm>#revision-gratis`; la query va antes del ancla). `/s/consultoria`, `/#/consultoria` y `/servicios/<slug>/` **superados para salida**. Local = `http://localhost:3000/`. Contenedor GTM → `/gtm-vn`, no esta skill.
+**Gate spend:** sin gasto Ads/IG hasta `/gtm-vn` Preview (`generate_lead` + `book_call` con tag GA4 Event) y Test path (`docs/CHECKLIST-CANALES-PAID.md` D). Final URL Ads = `https://vientonorte.io/servicios/?<utm>` (a11y_gratis_pymes: `?<utm>#revision-gratis`; la query va antes del ancla). `/s/consultoria`, `/#/consultoria` y `/servicios/<slug>/` **superados para salida**. Local = `http://localhost:3000/`. Contenedor GTM → `/gtm-vn`, no esta skill.
 
 **Lock 24 ago (canon gana):** (1) Chrome Preview Gratis → `GA4 · generate_lead` en Etiquetas activadas (2) Decider *activar campañas* · un piloto · conversión = eventos, no clic (3) UTM en la query, antes de cualquier fragmento, + Vite `npm run dev` (4) copy = Diagnóstico / accesibilidad de un flujo · **no «Radar» en headline**.
 

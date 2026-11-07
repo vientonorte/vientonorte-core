@@ -1,11 +1,6 @@
 ---
 name: cierre-vn-hoy
-description: >
-  Cierre explícito del día: lee Obsidian (rutas URL + días/plan), documenta en
-  Sessions, brief en clipboard para el foco CierreVNHOY. NO abre Session.app
-  salvo que el humano pida "abre Session" o se pase --open-session.
-  DATA DRIVEN. Use when: /CierreVNHOY, /workflow cierre-vn-hoy, "cierre vn hoy",
-  "documenta lo de Obsidian para Session", resumen a mail. El modelo local redacta. Grok envía a las dos bandejas después de QA humano y del visto bueno de Rö. Sin visto bueno no hay correo. Con visto bueno, un borrador no cierra.
+description: 'Cierre explícito del día: lee Obsidian (rutas URL + días/plan), documenta en Sessions, brief en clipboard para el foco CierreVNHOY. NO abre Session.app salvo que el humano pida "abre Session" o se pase --open-session. DATA DRIVEN. Use when: /CierreVNHOY, /workflow cierre-vn-hoy, "cierre vn hoy",...'
 ---
 
 # /CierreVNHOY · Session ← Obsidian (explícito)
@@ -59,9 +54,9 @@ vn-cierre-hoy --open-session   # solo si el humano pidió abrir la app
 4. ATAJO-PASTE = puntero a paths + “ver Calendar vivo”, **no** lista FO re-sintetizada
 5. Reportar: qué había en Calendar (dato) vs qué se tocó (delta)
 6. **No** ejecutar `open -a Session` ni `vn-cierre-hoy --open-session` salvo pedido explícito
-7. **Mail de cierre.** El modelo local redacta la nota y `## Retro deploy` y para. Grok deja borrador (`gmail__create_draft` / DraftExternalMessage); nunca envío directo (ver `vn-agent`). Única excepción documentada: el Retro deploy se envía solo a los 2 correos personales de Rö (ver vault), después de QA humano y del visto bueno de Rö en el chat. Sin ese visto bueno, solo borrador. Body **siempre** `## Retro deploy`. Links VN en el body: solo `https://vientonorte.io/servicios/` (+UTM, ancla opcional). También append en `Sessions/YYYY-MM-DD.md`.
+7. **Mail de cierre.** El modelo local redacta la nota y `## Retro deploy` y para. Grok deja borrador (`gmail__create_draft` / DraftExternalMessage); nunca envío directo (ver `vn-agent`). Única excepción documentada: el Retro deploy se envía solo a los 2 correos personales del usuario (ver vault), después de QA humano y del visto bueno del usuario en el chat. Sin ese visto bueno, solo borrador. Body **siempre** `## Retro deploy`. Links VN en el body: solo `https://vientonorte.io/servicios/` (+UTM, ancla opcional). También append en `Sessions/YYYY-MM-DD.md`.
 8. **Si `$` live (`finanzas.vientonorte.io`) está stale vs plantilla Calendar:** P0 del cierre = deploy del Worker finanzas, solo humano, por orden del TL: `cd worker && npm ci && npx --no-install wrangler deploy --keep-vars`. El agente no despliega; lo deja como P0 para el humano.
-9. Pegar en clipboard el link SSOT Design Ops (`obsidian://open?vault=Ro&file=Viento%20Norte%2FResources%2FPIPELINE%20Design%20Ops%20SSOT`). Si hubo ciclo DS hoy, apuntar `Sprints/DS-*.md` active.
+9. Pegar en clipboard el link SSOT Design Ops (`<OBSIDIAN_NOTE_URI>`). Si hubo ciclo DS hoy, apuntar `Sprints/DS-*.md` active.
 10. Si no corrió `vn-improve` hoy: decirlo. Si `$` stale, el P0 sigue siendo el deploy del paso 8 (solo humano por orden TL). El agente nunca corre wrangler.
 
 ### Prohibido
@@ -71,7 +66,7 @@ vn-cierre-hoy --open-session   # solo si el humano pidió abrir la app
 - Sobrescribir sin leer
 - **Abrir Session.app automáticamente** (bug reportado 2026-08-02)
 - **Email o resumen de cierre sin `## Retro deploy`**
-- **Enviar sin QA humano y sin el visto bueno de Rö**
+- **Enviar sin QA humano y sin el visto bueno del usuario**
 - **Dejar el mail en borradores después de ese visto bueno**
 
 ## En Session.app (humano, cuando quiera, 30 s)

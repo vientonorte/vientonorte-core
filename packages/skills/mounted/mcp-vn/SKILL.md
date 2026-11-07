@@ -1,17 +1,13 @@
 ---
 name: mcp-vn
-description: >
-  MCP Viento Norte: qué servidores tener, stdio mcp-vn (live GET probes),
-  y GitHub MCP (PRs/issues/CI org vientonorte).
-  Use when: /mcp-vn, MCP VN, contact.vientonorte.io/mcp, "qué MCP", develop mcp-vn,
-  GitHub MCP, PRs vientonorte, issues, Dependabot, CI Actions.
+description: 'MCP Viento Norte: qué servidores tener, stdio mcp-vn (live GET probes), y GitHub MCP (PRs/issues/CI org vientonorte). Use when: /mcp-vn, MCP VN, contact.vientonorte.io/mcp, "qué MCP", develop mcp-vn, GitHub MCP, PRs vientonorte, issues, Dependabot, CI Actions.'
 ---
 
 # /mcp-vn
 
 Padre: `/vn-agent`. Canon: `~/.grok/skills/vn-agent/references/canon.md`.
 
-**Ya existe prod:** un endpoint MCP del Worker de contacto (catálogo de lectura; la escritura usa una clave que no va en el repo y es **solo con OK de Rö**). Grok **no** lo handshakea como streamable HTTP.
+**Ya existe prod:** un endpoint MCP del Worker de contacto (catálogo de lectura; la escritura usa una clave que no va en el repo y es **solo con OK del usuario**). Grok **no** lo handshakea como streamable HTTP.
 
 **Stdio (este skill):** el fuente es `packages/skills/mcp/vn/server.mjs`. En el M5, `~/.grok/mcp/vn/server.mjs` apunta ahí. Config `[mcp_servers.vn]`.  
 Transporte: **NDJSON** (una línea JSON-RPC). No Content-Length. Gate: `grok mcp doctor vn` healthy. Tras editar config: `/mcps` → `r`.
@@ -32,7 +28,7 @@ No PII. No wrangler. No Ads. Prospecto no es una de estas tools. No se agrega ni
 
 ## Orden de MCPs (no reinventar)
 
-1. **Usar** los que ya handshakean (gmail, vercel y cloudflare: solo lectura por defecto; cualquier escritura, envío o deploy necesita OK de Rö): github, gmail, google_calendar, google_drive, tasks, figma, buffer, cursor, vercel, chrome-devtools (Preview ≠ este Chrome), cloudflare + docs/bindings/builds/observability, nvidia-elements. Índice: `packages/skills/src/connectors.json`.
+1. **Usar** los que ya handshakean (gmail, vercel y cloudflare: solo lectura por defecto; cualquier escritura, envío o deploy necesita OK del usuario): github, gmail, google_calendar, google_drive, tasks, figma, buffer, cursor, vercel, chrome-devtools (Preview ≠ este Chrome), cloudflare + docs/bindings/builds/observability, nvidia-elements. Índice: `packages/skills/src/connectors.json`.
 2. **stdio mcp-vn** (ops live · `grok mcp doctor vn` healthy). Con el TUI abierto, `/model ollama-qwen-light` lee y redacta y no publica `main`. Si el binario está cerrado, `grok -m ollama-qwen-light` y `ollmcp` no reemplazan las skills. Corre `~/bin/vn-night-local.sh --now` o `--work`. Esa corrida no toca QA de `/servicios/`, Figma, GitHub, correo, DNS ni un ship.
 3. **Más tarde:** conteo leads en Worker (API key, sin dump). No es un segundo proceso: tool extra en este server.
 4. **Nunca MCP propio** para GTM Preview, Ads ENABLED, LinkedIn 2FA, GSC. PARK: wix, aws-*, graphos. `nvidia-cuda-docs` entra solo si esa máquina ya pasó el OAuth. En W11 sigue pidiendo `/mcps` → `nvidia-cuda-docs` → `i`.

@@ -1,11 +1,6 @@
 ---
 name: docs-vn
-description: >
-  Documentation agent for Rodrigo Gaete / Viento Norte portfolio (mi-portafolio).
-  Updates CHANGELOG, architecture notes, Obsidian memory, nav/funnel canon, and PR/commit
-  docs after shipping features. Use when the user asks to document a change, write
-  release notes, update architecture, sync Obsidian after a sprint, document nav/consultoria,
-  or runs /docs-vn.
+description: Documentation agent for el usuario / Viento Norte portfolio (mi-portafolio). Updates CHANGELOG, architecture notes, Obsidian memory, nav/funnel canon, and PR/commit docs after shipping features. Use when the user asks to document a change, write release notes, update architecture, sync...
 ---
 
 # Docs · Viento Norte / mi-portafolio
@@ -26,7 +21,7 @@ Padre: `/vn-agent`. Paths/live/APIs: `~/.grok/skills/vn-agent/references/canon.m
 
 1. **Code** — `src/lib/nav-config.ts`, `src/lib/routes.ts`, `src/pages/ConsultoriaVientoNorte.tsx`, i18n `es.ts` / `en.ts`
 2. **Repo docs** — `CHANGELOG.md`, `docs/API-KICKOFF.md` (SSOT GET health+MCP), `docs/RUNBOOK-APIS-MCP-BD.md`, `PROJECT_ARCHITECTURE.md` si está al día
-3. **Obsidian** — vault **Ro** `Viento Norte/Writing/`, `Research/`, `Sprints/`
+3. **Obsidian** — vault configurado `Viento Norte/Writing/`, `Research/`, `Sprints/`
 4. **Git** — `git log -10 --oneline`, latest commit message and diff. `main` protegido → PR.
 
 If code and markdown disagree, **code wins**; fix the doc.

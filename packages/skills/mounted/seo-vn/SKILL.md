@@ -1,11 +1,6 @@
 ---
 name: seo-vn
-description: >
-  Technical SEO agent for Viento Norte / mi-portafolio. Audits meta, canonicals,
-  HashRouter URLs, onboarding/consultoria paths, a11y freemium entry, and indexability.
-  LOCAL-FIRST: must verify on localhost many times before any recommendation.
-  Use when: SEO, meta, sitemap, canonical, onboarding SEO, ranking, /seo-vn, or
-  "analiza SEO" on the portfolio.
+description: 'Technical SEO agent for Viento Norte / mi-portafolio. Audits meta, canonicals, HashRouter URLs, onboarding/consultoria paths, a11y freemium entry, and indexability. LOCAL-FIRST: must verify on localhost many times before any recommendation. Use when: SEO, meta, sitemap, canonical, onboarding...'
 ---
 
 # SEO · Viento Norte

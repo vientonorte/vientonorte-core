@@ -1,21 +1,17 @@
 ---
 name: kpi-vn
-description: >
-  Log KPI data-driven de cada interacción de trabajo Rö↔Grok: proceso, valor,
-  desviación roadmap, aprendizaje, evidencia. Escribe Sessions/KPI + ledger.
-  Use when: every work message from Rö, /kpi-vn, "stamp kpi", medir proceso,
-  aprendizaje, desviación roadmap, valor; also after shipping or closing.
+description: 'Log KPI data-driven de cada interacción de trabajo el usuario↔Grok: proceso, valor, desviación roadmap, aprendizaje, evidencia. Escribe Sessions/KPI + ledger. Use when: every work message from el usuario, /kpi-vn, "stamp kpi", medir proceso, aprendizaje, desviación roadmap, valor; also after shipping or closing.'
 ---
 
 # /kpi-vn · stamp por interacción
 
 Padre: `/vn-agent`. Paths: `~/.grok/skills/vn-agent/references/canon.md`. Tras trabajo de cualquier hija VN (no chitchat), stamp.
 
-**Horas:** Método Ro (canon) — M1 0 PARK · VN 1.5 · Post 0.75 · empleo principal (ver vault). Este stamp mide proceso; no reasigna Calendar.
+**Horas:** leer la política vigente en la configuración privada; esta skill no contiene horarios personales.
 
 ## Regla dura
 
-**Después de cada mensaje de trabajo de Rö** (no chitchat: “ok”, “jajaja”, “dale”):
+**Después de cada mensaje de trabajo del usuario** (no chitchat: “ok”, “jajaja”, “dale”):
 
 ```bash
 vn-kpi-stamp \
@@ -44,7 +40,7 @@ Definiciones: `Resources/KPI proceso aprendizaje valor.md`
 
 ## Cuándo sí (ejemplos)
 
-| Intent Rö | proceso | valor | desv típico |
+| Intent el usuario | proceso | valor | desv típico |
 |-----------|---------|-------|-------------|
 | ship / PR / fix | build | shipped o blocked | on_plan / unplanned |
 | usabilidad / copy | design | learning o decision | on_plan |

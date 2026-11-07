@@ -1,8 +1,6 @@
 ---
 name: preprod-qa
-description: >
-  Orquesta gate técnico FO + revisión multi-agente antes de prod (GO/NO-GO).
-  Use when: before merge to main / ship FO, /preprod-qa. After ship, hand off to /cierre-vn-hoy. Prefer local M5.
+description: 'Orquesta gate técnico FO + revisión multi-agente antes de prod (GO/NO-GO). Use when: before merge to main / ship FO, /preprod-qa. After ship, hand off to /cierre-vn-hoy. Prefer local M5.'
 ---
 
 # /preprod-qa
@@ -14,7 +12,7 @@ Script técnico: `mi-portafolio/scripts/preprod-gate.sh`
 /preprod-qa
 ```
 
-Human Test path (H2, favicon, HU-01 title, HU-02 canonical, SEM $0) **no** lo cierra el agente.
+Human Test path (H2, favicon, HU-01 title, HU-02 canonical, SEM sin gasto) **no** lo cierra el agente.
 
 ## Horas
 
@@ -31,6 +29,6 @@ Tras el verdict, un agente **solo mide** ledger/MCP/health. El script puntúa:
 | `finanzas-stale` | 100 | Solo humano, por orden del TL: `cd worker && npm ci && npx --no-install wrangler deploy --keep-vars` |
 | `finanzas-unreachable` | 90 | re-curl; no wrangler |
 | `api-health` | 80 | check contact worker |
-| `mcp-skills-missing` | 70 | merge FO#202 + deploy Worker contact — solo con OK de Rö + orden TL (humano) |
+| `mcp-skills-missing` | 70 | merge FO#202 + deploy Worker contact — solo con OK del usuario + orden TL (humano) |
 
 `args.improve=false` salta la fase. Nunca wrangler desde el workflow. Human Test path sigue abierto.

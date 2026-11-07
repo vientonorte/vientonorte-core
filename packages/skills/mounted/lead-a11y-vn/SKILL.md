@@ -1,10 +1,6 @@
 ---
 name: lead-a11y-vn
-description: >
-  Pipeline freemium accesibilidad Viento Norte: lead free a11y → Gmail label/draft,
-  Drive carpeta entregable, Calendar hold, Tasks P0. Orquesta conectores Google.
-  Use when: lead gratis a11y, freemium pipeline, Transvip-style deliverable handoff,
-  /lead-a11y-vn, or "pipeline free a11y".
+description: 'Pipeline freemium accesibilidad Viento Norte: lead free a11y → Gmail label/draft, Drive carpeta entregable, Calendar hold, Tasks P0. Orquesta conectores Google. Use when: lead gratis a11y, freemium pipeline, client deliverable handoff, /lead-a11y-vn, or "pipeline free a11y".'
 ---
 
 # Lead free a11y · pipeline Google
@@ -53,7 +49,7 @@ Form `https://vientonorte.io/servicios/#revision-gratis` primero (sitio + nombre
 - Evento: `VN · revisión a11y · {Cliente}`
 - Duración: 30 min · slot **≥48 h** después del form (informe listo)
 - Descripción: link Drive + checklist P0 WCAG
-- `send_updates: none` salvo que Rö pida invitar cliente
+- `send_updates: none` salvo que el usuario pida invitar cliente
 - No abrir Calendar desde el CTA gratis **antes** del form
 
 ## Tasks (Grok scheduled)
