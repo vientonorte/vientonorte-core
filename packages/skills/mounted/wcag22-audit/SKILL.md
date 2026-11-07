@@ -1,6 +1,6 @@
 ---
 name: wcag22-audit
-description: Aplica auditoría WCAG 2.2 nivel AA (mínimo SURA) con criterios numerados, técnicas verificables y plan de remediación. Activar cuando el usuario pida audit de accesibilidad, revisión WCAG, checklist a11y, evaluación accesible, o entregue pantalla/componente para validación.
+description: Aplica auditoría WCAG 2.2 nivel AA con criterios numerados, técnicas verificables y plan de remediación. Activar cuando el usuario pida audit de accesibilidad, revisión WCAG, checklist a11y, evaluación accesible, o entregue pantalla/componente para validación.
 ---
 
 # Skill — WCAG 2.2 Audit
@@ -8,10 +8,10 @@ description: Aplica auditoría WCAG 2.2 nivel AA (mínimo SURA) con criterios nu
 ## Cuándo activar
 - el usuario menciona: "WCAG", "a11y", "accesibilidad", "audit accesible", "contraste", "lector pantalla".
 - Pantalla, componente o flujo en revisión final.
-- Pre-release SURA o cualquier proyecto con compliance accesibilidad.
+- Pre-release de un cliente o cualquier proyecto con compliance de accesibilidad.
 
 ## Nivel de cumplimiento
-- **SURA default: AA**.
+- **Default: AA**.
 - AAA cuando la BU lo solicite explícitamente y sea viable sin sacrificar otros criterios.
 
 ## Estructura del audit

@@ -11,7 +11,7 @@ description: 'Use this before spending cloud tokens on a Viento Norte (VN) task:
 ## Qué NO va local
 - Aritmética o cifras (modelos 7B no sirven para eso).
 - Arquitectura, cambios multiarchivo, merges, todo lo que se envía, publica o despliega: queda en cloud y con OK explícito del usuario.
-- Fruta, Contra-Archivo y datos personales nunca a modelos cloud (minimax-m3:cloud prohibido).
+- Un proyecto de investigación de campo y los datos personales nunca van a modelos cloud (minimax-m3:cloud prohibido).
 
 ## Pasos
 1. Revisar la ficha SSOT de máquinas y modelos (Obsidian `<VAULT>/00-sistema/MAQUINAS-Y-MODELOS.md`) para saber el modelo vigente en W11 (hoy `qwen2.5-coder:7b`, contexto 16k, un modelo a la vez, Ollama solo en localhost).

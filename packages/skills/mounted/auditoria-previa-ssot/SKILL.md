@@ -8,12 +8,12 @@ Sale de la auditoría del Grok de la terminal del 2026-10-12 (card sort de Figma
 
 ## 1. Partir desde la SSOT
 - Para cualquier cosa de marca, marketing o Figma, la única puerta de entrada es el archivo Figma **VN · Marketing SSOT**. Cada dato tiene un solo hogar.
-- FO, Penji y SURA no comparten SSOT con VN. No los mezcles.
-- Solo la pila «VN vivo» entra en /vn-agent. Las pilas Portafolio, Entregas/Penji, SURA y el DS del usuario quedan fuera.
+- Otros clientes y otros frentes no comparten SSOT con VN. No los mezcles.
+- Solo la pila «VN vivo» entra en /vn-agent. Las pilas de otros clientes y el DS del usuario quedan fuera.
 
 ## 2. No clasificar por nombre de archivo
 - No vuelvas a clasificar archivos por el nombre ("Untitled", prototipos). Abre el archivo o pregunta.
-- El card sorting va después del diagnóstico y antes del UI kit (método Valuesite / Método Ro).
+- El card sorting va después del diagnóstico y antes del UI kit.
 - Una tarjeta por archivo, con clave, tipo y nodo de prototipo. Si un archivo tiene varios clientes, se listan en la misma tarjeta. Un link de prototipo es un nodo dentro de su tarjeta, no una tarjeta propia.
 - Las asignaciones de dueño ya hechas viven en la memoria del TUI (`topics/figma-card-sort.md`). Léelas antes de reasignar.
 

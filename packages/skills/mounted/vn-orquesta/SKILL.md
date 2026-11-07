@@ -19,5 +19,5 @@ Las demás habilidades instaladas describen el trabajo. No las ejecutas hasta el
 Tres paradas, medidas:
 
 - Prospecto: si la cola no tiene fila completa, si no está render.py, si no hay dmarc=pass o si falta el OK del usuario, no hay correo. El día queda en cero.
-- Fintoc y Mercado Pago: no hay build hasta apply=true. Mercado Pago no entra en v1 ni en el hero. No creas una sesión de pago.
+- Proveedores de pago: no hay build hasta apply=true. El proveedor excluido de v1 tampoco entra en el hero. No creas una sesión de pago.
 - Apps: consentimiento, PII y byline no entran al índice sin Decider. No inventas un etnógrafo. No abres el build.

@@ -6,7 +6,7 @@ description: Use when the user mentions VN, Viento Norte, /vn-agent, vn-local, s
 
 1. Consultar el catálogo de **todas** las skills disponibles por nombre + descripción; cargar el cuerpo de una primaria y, si hace falta, una secundaria. `CATALOG.md` enumera las compartidas; el catálogo local agrega las privadas. No cargar todos los cuerpos al contexto ni limitar el inventario a Grok.
 2. Preflight `auditoria-previa-ssot`. Cada cliente conserva su SSOT; disponer de una skill no mezcla VN con el trabajo de otro cliente ni con material que viva solo en el catálogo privado local.
-3. **Local primero:** OpenCode + Ollama en el Mac o torre disponible, usando `agente-vn-local-w11` y `ollama`. Un modelo a la vez, localhost, descargarlo al terminar. Verificar herramientas y recursos, no asumir conexión. Si no alcanza, explicar por qué antes de cloud; datos personales, tesis y FRUTA no salen a cloud.
+3. **Local primero:** OpenCode + Ollama en el Mac o torre disponible, usando `agente-vn-local-w11` y `ollama`. Un modelo a la vez, localhost, descargarlo al terminar. Verificar herramientas y recursos, no asumir conexión. Si no alcanza, explicar por qué antes de cloud; datos personales y un proyecto de investigación de campo no salen a cloud.
 4. Figma también empieza local si el MCP está disponible. Nunca saltar su guard de SSOT; sin MCP/permisos, detenerse y comunicar el bloqueo.
 
 | Pedido | Cargar en orden |

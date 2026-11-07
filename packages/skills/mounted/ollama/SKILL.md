@@ -17,7 +17,7 @@ La política vive en `~/.grok/rules/ollama-tokens.md` y en el vault configurado 
 - **GWin** lo corre en esta torre. **GMac** de día lo corre en LM Studio del M5. La noche de ese Mac sigue en Ollama. **MBot** solo le manda texto que ya está transcrito.
 - El iPad no corre Ollama.
 - Fotos, visión y una herramienta que el modelo no tiene (MCP) no corren aquí. Todo lo demás, incluido un LLM de producto VN, sí, si esta torre o el M5 pueden correrlo.
-- Durante captura Micro1 o proctoring, no cargues el modelo en la GPU.
+- Durante una captura de un trabajo externo o un proctoring, no cargues el modelo en la GPU.
 
 ## Pasos en W11
 

@@ -1,6 +1,6 @@
 ---
 name: lead-a11y-vn
-description: 'Pipeline freemium accesibilidad Viento Norte: lead free a11y → Gmail label/draft, Drive carpeta entregable, Calendar hold, Tasks P0. Orquesta conectores Google. Use when: lead gratis a11y, freemium pipeline, Transvip-style deliverable handoff, /lead-a11y-vn, or "pipeline free a11y".'
+description: 'Pipeline freemium accesibilidad Viento Norte: lead free a11y → Gmail label/draft, Drive carpeta entregable, Calendar hold, Tasks P0. Orquesta conectores Google. Use when: lead gratis a11y, freemium pipeline, client deliverable handoff, /lead-a11y-vn, or "pipeline free a11y".'
 ---
 
 # Lead free a11y · pipeline Google
