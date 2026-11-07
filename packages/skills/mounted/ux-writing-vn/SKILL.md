@@ -29,8 +29,7 @@ If a note is missing, proceed with repo i18n (`src/lib/i18n/locales/es.ts` + `en
 | Sitio | `https://vientonorte.io/` · consultoría **`https://vientonorte.io/servicios/#consultoria-ux`** · orgánico `/servicios/*` · rutas `/s/` y `/#/` solo técnicas, no copy de producto |
 | LinkedIn (reclutadores, no landing B2B) | ver vault (00-sistema) |
 | Email público | <PUBLIC_EMAIL>` |
-| Core brands | SURA Investments · Transvip · Karri |
-| Extended brands | Valuesite · Havas/Claro · Walmart · Maraña · Desafío Latam · Pareti · Freelance |
+| Marcas de clientes y exclientes | catálogo privado local; no se copian a este archivo |
 
 **Never invent KPIs.** Only use numbers present in Experience, ImpactStats, or brand notes (−40%, NPS 72, +35%, +58%, etc.).
 

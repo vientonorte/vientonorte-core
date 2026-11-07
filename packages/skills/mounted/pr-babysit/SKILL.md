@@ -10,7 +10,7 @@ argument-hint: "add <number> | remove <number> | list | check"
 
 # PR Babysitter
 
-You are a PR babysitter agent. Your job is to monitor GitHub pull requests, detect issues (CI failures, review comments, merge conflicts), and fix them autonomously. Fixes and commits happen **only** inside subagents (spawned via `spawn_subagent`) with worktree isolation — never as direct orchestrator edits on the main workspace. You support three PR topologies:
+You are a PR babysitter agent. Your job is to monitor GitHub pull requests, detect issues (CI failures, review comments, merge conflicts), and fix them in an isolated worktree. Force-push and PR comments are not part of that autonomy: each one needs Rö's explicit authorization in this chat, and invoking `/pr-babysit` is not that authorization. Fixes and commits happen **only** inside subagents (spawned via `spawn_subagent`) with worktree isolation — never as direct orchestrator edits on the main workspace. You support three PR topologies:
 
 1. **Independent PRs** — standalone PRs targeting the default branch.
 2. **Graphite stacks** — stacked PRs managed by the Graphite CLI (`gt`). Detected via `gt` metadata or API-based chain walking.
@@ -227,13 +227,14 @@ while true; do
 done
 ```
 
-If `gt checkout` fails (branch not tracked — **common when the PR was created on a different machine**), import the stack into graphite using the API-detected chain:
+If `gt checkout` fails (branch not tracked — **common when the PR was created on a different machine**), import the stack into graphite using the API-detected chain.
+
+`gt sync --force` overwrites local Graphite metadata. Do not run it unless Rö has explicitly authorized this command in this chat for this action. Invoking `/pr-babysit` is not permission. Without that authorization, skip the command and continue with manual `gt track` below.
 
 ```bash
-# Sync graphite metadata from remote.
-# Warning: --force overwrites all local Graphite metadata. This is safe in the
-# cross-machine scenario but could disrupt other locally-tracked Graphite stacks.
-# Log whether this succeeds or fails for debugging.
+# Only after Rö authorizes this exact command in chat.
+# --force overwrites all local Graphite metadata and can disrupt other
+# locally-tracked Graphite stacks. Log whether this succeeds or fails.
 gt sync --force --no-interactive 2>/dev/null || true
 
 # Try checkout again after sync
@@ -634,15 +635,17 @@ If the rebase encounters conflicts:
    ```
 5. After all conflicts are resolved and the rebase completes, verify the result builds. Run the appropriate build/lint command for the affected files (e.g., `cargo check` for Rust, `python -m py_compile <file>` for Python, `npx tsc --noEmit` for TypeScript). If the build fails, fix the issue before pushing -- pushing broken code triggers CI failures that consume another fix cycle.
 
-After resolving, push:
+After resolving, a force-push requires Rö's explicit authorization in this chat for this push. Invoking `/pr-babysit` is not permission. Without that authorization, leave the rebase local and report that it was not pushed.
 
 ```bash
+# Only after Rö authorizes this force-push in chat.
 git push --force-with-lease
 ```
 
-Post a summary comment:
+A summary comment also requires Rö's explicit authorization in this chat for this comment. Invoking the skill is not permission. Without it, keep the summary in the chat report and do not post.
 
 ```bash
+# Only after Rö authorizes this comment in chat.
 gh pr comment <number> --body "Automated fix: resolved merge conflicts and rebased."
 ```
 
@@ -696,9 +699,10 @@ For each failed check, the fix counts as one fix action — check the per-cycle 
    git push
    ```
 
-Post a summary comment:
+A summary comment requires Rö's explicit authorization in this chat for this comment. Invoking `/pr-babysit` is not permission. Without it, keep the summary in the chat report and do not post.
 
 ```bash
+# Only after Rö authorizes this comment in chat.
 gh pr comment <number> --body "Automated fix: addressed CI failure in <check_name>."
 ```
 
@@ -710,9 +714,10 @@ Set `last_status` to `"ci_failed"`. Increment the per-cycle fix counter for this
 
 This section handles the **review-level body** only (the top-level summary the reviewer wrote when requesting changes). Individual inline comment threads are handled separately in "Unresolved Review Comments" below to avoid double-processing.
 
-Check the per-cycle fix counter before proceeding. If it has reached 3, do **not** silently skip. Post a general PR comment explaining that the review-level feedback was evaluated but the fix cap for this cycle has been reached, include a substantive technical summary of what needs to change, and note it will be addressed in the next cycle:
+Check the per-cycle fix counter before proceeding. If it has reached 3, do **not** silently skip. Explain in the chat report that the review-level feedback was evaluated but the fix cap for this cycle has been reached, include a substantive technical summary of what needs to change, and note it will be addressed in the next cycle. Posting that text to the PR requires Rö's explicit authorization in this chat for this comment. Invoking `/pr-babysit` is not permission.
 
 ```bash
+# Only after Rö authorizes this comment in chat.
 gh pr comment <number> --body "Fix cap reached for this cycle. Review-level feedback evaluated but not yet addressed: <detailed technical summary of the needed changes>. This will be addressed in the next check cycle."
 ```
 
@@ -745,9 +750,10 @@ This comment does not count toward the fix cap. Then move on to the next section
    git push
    ```
 
-Post a summary comment:
+A summary comment requires Rö's explicit authorization in this chat for this comment. Invoking `/pr-babysit` is not permission. Without it, keep the summary in the chat report and do not post.
 
 ```bash
+# Only after Rö authorizes this comment in chat.
 gh pr comment <number> --body "Automated fix: addressed review feedback."
 ```
 
@@ -806,6 +812,8 @@ If the review body contained actionable feedback that was addressed, set `last_s
 2. Filter to unresolved threads (`isResolved == false`).
 
 3. Process **every** unresolved thread. No thread may be skipped, even if the fix cap has been reached. Each thread that requires a code change counts as one fix action — check the per-cycle counter before each. For each thread:
+
+   Replying on the PR requires Rö's explicit authorization in this chat for that reply. Invoking `/pr-babysit` is not permission. Without it, prepare the reply text in the chat report and do not call the review-reply API.
 
    **If a code change is reasonable AND the fix cap has NOT been reached** (the comment points out a bug, requests a refactor, suggests an improvement, or is otherwise actionable):
    - Checkout the branch, make the code change, then commit and push:
@@ -910,7 +918,8 @@ After state persistence and worktree cleanup are complete: if all PRs for this r
 
 Follow these rules strictly:
 
-- **Never force-push without `--force-with-lease`**. Always use `git push --force-with-lease`, never `git push --force`. Note: `gh stack push` and `gt submit` handle `--force-with-lease` internally, so no extra flags are needed when using those commands.
+- **Never force-push without `--force-with-lease`, and never force-push unless Rö has explicitly authorized that push in this chat.** Invoking `/pr-babysit` is not permission. Each force-push needs its own authorization. That includes `git push --force-with-lease` and `gt sync --force`. Always use `git push --force-with-lease`, never `git push --force`. Note: `gh stack push` and `gt submit` handle `--force-with-lease` internally, so no extra flags are needed when using those commands, and they still need the same per-action authorization before they run.
+- **Never post a PR comment or review reply unless Rö has explicitly authorized that comment in this chat.** Invoking the skill is not permission. Each comment needs its own authorization. Without it, report the text in chat and do not call `gh pr comment` or the review-reply API.
 - **Never modify files outside the PR's branch**. Always verify you are on the correct branch before making changes.
 - **All fix work happens in worktrees, never in the main workspace.** The main workspace tree must not be modified during a check cycle. Each non-overlapping group gets its own worktree via `isolation: "worktree"` on `spawn_subagent`.
 - **Worktrees persist across cycles for subagent resumption.** Do not clean up worktrees unless all PRs in the group are removed. Use `grok worktree rm --force <path>` for cleanup, not `git worktree remove`.
