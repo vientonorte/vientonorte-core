@@ -32,9 +32,12 @@ describe('@vientonorte/skills', () => {
   });
 
   it('resolves on-demand skills without listing them', () => {
-    expect(listSkills().some((s) => s.id === 'prospecto-local')).toBe(false);
-    expect(getSkill('prospecto-local')).toBeUndefined();
-    expect(resolveSkill('prospecto-local')?.where).toBe('machine');
+    expect(listSkills().some((s) => s.id === 'bujo-ro')).toBe(false);
+    expect(getSkill('bujo-ro')).toBeUndefined();
+    expect(resolveSkill('bujo-ro')?.where).toBe('machine');
+    expect(getSkill('prospecto-local')?.local).toBe('mounted/prospecto-local/SKILL.md');
+    expect(resolveSkill('prospecto-local')?.where).toBe('catalog');
+    expect(resolveSkill('ollama')?.where).toBe('catalog');
     expect(listOnDemand().every((s) => s.public === false)).toBe(true);
     expect(listConnectors().find((c) => c.id === 'nvidia-cuda-docs')?.auth).toBe('oauth');
   });

@@ -2,7 +2,7 @@
 name: vn-agent
 description: Use when the user mentions VN, Viento Norte, /vn-agent, vn-local, skills, Figma, SSOT, or orchestration across local and shared skills.
 ---
-# VN · router completo
+# Agente Viento Norte · router completo
 
 1. Consultar el catálogo de **todas** las skills disponibles por nombre + descripción; cargar el cuerpo de una primaria y, si hace falta, una secundaria. `CATALOG.md` enumera las compartidas; el catálogo local agrega las privadas. No cargar todos los cuerpos al contexto ni limitar el inventario a Grok.
 2. Preflight `auditoria-previa-ssot`. Cada cliente conserva su SSOT; disponer de una skill no mezcla VN, Portafolio, SURA, Penji ni tesis.

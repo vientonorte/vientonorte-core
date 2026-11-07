@@ -4,11 +4,11 @@
   "note": "listSkills no incluye esta lista. El SKILL.md no está en el repo.",
   "skills": [
     {
-      "id": "ask-before-advancing",
-      "slash": "/ask-before-advancing",
+      "id": "an-lisis-financiero-hogar",
+      "slash": "/an-lisis-financiero-hogar",
       "public": false,
       "body": "machine",
-      "use": "Pregunta antes de avanzar un plan."
+      "use": "Finanzas del hogar. El cuerpo queda en la máquina."
     },
     {
       "id": "bujo-ro",
@@ -18,18 +18,39 @@
       "use": "Cuaderno manuscrito. El cuerpo queda en la máquina."
     },
     {
-      "id": "canva-safari",
-      "slash": "/canva-safari",
+      "id": "ca-index-drive-link",
+      "slash": "/ca-index-drive-link",
       "public": false,
       "body": "machine",
-      "use": "Abre Canva en Safari con la sesión de esa máquina."
+      "use": "Índice local. El cuerpo queda en la máquina."
     },
     {
-      "id": "catalog",
-      "slash": "/catalog",
+      "id": "ca-local-sin-cloud",
+      "slash": "/ca-local-sin-cloud",
       "public": false,
       "body": "machine",
-      "use": "Índice local de fuentes de research."
+      "use": "Trabajo local sin nube. El cuerpo queda en la máquina."
+    },
+    {
+      "id": "cierre-penji",
+      "slash": "/cierre-penji",
+      "public": false,
+      "body": "machine",
+      "use": "Cierre de ese cliente. El cuerpo queda en la máquina."
+    },
+    {
+      "id": "contadur-a-y-gesti-n-sii",
+      "slash": "/contadur-a-y-gesti-n-sii",
+      "public": false,
+      "body": "machine",
+      "use": "Gestión contable. El cuerpo queda en la máquina."
+    },
+    {
+      "id": "daily",
+      "slash": "/daily",
+      "public": false,
+      "body": "machine",
+      "use": "Ritual diario. El cuerpo queda en la máquina."
     },
     {
       "id": "desk-dualboot",
@@ -46,11 +67,11 @@
       "use": "Fichas del contra-archivo. El cuerpo queda en la máquina."
     },
     {
-      "id": "github-analyze",
-      "slash": "/gh-analyze",
+      "id": "integrar-evidencia-etnogr-fica-a-la-tesis",
+      "slash": "/integrar-evidencia-etnogr-fica-a-la-tesis",
       "public": false,
       "body": "machine",
-      "use": "Informe de salud de un repo GitHub."
+      "use": "Evidencia de tesis. El cuerpo queda en la máquina."
     },
     {
       "id": "job-hunt-ro",
@@ -67,53 +88,60 @@
       "use": "Citas de libros anotados. El cuerpo queda en la máquina."
     },
     {
-      "id": "notebooklm",
-      "slash": "/notebooklm",
+      "id": "micro1-cierre",
+      "slash": "/micro1-cierre",
       "public": false,
       "body": "machine",
-      "use": "NotebookLM en la máquina que tenga el CLI."
+      "use": "Cierre de esa entrega. El cuerpo queda en la máquina."
     },
     {
-      "id": "ollama",
-      "slash": "/ollama",
+      "id": "micro1-delivery",
+      "slash": "/micro1-delivery",
       "public": false,
       "body": "machine",
-      "use": "Modelo local antes de nube. La política no se copia aquí."
+      "use": "Entrega local. El cuerpo queda en la máquina."
     },
     {
-      "id": "poema-revision",
-      "slash": "/poema-revision",
+      "id": "micro1-pipeline",
+      "slash": "/micro1-pipeline",
       "public": false,
       "body": "machine",
-      "use": "Revisión de un poema. El cuerpo queda en la máquina."
+      "use": "Pipeline local. El cuerpo queda en la máquina."
     },
     {
-      "id": "pr-babysit",
-      "slash": "/pr-babysit",
+      "id": "penji",
+      "slash": "/penji",
       "public": false,
       "body": "machine",
-      "use": "Seguimiento de un PR. El cuerpo queda en la máquina."
+      "use": "Cliente externo. El cuerpo queda en la máquina."
     },
     {
-      "id": "prospecto-local",
-      "slash": "/prospecto-local",
+      "id": "penji-youtube-thumb",
+      "slash": "/penji-youtube-thumb",
       "public": false,
       "body": "machine",
-      "use": "Suma prospectos con la plantilla existente. No envía correo."
+      "use": "Pieza de ese cliente. El cuerpo queda en la máquina."
     },
     {
-      "id": "wcag22-audit",
-      "slash": "/wcag22-audit",
+      "id": "postulaciones-calendario",
+      "slash": "/postulaciones-calendario",
       "public": false,
       "body": "machine",
-      "use": "Auditoría WCAG 2.2 AA. El cuerpo queda en la máquina."
+      "use": "Calendario de postulaciones. El cuerpo queda en la máquina."
     },
     {
-      "id": "yt-to-notebooklm",
-      "slash": "/yt-research",
+      "id": "research-personas-empresas",
+      "slash": "/research-personas-empresas",
       "public": false,
       "body": "machine",
-      "use": "YouTube hacia NotebookLM en la máquina que tenga el script."
+      "use": "Research local. El cuerpo queda en la máquina."
+    },
+    {
+      "id": "ritual-semanal-bujo-obsidian",
+      "slash": "/ritual-semanal-bujo-obsidian",
+      "public": false,
+      "body": "machine",
+      "use": "Ritual semanal. El cuerpo queda en la máquina."
     }
   ]
 }

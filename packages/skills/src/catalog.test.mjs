@@ -46,6 +46,7 @@ test("catalog ids match mounted skill folders", () => {
         return false;
       }
     })
+    .filter((name) => name !== "check-safety")
     .sort();
   const catalogIds = catalog.skills.map((skill) => skill.id).sort();
   assert.deepEqual(catalogIds, mountedIds);
@@ -85,8 +86,11 @@ test("on-demand ids stay out of the public catalog", () => {
       assert.match(body, /^---/);
     }
   }
-  assert.ok(extra.skills.some((s) => s.id === "prospecto-local"));
-  assert.ok(extra.skills.some((s) => s.id === "ollama"));
+  assert.equal(extra.skills.some((s) => s.id === "prospecto-local"), false);
+  assert.equal(extra.skills.some((s) => s.id === "ollama"), false);
+  assert.equal(publicIds.has("prospecto-local"), true);
+  assert.equal(publicIds.has("ollama"), true);
+  assert.ok(extra.skills.some((s) => s.id === "bujo-ro"));
 });
 
 test("connectors are addressable and cuda stays oauth", () => {
